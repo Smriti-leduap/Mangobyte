@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangobyte Digital | Creative Digital Marketing Agency</title>
+    <meta name="description" content="Mangobyte is a Kathmandu-based creative digital marketing agency specializing in branding, web development, SEO, and digital strategy for startups and enterprises.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="timeline.css">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Animation Libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- 1. NAVIGATION HEADER -->
+    <header class="site-header" id="navbar">
+        <div class="container">
+            <div class="header-right">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i data-lucide="sun" id="theme-icon"></i>
+                </button>
+                <div class="menu-toggle" id="menu-toggle-btn" role="button" aria-expanded="false">
+                    <span class="menu-label">Menu</span>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FULL SCREEN MENU OVERLAY -->
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+        <nav class="overlay-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- LEFT: Copy -->
+                <div class="hero-left">
+
+                    <h1 class="hero-title">
+                        Powerful Results,<br>
+                        <span class="title-italic">Real Growth.</span>
+                    </h1>
+
+                    <p class="hero-sub">
+                        Powerful growth doesn't have to break the bank or take forever.
+                        We help businesses drive revenue, generate leads, and build brands that stick.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="contact.html" class="btn btn-primary">Make Magic Happen <i data-lucide="arrow-right"></i></a>
+                        <a href="work.html" class="btn btn-outline">View Our Work <i data-lucide="external-link"></i></a>
+                    </div>
+
+                    <!-- Social proof -->
+                    <div class="hero-social-proof">
+                        <div class="proof-avatars">
+                            <div class="proof-avatar" style="background: linear-gradient(135deg,#3B82F6,#38BDF8);">AK</div>
+                            <div class="proof-avatar" style="background: linear-gradient(135deg,#6366F1,#3B82F6);">PM</div>
+                            <div class="proof-avatar" style="background: linear-gradient(135deg,#38BDF8,#6366F1);">SR</div>
+                            <div class="proof-avatar" style="background: linear-gradient(135deg,#3B82F6,#6366F1);">NR</div>
+                            <div class="proof-avatar more">+50</div>
+                        </div>
+                        <div class="proof-text">
+                            <strong>Trusted by 50+ businesses</strong>
+                            <div class="proof-stars">
+                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
+                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
+                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
+                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
+                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
+                                <span>4.9 / 5.0 rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Placeholder Box -->
+                <div class="hero-right">
+                    <div class="hero-img-placeholder">
+                        <i data-lucide="image"></i>
+                        <span>Hero Image</span>
+                    </div>
+
+                    <!-- Floating stat card 1 -->
+                    <div class="hero-stat-card card-top-right">
+                        <span class="stat-card-label">Projects Done</span>
+                        <span class="stat-card-value">150+</span>
+                        <span class="stat-card-up"><i data-lucide="trending-up" style="width:12px;height:12px;"></i> All-time</span>
+                    </div>
+
+                    <!-- Floating stat card 2 -->
+                    <div class="hero-stat-card card-bottom-left">
+                        <span class="stat-card-label">Avg. ROI Increase</span>
+                        <span class="stat-card-value">250%</span>
+                        <span class="stat-card-up"><i data-lucide="trending-up" style="width:12px;height:12px;"></i> Per client</span>
+                    </div>
+
+                    <!-- Floating stat card 3 -->
+                    <div class="hero-stat-card card-mid-right">
+                        <span class="stat-card-label">Happy Clients</span>
+                        <span class="stat-card-value">45</span>
+                        <span class="stat-card-sub">Active right now</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SOCIAL PROOF / STATS -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="text-gradient counter" data-target="150">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="text-gradient counter" data-target="45">0</h3>
+                    <p>Active Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="text-gradient counter" data-target="12">0</h3>
+                    <p>M$ Revenue Generated</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="text-gradient counter" data-target="250">0</h3>
+                    <p>% Avg. ROI Increase</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUSTED COMPANIES SECTION -->
+    <section class="trusted-section">
+        <div class="container">
+            <h2>Who We Work With</h2>
+            <p class="section-sub">From fast-growing startups to established enterprises, we partner with businesses across all industries to drive measurable growth.</p>
+        </div>
+        <!-- Row 1: Left to Right -->
+        <div class="trusted-logos-row scroll-ltr">
+            <div class="trusted-logo-item">CloudBeds</div>
+            <div class="trusted-logo-item">GoSite</div>
+            <div class="trusted-logo-item">Inscripta</div>
+            <div class="trusted-logo-item">Nadel.com</div>
+            <div class="trusted-logo-item">Level 10</div>
+            <div class="trusted-logo-item">Luna Grill</div>
+            <div class="trusted-logo-item">Mesa Biotech</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="trusted-logo-item">CloudBeds</div>
+            <div class="trusted-logo-item">GoSite</div>
+            <div class="trusted-logo-item">Inscripta</div>
+            <div class="trusted-logo-item">Nadel.com</div>
+            <div class="trusted-logo-item">Level 10</div>
+            <div class="trusted-logo-item">Luna Grill</div>
+            <div class="trusted-logo-item">Mesa Biotech</div>
+        </div>
+        <!-- Row 2: Right to Left -->
+        <div class="trusted-logos-row scroll-rtl" style="margin-top: 1rem;">
+            <div class="trusted-logo-item">MindBody</div>
+            <div class="trusted-logo-item">PetDesk</div>
+            <div class="trusted-logo-item">Perceptyx</div>
+            <div class="trusted-logo-item">Silvergate</div>
+            <div class="trusted-logo-item">TuSimple</div>
+            <div class="trusted-logo-item">Vigor Systems</div>
+            <div class="trusted-logo-item">ReSoft</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="trusted-logo-item">MindBody</div>
+            <div class="trusted-logo-item">PetDesk</div>
+            <div class="trusted-logo-item">Perceptyx</div>
+            <div class="trusted-logo-item">Silvergate</div>
+            <div class="trusted-logo-item">TuSimple</div>
+            <div class="trusted-logo-item">Vigor Systems</div>
+            <div class="trusted-logo-item">ReSoft</div>
+        </div>
+        <!-- Row 3: Left to Right -->
+        <div class="trusted-logos-row scroll-ltr" style="margin-top: 1rem;">
+            <div class="trusted-logo-item">Tech Solutions</div>
+            <div class="trusted-logo-item">Lumina Global</div>
+            <div class="trusted-logo-item">Apex Retail</div>
+            <div class="trusted-logo-item">Quantum SaaS</div>
+            <div class="trusted-logo-item">Nepal Ventures</div>
+            <div class="trusted-logo-item">Elite Commerce</div>
+            <div class="trusted-logo-item">BBB</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="trusted-logo-item">Tech Solutions</div>
+            <div class="trusted-logo-item">Lumina Global</div>
+            <div class="trusted-logo-item">Apex Retail</div>
+            <div class="trusted-logo-item">Quantum SaaS</div>
+            <div class="trusted-logo-item">Nepal Ventures</div>
+            <div class="trusted-logo-item">Elite Commerce</div>
+            <div class="trusted-logo-item">BBB</div>
+        </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- 4. SERVICES SECTION — STICKY STACKING -->
+    <section class="section-padding" id="services">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3rem; margin-top: 1rem;">What We <span class="text-gradient">Do</span></h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 0; font-size: var(--text-lg);">Strategy-first solutions tailored to help startups and enterprises scale their online presence.</p>
+            </div>
+            <div class="services-slider-container">
+                <div class="drag-indicator">
+                    <i data-lucide="chevron-left"></i> DRAG <i data-lucide="chevron-right"></i>
+                </div>
+                <div class="services-slider" id="services-slider-element">
+                    <!-- Service 1 -->
+                    <div class="services-tcard glass">
+                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');"></div>
+                        <div class="services-pill">Primary Care</div>
+                        <h3>Branding & Identity</h3>
+                        <div class="services-tcard-bottom">
+                            <p>Development of logos, brand guidelines, and complete visual identity systems that build lasting recognition.</p>
+                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="services-tcard glass">
+                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop');"></div>
+                        <div class="services-pill">Digital Platform</div>
+                        <h3>Website Development</h3>
+                        <div class="services-tcard-bottom">
+                            <p>Creation of business websites, custom web applications, and landing pages built for speed and performance.</p>
+                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="services-tcard glass">
+                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop');"></div>
+                        <div class="services-pill">Growth Marketing</div>
+                        <h3>Digital Marketing</h3>
+                        <div class="services-tcard-bottom">
+                            <p>Comprehensive marketing services including social media, email marketing, and paid advertising.</p>
+                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="services-tcard glass">
+                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop');"></div>
+                        <div class="services-pill">Organic Traffic</div>
+                        <h3>SEO & SEM</h3>
+                        <div class="services-tcard-bottom">
+                            <p>Technical SEO audits, on-page optimization, and search engine marketing strategies to drive organic traffic.</p>
+                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="services-tcard glass">
+                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop');"></div>
+                        <div class="services-pill">Native & Cross-platform</div>
+                        <h3>Mobile App Dev</h3>
+                        <div class="services-tcard-bottom">
+                            <p>Design and development of iOS, Android, and cross-platform mobile apps tailored to your business needs.</p>
+                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="services-tcard glass">
+                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop');"></div>
+                        <div class="services-pill">User Centric</div>
+                        <h3>UI/UX Design</h3>
+                        <div class="services-tcard-bottom">
+                            <p>Wireframing, prototyping, and high-fidelity UI/UX design that deliver exceptional user experiences.</p>
+                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PROCESS SECTION -->
+    <section class="section-padding" id="process" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 3rem; margin-top: 1rem;">Our <span class="text-gradient">Process</span></h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 0; font-size: var(--text-lg);">A seamless 7-step flow designed to scale your business predictably.</p>
+            </div>
+            
+            <div class="timeline-container">
+                <!-- Step 1 -->
+                <div class="timeline-step">
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <h4><i data-lucide="search"></i> 1 Research & Audit</h4>
+                            <p>We explore your current performance, competitors, and user pain points to uncover true growth opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-step">
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <h4><i data-lucide="map"></i> 2 Strategy & Planning</h4>
+                            <p>We develop a custom roadmap mapping out the exact steps, campaigns, and funnels needed to achieve your goals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-step">
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <h4><i data-lucide="pen-tool"></i> 3 Visual Design</h4>
+                            <p>Our team builds clean, energetic designs with intuitive navigation and motivating visuals to capture attention.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-step">
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <h4><i data-lucide="code"></i> 4 Development</h4>
+                            <p>We bring the designs to life using modern tech stacks, ensuring speed, security, and flawless responsive behavior.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-step">
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <h4><i data-lucide="check-square"></i> 5 Testing & QA</h4>
+                            <p>Multiple test rounds are run to refine the experience, making sure everything feels smooth, secure, and enjoyable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-step">
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <h4><i data-lucide="rocket"></i> 6 Launch</h4>
+                            <p>We execute a coordinated go-live strategy, pushing your new digital presence or campaigns to the public.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="timeline-step">
+                    <div class="timeline-card">
+                        <div class="timeline-content">
+                            <h4><i data-lucide="trending-up"></i> 7 Growth & Optimize</h4>
+                            <p>Post-launch, we continuously monitor analytics and run A/B tests to maximize ROI and scale effectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="x-divider"></div>
+
+    <!-- 6. PORTFOLIO / CASE STUDIES -->
+    <section class="section-padding" id="portfolio">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem;">
+                <div>
+                    <h2 style="font-size: 3rem; margin-top: 1rem;">Case <span class="text-gradient">Studies</span></h2>
+                </div>
+                <a href="work.html" class="btn btn-outline">View All Projects</a>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Project 1: Sapphire -->
+                <div class="portfolio-card glass">
+                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-tags"><span>SEO</span><span>Organic Traffic</span></div>
+                        <h3>Sapphire</h3>
+                        <p><strong style="color: var(--accent-sky);">+39.1% Organic Traffic</strong> — achieved in just 6 months through comprehensive SEO.</p>
+                    </div>
+                </div>
+                <!-- Project 2: Targeted Keywords -->
+                <div class="portfolio-card glass">
+                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-tags"><span>SEO</span><span>Rankings</span></div>
+                        <h3>Targeted Keywords</h3>
+                        <p><strong style="color: var(--accent-sky);">21 Keywords in Top 3</strong> — highly-competitive targeted keywords pushed into top positions.</p>
+                    </div>
+                </div>
+                <!-- Project 3: Nexus SaaS -->
+                <div class="portfolio-card glass">
+                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-tags"><span>B2B</span><span>UI/UX</span></div>
+                        <h3>Nexus SaaS</h3>
+                        <p><strong style="color: var(--accent-sky);">-50% Churn Rate</strong> — complete redesign and growth strategy delivered measurable results.</p>
+                    </div>
+                </div>
+                <!-- Project 4: Aether Intelligence -->
+                <div class="portfolio-card glass">
+                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-tags"><span>AI Tech</span><span>Branding</span></div>
+                        <h3>Aether Intelligence</h3>
+                        <p><strong style="color: var(--accent-sky);">+120% Brand Awareness</strong> — futuristic identity and launch campaign for an AI lab.</p>
+                    </div>
+                </div>
+                <!-- Project 5: Chronos Watches -->
+                <div class="portfolio-card glass">
+                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-tags"><span>Luxury</span><span>Ads</span></div>
+                        <h3>Chronos Watches</h3>
+                        <p><strong style="color: var(--accent-sky);">3× ROAS</strong> — high-performance ads for a premium mechanical watch collection.</p>
+                    </div>
+                </div>
+                <!-- Project 6: Spark App -->
+                <div class="portfolio-card glass">
+                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-tags"><span>Mobile</span><span>Growth</span></div>
+                        <h3>Spark App</h3>
+                        <p><strong style="color: var(--accent-sky);">100k+ Downloads</strong> — viral acquisition campaign in 30 days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TESTIMONIALS — DRAGGABLE -->
+    <section class="section-padding testimonials-section" style="background: var(--bg-secondary); overflow: hidden;">
+        <div class="container" style="margin-bottom: 4rem;">
+            <div style="text-align: center;">
+                <h2 style="font-size: 3rem; margin-top: 1rem;">What Our <span class="text-gradient">Clients Say</span></h2>
+            </div>
+        </div>
+
+        <div class="testimonials-slider" id="testimonials-slider">
+            <div class="testimonials-track" id="testimonials-track">
+                <!-- Card 1 -->
+                <div class="tcard glass">
+                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
+                    <p class="tcard-text">"GoScaleX gave us a revenue engine. Our CAC dropped by 40% in the first quarter alone. Absolutely phenomenal results."</p>
+                    <div class="tcard-author">
+                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #3B82F6, #6366F1);">AS</div>
+                        <div>
+                            <h5>Aarav Sharma</h5>
+                            <p>CEO, UrbanEdge Nepal</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="tcard glass">
+                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
+                    <p class="tcard-text">"Within 6 months our organic traffic tripled. The SEO strategy they built was unlike anything we'd seen from an agency before."</p>
+                    <div class="tcard-author">
+                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #60a5fa, #2563EB);">PK</div>
+                        <div>
+                            <h5>Priya Kapoor</h5>
+                            <p>Founder, Lumina Global</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="tcard glass">
+                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
+                    <p class="tcard-text">"The AI automation they built for our sales funnel now generates 40+ qualified demos weekly on autopilot. Pure ROI."</p>
+                    <div class="tcard-author">
+                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);">RJ</div>
+                        <div>
+                            <h5>Rohan Joshi</h5>
+                            <p>Head of Growth, FinTech AI</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="tcard glass">
+                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
+                    <p class="tcard-text">"Our churn dropped 50% after the redesign. They don't just market — they engineer growth from the ground up."</p>
+                    <div class="tcard-author">
+                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #34d399, #60a5fa);">SM</div>
+                        <div>
+                            <h5>Sara Mills</h5>
+                            <p>CPO, Nexus SaaS</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="tcard glass">
+                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
+                    <p class="tcard-text">"100k downloads in 30 days. I honestly didn't think that was possible for us. They proved me wrong in the best way."</p>
+                    <div class="tcard-author">
+                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #6366F1, #2563EB);">TN</div>
+                        <div>
+                            <h5>Tasha Nyarko</h5>
+                            <p>CEO, Spark App</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="tcard glass">
+                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
+                    <p class="tcard-text">"The performance ads campaign delivered ROAS we'd only dreamed of. The partner every luxury brand needs."</p>
+                    <div class="tcard-author">
+                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #1E3A8A, #60a5fa);">DL</div>
+                        <div>
+                            <h5>Daniel Laurent</h5>
+                            <p>Marketing Director, Chronos Watches</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fade edges -->
+        <div class="testimonials-fade-left"></div>
+        <div class="testimonials-fade-right"></div>
+    </section>
+
+    <!-- 7.5 FAQ SECTION -->
+    <section class="section-padding" id="faq">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; margin-top: 1rem;">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">Everything you need to know about how we work.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your typical project timeline?</span>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Our standard timeline for a full website redesign or MVP app development is 6-8 weeks. This includes discovery, design, development, and testing. However, complex projects or enterprise solutions may require additional time. We always provide a clear, customized roadmap before starting any work.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you work with startups or established enterprises?</span>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We partner with both! We help ambitious startups build their brand from scratch and scale quickly, while also assisting established enterprises in modernizing their legacy systems, improving user experience, and driving digital transformation.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is your pricing model?</span>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We offer custom pricing based on the scope and complexity of your project. We typically work on a fixed-bid basis for well-defined projects (like a website build), and a monthly retainer model for ongoing services like SEO, digital marketing, and continuous optimization.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do you ensure the quality of your work?</span>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Quality is built into our process. We conduct multiple rounds of rigorous QA testing across different devices and browsers. We also believe in transparent communication, involving you in key review milestones to ensure the final product exceeds your expectations.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FINAL CTA -->
+    <section class="section-padding final-cta">
+        <div class="container">
+            <h2 class="hero-title">Ready to <span class="text-gradient">Scale Your Brand?</span></h2>
+            <p class="hero-sub" style="margin: 0 auto 3rem;">Join 50+ high-growth brands that trust us to dominate their market.</p>
+            <a href="contact.html" class="btn btn-primary" style="padding: 1.5rem 3.5rem; font-size: 1.2rem;">Let's Talk <i data-lucide="message-square"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <p>Creative digital agency based in Kathmandu, Nepal. Strategy-first solutions for startups and enterprises.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Agency</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">Branding & Identity</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">SEO & SEM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hello@mangobyte.com.np">hello@mangobyte.com.np</a></li>
+                        <li><a href="#">Kathmandu, Nepal</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mangobyte Digital. All rights reserved.</p>
+                <p>Built for Challengers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

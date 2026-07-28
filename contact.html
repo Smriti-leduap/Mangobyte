@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Mangobyte Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+    <div class="noise"></div>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="site-header" id="navbar">
+        <div class="container">
+            <div class="header-right">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i data-lucide="sun" id="theme-icon"></i>
+                </button>
+                <div class="menu-toggle" id="menu-toggle-btn" role="button" aria-expanded="false">
+                    <span class="menu-label">Menu</span>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FULL SCREEN MENU OVERLAY -->
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+        <nav class="overlay-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <main class="section-padding" style="flex: 1; display: flex; align-items: center; padding-top: 150px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+                <!-- Left Side: Contact Info -->
+                <div>
+                    <h1 class="hero-title" style="font-size: 4rem;">Let's <span class="text-gradient">Connect</span></h1>
+                    <p class="hero-sub">Fill out the form and our team will get back to you within 24 hours.</p>
+                    
+                    <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div class="service-icon" style="font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 0;"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.2rem;">Email Us</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">hello@mangobyte.com.np</p>
+                            </div>
+                        </div>
+
+                        <!-- Location 1 -->
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div class="service-icon" style="font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 0;"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.2rem;">Australia Office</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Sydney, NSW<br>Australia</p>
+                            </div>
+                        </div>
+
+                        <!-- Location 2 -->
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div class="service-icon" style="font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 0;"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4 style="color: var(--text-primary); margin-bottom: 0.2rem;">Nepal Office</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Kathmandu<br>Nepal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div class="glass" style="padding: 3.5rem;">
+                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                                <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">First Name</label>
+                                <input type="text" class="form-input">
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                                <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Last Name</label>
+                                <input type="text" class="form-input">
+                            </div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                            <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Email address</label>
+                            <input type="email" class="form-input">
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                            <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Service you want to enquire about</label>
+                            <select class="form-input" style="appearance: none; cursor: pointer;">
+                                <option style="background: var(--bg-card); color: var(--text-primary);">Branding & Identity</option>
+                                <option style="background: var(--bg-card); color: var(--text-primary);">Website Development</option>
+                                <option style="background: var(--bg-card); color: var(--text-primary);">Digital Marketing</option>
+                                <option style="background: var(--bg-card); color: var(--text-primary);">SEO & SEM</option>
+                                <option style="background: var(--bg-card); color: var(--text-primary);">Mobile App Development</option>
+                                <option style="background: var(--bg-card); color: var(--text-primary);">UI/UX Design</option>
+                            </select>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                            <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Input Message</label>
+                            <textarea rows="5" class="form-input" style="resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="justify-content: center; width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 0.5rem;">Send button</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" style="margin-top: auto;">
+        <div class="container" style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+            &copy; 2026 Mangobyte Digital. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
