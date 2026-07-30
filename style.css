@@ -828,7 +828,7 @@ body.light-theme .theme-toggle {
     background: #EEEEEE;
     border: 2px solid #D2D2D2;
     color: var(--text-primary);
-    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(20, 20, 20, 0.08);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18), 0 8px 18px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(20, 20, 20, 0.08);
 }
 
 .hero-stack-copy strong { font-size: 18px; line-height: 1.1; }
@@ -846,6 +846,26 @@ body.light-theme .theme-toggle {
 }
 .hero-stack-skeleton i:nth-child(2) { width: 82%; }
 .hero-stack-skeleton i:nth-child(3) { width: 58%; }
+
+.hero-stack-welcome {
+    display: none;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.stack-top-right.is-welcomed .hero-stack-skeleton { display: none; }
+.stack-top-right.is-welcomed .hero-stack-welcome {
+    display: block;
+    animation: hero-welcome-in 0.45s ease-out both;
+}
+
+@keyframes hero-welcome-in {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 @keyframes hero-skeleton-shimmer {
     from { background-position: 200% 0; }
@@ -2143,11 +2163,11 @@ body.light-theme .service-card-stack {
 }
 
 .services-stack-list .service-block:nth-child(1) { top: 90px; z-index: 1; }
-.services-stack-list .service-block:nth-child(2) { top: 110px; z-index: 2; }
-.services-stack-list .service-block:nth-child(3) { top: 130px; z-index: 3; }
-.services-stack-list .service-block:nth-child(4) { top: 150px; z-index: 4; }
-.services-stack-list .service-block:nth-child(5) { top: 170px; z-index: 5; }
-.services-stack-list .service-block:nth-child(6) { top: 190px; z-index: 6; }
+.services-stack-list .service-block:nth-child(2) { top: 90px; z-index: 2; }
+.services-stack-list .service-block:nth-child(3) { top: 90px; z-index: 3; }
+.services-stack-list .service-block:nth-child(4) { top: 90px; z-index: 4; }
+.services-stack-list .service-block:nth-child(5) { top: 90px; z-index: 5; }
+.services-stack-list .service-block:nth-child(6) { top: 90px; z-index: 6; }
 
 @media (max-width: 768px) {
     .services-stack-list .service-block { position: relative; top: auto !important; }

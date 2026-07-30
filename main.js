@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(tick);
     }
 
+    // After the initial loading moment, turn the hero skeleton into a welcome message.
+    const growthSnapshot = document.querySelector('.stack-top-right');
+    if (growthSnapshot) {
+        window.setTimeout(() => growthSnapshot.classList.add('is-welcomed'), 5000);
+    }
+
     // 1. Initialize Lenis Smooth Scroll
     const lenis = new Lenis({
         duration: 1.2,
