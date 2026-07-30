@@ -168,6 +168,16 @@ img { max-width: 100%; display: block; }
     font-weight: 600;
 }
 
+.btn [data-lucide="arrow-up"],
+.service-btn [data-lucide="arrow-up"] {
+    transition: transform 220ms ease;
+}
+
+.btn:hover [data-lucide="arrow-up"],
+.service-btn:hover [data-lucide="arrow-up"] {
+    transform: rotate(180deg);
+}
+
 .btn-primary {
     background: var(--brand-green);
     color: #fff;
@@ -2076,12 +2086,12 @@ body.light-theme .footer-bottom { border-top-color: rgba(0, 0, 0, 0.05); }
     justify-content: center;
     position: absolute;
     z-index: 3;
-    top: -37px;
+    top: -43px;
     left: 50%;
     margin: 0;
     transform: translateX(-50%);
 }
-.footer-center-logo img { width: 280px; height: auto; }
+.footer-center-logo img { width: 340px; height: auto; }
 
 .footer-brand-tagline {
     margin: 0 auto;
@@ -2189,8 +2199,8 @@ body.light-theme .footer-contact-surface .footer-bottom {
 @media (max-width: 768px) {
     .footer { padding: 32px 0 0; }
     .footer-contact-content { padding: 52px 24px 32px; }
-    .footer-center-logo { top: -25px; margin: 0; }
-    .footer-center-logo img { width: 220px; }
+    .footer-center-logo { top: -31px; margin: 0; }
+    .footer-center-logo img { width: 280px; }
     .footer-main-actions { position: static; align-items: center; flex-direction: column; margin: 22px 0 40px; }
     .footer-contact-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 0; margin-left: 0; text-align: center; }
     .footer-contact-block,
