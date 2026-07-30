@@ -289,6 +289,55 @@ document.addEventListener('DOMContentLoaded', () => {
               .from('.hero-social-proof', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' }, '-=0.3');
     }
 
+    // Hero gallery: a selected orbit image flies into the featured rectangle.
+    const heroOrbitFeature = document.getElementById('hero-orbit-feature');
+    const heroOrbitItems = Array.from(document.querySelectorAll('.hero-orbit-item'));
+    if (heroOrbitFeature && heroOrbitItems.length) {
+        const featureImage = heroOrbitFeature.querySelector('img');
+
+        heroOrbitItems.forEach(item => {
+            item.setAttribute('aria-pressed', 'false');
+            item.addEventListener('click', () => {
+                const sourceImage = item.querySelector('img');
+                if (!sourceImage || !featureImage) return;
+
+                heroOrbitItems.forEach(other => {
+                    const selected = other === item;
+                    other.classList.toggle('is-selected', selected);
+                    other.setAttribute('aria-pressed', String(selected));
+                });
+
+                const sourceRect = sourceImage.getBoundingClientRect();
+                const targetRect = heroOrbitFeature.getBoundingClientRect();
+                const flightImage = sourceImage.cloneNode(true);
+                flightImage.className = 'hero-orbit-flight';
+                flightImage.style.left = `${sourceRect.left}px`;
+                flightImage.style.top = `${sourceRect.top}px`;
+                flightImage.style.width = `${sourceRect.width}px`;
+                flightImage.style.height = `${sourceRect.height}px`;
+                document.body.appendChild(flightImage);
+
+                heroOrbitFeature.classList.add('is-changing');
+                requestAnimationFrame(() => {
+                    flightImage.style.left = `${targetRect.left}px`;
+                    flightImage.style.top = `${targetRect.top}px`;
+                    flightImage.style.width = `${targetRect.width}px`;
+                    flightImage.style.height = `${targetRect.height}px`;
+                    flightImage.style.borderRadius = '18px';
+                });
+
+                window.setTimeout(() => {
+                    featureImage.src = sourceImage.currentSrc || sourceImage.src;
+                    featureImage.alt = sourceImage.alt;
+                    heroOrbitFeature.classList.remove('is-empty');
+                    heroOrbitFeature.classList.remove('is-changing');
+                    flightImage.style.opacity = '0';
+                    window.setTimeout(() => flightImage.remove(), 180);
+                }, 560);
+            });
+        });
+    }
+
     
     const counters = document.querySelectorAll('.counter');
     counters.forEach(counter => {
@@ -781,6 +830,40 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(updateServiceRings);
         }
         requestAnimationFrame(updateServiceRings);
+    }
+
+    // Hero image ring uses the same elliptical rotation system as the
+    // service-card thumbnails, but remains colourful and non-hoverable.
+    const heroServiceOrbit = document.querySelector('.hero-service-orbit');
+    if (heroServiceOrbit && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const heroOrbitTiles = Array.from(heroServiceOrbit.querySelectorAll('.hero-service-orbit-image'));
+        const heroOrbitTotal = heroOrbitTiles.length || 1;
+        const HERO_ORBIT_MS = 24000;
+        const HERO_TILT = -25 * Math.PI / 180;
+
+        const updateHeroServiceOrbit = time => {
+            const width = heroServiceOrbit.offsetWidth;
+            const height = heroServiceOrbit.offsetHeight;
+            const radiusX = width * 0.36;
+            const radiusY = height * 0.34;
+            const centerX = width * 0.5;
+            const centerY = height * 0.52;
+
+            heroOrbitTiles.forEach((tile, index) => {
+                const phase = ((time / HERO_ORBIT_MS) + index / heroOrbitTotal) % 1;
+                const angle = phase * Math.PI * 2;
+                const ellipseX = Math.cos(angle) * radiusX;
+                const ellipseY = Math.sin(angle) * radiusY;
+                const x = centerX + ellipseX * Math.cos(HERO_TILT) - ellipseY * Math.sin(HERO_TILT);
+                const y = centerY + ellipseX * Math.sin(HERO_TILT) + ellipseY * Math.cos(HERO_TILT);
+                tile.style.transform = `translate(${x}px, ${y}px)`;
+                tile.style.zIndex = ellipseX > 0 ? '3' : '1';
+            });
+
+            requestAnimationFrame(updateHeroServiceOrbit);
+        };
+
+        requestAnimationFrame(updateHeroServiceOrbit);
     }
 
     // 8. Lucide Icons re-init
