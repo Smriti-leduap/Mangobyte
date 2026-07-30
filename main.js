@@ -190,6 +190,96 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
 
+    // Section content slides into place as it enters the viewport, with a
+    // compact MangoByte colour highlight marking the active reading area.
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const highlightGroups = [
+        document.querySelector('.services-stack-heading'),
+        document.querySelector('.process-dial-heading'),
+        document.querySelector('#portfolio > .container'),
+        document.querySelector('.testimonials-section > .container'),
+        document.querySelector('.faq-section .container')
+    ].filter(Boolean);
+
+    highlightGroups.forEach(group => {
+        group.classList.add('scroll-highlight-group');
+        const content = Array.from(group.querySelectorAll('h2, p, .btn'));
+
+        ScrollTrigger.create({
+            trigger: group,
+            start: 'top 72%',
+            end: 'bottom 32%',
+            toggleClass: { targets: group, className: 'is-scroll-highlighted' }
+        });
+
+        if (!reducedMotion && content.length) {
+            gsap.fromTo(content,
+                { autoAlpha: 0, y: 28 },
+                {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 0.7,
+                    stagger: 0.1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: group,
+                        start: 'top 78%',
+                        toggleActions: 'play none none none'
+                    }
+                }
+            );
+        }
+    });
+
+    document.querySelectorAll('.service-block').forEach(block => {
+        const copy = Array.from(block.querySelectorAll('.service-block-text > *'));
+        const visual = block.querySelector('.service-block-img');
+
+        ScrollTrigger.create({
+            trigger: block,
+            start: 'top 72%',
+            end: 'bottom 32%',
+            toggleClass: { targets: block, className: 'is-scroll-highlighted' }
+        });
+
+        if (!reducedMotion) {
+            if (copy.length) {
+                gsap.fromTo(copy,
+                    { autoAlpha: 0, x: -34 },
+                    {
+                        autoAlpha: 1,
+                        x: 0,
+                        duration: 0.65,
+                        stagger: 0.08,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: block,
+                            start: 'top 78%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            if (visual) {
+                gsap.fromTo(visual,
+                    { autoAlpha: 0, x: 46 },
+                    {
+                        autoAlpha: 1,
+                        x: 0,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: block,
+                            start: 'top 78%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+        }
+    });
+
     // Hero Animations
     const heroTl = gsap.timeline();
     if (document.querySelector('.hero-title')) {
@@ -239,6 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const processPin = document.getElementById('process-pin');
+    const processSection = document.querySelector('.process-dial-section');
     const processDialWheel = document.getElementById('process-dial-wheel');
     const processDialNumbers = processDialWheel ? Array.from(processDialWheel.querySelectorAll('.process-dial-number')) : [];
     const processDialPanels = Array.from(document.querySelectorAll('.process-dial-panel'));
@@ -281,12 +372,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         setProcessStep(0);
 
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 768 && processSection) {
             ScrollTrigger.create({
-                trigger: processPin,
-                start: 'top top+=90',
+                trigger: processSection,
+                start: 'top top',
                 end: () => `+=${window.innerHeight * 4.5}`,
-                pin: true,
+                pin: processSection,
                 scrub: 1,
                 anticipatePin: 1,
                 onUpdate: self => {
@@ -301,6 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Case studies — infinite arc/spiral carousel (scroll-driven + prev/next buttons)
+    const caseStudiesSection = document.getElementById('portfolio');
     const motionPin = document.getElementById('motion-pin');
     const motionCards = motionPin ? Array.from(motionPin.querySelectorAll('.motion-card')) : [];
     const motionPrevBtn = document.getElementById('motion-prev');
@@ -335,11 +427,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         layoutArc(0);
 
+        const caseStudiesPinTarget = caseStudiesSection || motionPin;
+
         ScrollTrigger.create({
-            trigger: motionPin,
-            start: 'top top+=90',
-            end: () => `+=${motionPin.offsetHeight * 2.5}`,
-            pin: true,
+            trigger: caseStudiesPinTarget,
+            start: 'top top',
+            end: () => `+=${caseStudiesPinTarget.offsetHeight * 2.5}`,
+            pin: caseStudiesPinTarget,
             scrub: 1,
             anticipatePin: 1,
             onUpdate: self => {

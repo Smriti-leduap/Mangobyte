@@ -98,7 +98,7 @@ body {
     line-height: 1.6;
     overflow-x: clip;
     -webkit-font-smoothing: antialiased;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 h1, h2 {
@@ -160,7 +160,7 @@ img { max-width: 100%; display: block; }
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: var(--transition-smooth);
     border: none;
@@ -334,7 +334,7 @@ body.light-theme .form-input:focus {
    NAVIGATION & HEADER
    ============================================================ */
 .site-header {
-    position: fixed;
+    position: absolute;
     top: 0; left: 0;
     width: 100%;
     z-index: 10002;
@@ -368,6 +368,9 @@ body.light-theme .form-input:focus {
     align-items: center;
     gap: 0.75rem;
     pointer-events: auto;
+    position: fixed;
+    top: 1.5rem;
+    right: max(2rem, calc((100vw - var(--container-width)) / 2 + 2rem));
 }
 
 /* Theme Toggle ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Always visible */
@@ -1045,13 +1048,13 @@ body.light-theme .service-card-stack {
 
 /* PROCESS SECTION ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â scroll-driven dial */
 .process-dial-section {
-    padding: 7rem 0 0;
+    padding: 32px 0 0;
     background: var(--bg-secondary);
     color: var(--text-primary);
     overflow: visible;
 }
 
-.process-dial-heading { margin-bottom: 3.5rem; }
+.process-dial-heading { margin-bottom: 8px; }
 .process-dial-heading h2 { margin: 0; }
 .process-dial-heading > p:last-child { max-width: 600px; margin-top: 1rem; color: var(--text-secondary); font-size: 16px; }
 
@@ -1127,13 +1130,20 @@ body.light-theme .service-card-stack {
 
 
 /* CASE STUDIES ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ARC / SPIRAL SCROLL CAROUSEL */
+.case-studies-section {
+    padding: 32px 0 12px;
+    overflow: visible;
+}
+
+.case-studies-section > .container > div:first-child { margin-bottom: 16px !important; }
+
 .motion-pin {
     position: relative;
-    height: 46vh;
+    height: 380px;
     min-height: 380px;
-    max-height: 460px;
+    max-height: 380px;
     overflow: hidden;
-    margin-top: -1.5rem;
+    margin-top: 0;
     background: var(--bg-main);
 }
 
@@ -1202,7 +1212,7 @@ body.light-theme .service-card-stack {
     display: flex;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 2rem;
+    margin-top: 16px;
 }
 
 .motion-nav-btn {
@@ -1552,7 +1562,8 @@ body.light-theme .service-card-stack {
     grid-template-columns: 1.1fr 1fr;
     gap: 3rem;
     align-items: center;
-    padding: 3.5rem 2rem;
+    min-height: 520px;
+    padding: 4.5rem 2rem;
 }
 
 .service-block-num {
@@ -1700,7 +1711,7 @@ body.light-theme .service-card-stack {
 }
 
 @media (max-width: 768px) {
-    .service-block-inner { grid-template-columns: 1fr; padding: 2.5rem 2rem; gap: 1.5rem; }
+    .service-block-inner { grid-template-columns: 1fr; min-height: 0; padding: 2.5rem 2rem; gap: 1.5rem; }
     .service-block-img { height: 220px; order: -1; }
     .service-img-ring { display: none; }
 }
@@ -2004,6 +2015,222 @@ body.light-theme .faq-item {
 }
 
 body.light-theme .footer-bottom { border-top-color: rgba(0, 0, 0, 0.05); }
+
+/* Footer redesign: CTA panel with an interactive contact surface. */
+.footer {
+    background: var(--bg-main);
+    padding: 48px 0;
+    overflow: visible;
+}
+
+.footer-shell {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+
+.footer-contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 20px;
+    border-radius: 999px;
+    background: var(--brand-green);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 250ms ease, background 250ms ease;
+}
+
+.footer-contact-button:hover { background: var(--brand-orange); color: #fff; transform: translateY(-3px); }
+.footer-contact-button i { width: 16px; height: 16px; }
+
+.footer-contact-surface {
+    position: relative;
+    min-height: 420px;
+    margin-top: 0;
+    overflow: hidden;
+    border-radius: 0;
+    background: #171717;
+    color: #F5F5F5;
+}
+
+.footer-contact-surface .footer-bars {
+    padding: 0 28px;
+    opacity: 0.42;
+}
+
+.footer-contact-surface .bar {
+    max-width: 3px;
+    background-image: repeating-linear-gradient(to bottom, rgba(245,245,245,0.48) 0px, rgba(245,245,245,0.48) 2px, transparent 2px, transparent 9px);
+}
+
+.footer-contact-content { position: relative; z-index: 1; padding: 36px 48px; }
+
+.footer-center-logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 8px;
+}
+.footer-center-logo img { width: 230px; height: auto; }
+
+.footer-brand-tagline {
+    margin: 0 auto;
+    color: rgba(245,245,245,0.72);
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+}
+
+.footer-main-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 22px 0 64px;
+}
+
+.footer-contact-button-secondary { background: rgba(0, 124, 124, 0.58); }
+
+.footer-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+    gap: 32px;
+    min-height: 150px;
+    margin-left: 24vw;
+    margin-top: 0;
+}
+
+.footer-contact-block { display: flex; flex-direction: column; gap: 7px; }
+.footer-contact-block h4 { margin-bottom: 6px; color: #fff; font-size: 24px; }
+.footer-contact-block a,
+.footer-contact-block p { color: rgba(245,245,245,0.72); font-size: 14px; }
+.footer-contact-block a:hover { color: #fff; }
+.footer-contact-message {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    align-items: flex-start;
+    max-width: 340px;
+    text-align: left;
+}
+.footer-contact-message > p {
+    margin: 0;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.05;
+}
+.footer-contact-message > p span {
+    color: var(--brand-orange);
+    font-style: italic;
+}
+.footer-link-column { align-items: flex-start; }
+
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 120px;
+    left: 48px;
+    margin: 0;
+    z-index: 2;
+}
+
+.footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(245,245,245,0.35);
+    border-radius: 50%;
+    color: #fff;
+    transition: background 200ms ease, color 200ms ease;
+}
+
+.footer-social-icons a:hover { background: var(--brand-green); border-color: var(--brand-green); }
+.footer-social-icons i { width: 16px; height: 16px; }
+.footer-social-icons svg { stroke: #fff; }
+
+.footer-contact-surface .footer-bottom {
+    margin-top: 44px;
+    padding-top: 20px;
+    justify-content: center;
+    border-top-color: rgba(255,255,255,0.3);
+    color: rgba(245,245,245,0.6);
+    text-align: center;
+}
+
+/* Keep the copyright divider visible when the page is in light mode. */
+body.light-theme .footer-contact-surface .footer-bottom {
+    border-top-color: rgba(245,245,245,0.3);
+}
+.footer-contact-surface .footer-bottom > div { position: absolute; right: 0; }
+.footer-bottom div { display: flex; gap: 18px; }
+.footer-bottom a { color: rgba(245,245,245,0.6); }
+.footer-bottom a:hover { color: #fff; }
+
+@media (max-width: 768px) {
+    .footer { padding: 32px 0; }
+    .footer-contact-content { padding: 32px 24px; }
+    .footer-center-logo { margin-bottom: 8px; }
+    .footer-center-logo img { width: 190px; }
+    .footer-main-actions { align-items: center; flex-direction: column; margin-bottom: 40px; }
+    .footer-contact-grid { grid-template-columns: 1fr; gap: 32px; margin-top: 0; margin-left: 0; text-align: center; }
+    .footer-contact-block,
+    .footer-link-column { align-items: center; }
+    .footer-contact-message { position: static; align-items: center; max-width: 420px; margin: 0 auto; text-align: center; }
+    .footer-contact-message > p { font-size: 32px; }
+    .footer-social-icons { position: static; margin-top: 4px; }
+    .footer-contact-surface .footer-bottom { align-items: center; flex-direction: column; gap: 12px; text-align: center; }
+    .footer-contact-surface .footer-bottom > div { position: static; }
+}
+
+/* Scroll highlights — each section gains a small, brand-coloured progress accent
+   as its content comes into view. */
+.scroll-highlight-group { position: relative; }
+
+.scroll-highlight-group::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brand-orange), var(--brand-green));
+    box-shadow: 0 0 16px rgba(var(--accent-rgb), 0.34);
+    transition: width 650ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-highlight-group.is-scroll-highlighted::after { width: min(120px, 72%); }
+
+.service-block { isolation: isolate; }
+
+.service-block::after {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    top: 26px;
+    bottom: 26px;
+    left: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--brand-orange), var(--brand-green));
+    box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.5);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 650ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-block.is-scroll-highlighted::after { transform: scaleY(1); }
+.service-block.is-scroll-highlighted .service-block-tagline { color: var(--brand-orange); }
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-highlight-group::after,
+    .service-block::after { transition: none; }
+}
 
 /* CURSOR */
 .custom-cursor {
