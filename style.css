@@ -168,14 +168,14 @@ img { max-width: 100%; display: block; }
     font-weight: 600;
 }
 
-.btn [data-lucide="arrow-up"],
-.service-btn [data-lucide="arrow-up"] {
+.btn [data-lucide="arrow-up-right"],
+.service-btn [data-lucide="arrow-up-right"] {
     transition: transform 220ms ease;
 }
 
-.btn:hover [data-lucide="arrow-up"],
-.service-btn:hover [data-lucide="arrow-up"] {
-    transform: rotate(180deg);
+.btn:hover [data-lucide="arrow-up-right"],
+.service-btn:hover [data-lucide="arrow-up-right"] {
+    transform: rotate(90deg);
 }
 
 .btn-primary {
