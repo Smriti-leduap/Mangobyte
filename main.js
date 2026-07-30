@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Opening preloader — simple timed intro before the page reveals
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        const countEl = document.getElementById('preloader-count');
+        document.body.classList.add('preloading');
+
+        const duration = 1100;
+        const start = performance.now();
+
+        function tick(now) {
+            const progress = Math.min(1, (now - start) / duration);
+            const pct = Math.round(progress * 100);
+            if (countEl) countEl.textContent = pct + '%';
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                document.body.classList.remove('preloading');
+                preloader.classList.add('hide');
+                setTimeout(() => preloader.remove(), 700);
+            }
+        }
+        requestAnimationFrame(tick);
+    }
+
     // 1. Initialize Lenis Smooth Scroll
     const lenis = new Lenis({
         duration: 1.2,
@@ -7,28 +32,47 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseMultiplier: 1,
     });
 
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+   
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
 
     // 2. Custom Cursor
     const cursor = document.getElementById('cursor');
     if (cursor) {
         document.addEventListener('mousemove', (e) => {
             gsap.to(cursor, {
-                x: e.clientX - 10,
-                y: e.clientY - 10,
+                x: e.clientX - 16,
+                y: e.clientY - 11,
                 duration: 0.1
             });
         });
 
-        // Cursor hover effects
+        if (!window.matchMedia('(pointer: coarse)').matches) {
+            document.addEventListener('click', (e) => {
+                const stamp = document.createElement('span');
+                stamp.className = 'cursor-petal-stamp';
+                stamp.style.left = `${e.pageX}px`;
+                stamp.style.top = `${e.pageY}px`;
+                const stampArt = document.createElement('span');
+                stampArt.className = 'cursor-petal-stamp-art';
+                stamp.appendChild(stampArt);
+                document.body.appendChild(stamp);
+
+                gsap.fromTo(stampArt,
+                    { opacity: 1, scale: 1 },
+                    { opacity: 0, scale: 1, duration: 2.4, ease: 'power1.out', onComplete: () => stamp.remove() }
+                );
+            });
+        }
+
+       
         const interactiveElements = document.querySelectorAll('a, button, .service-card-stack, .portfolio-card, .menu-toggle, .overlay-close');
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                gsap.to(cursor, { scale: 3, opacity: 0.5 });
+                gsap.to(cursor, { scale: 1.2, opacity: 1 });
             });
             el.addEventListener('mouseleave', () => {
                 gsap.to(cursor, { scale: 1, opacity: 1 });
@@ -36,7 +80,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Theme Toggle Logic
+    // Give grid-based backgrounds a restrained 3D response to the cursor.
+    document.querySelectorAll('.grid-interactive').forEach(section => {
+        const gridLayer = section.querySelector('.interactive-grid-layer');
+        if (!gridLayer || window.matchMedia('(pointer: coarse)').matches) return;
+
+        section.addEventListener('pointermove', event => {
+            const bounds = section.getBoundingClientRect();
+            const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+            const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+            gridLayer.style.setProperty('--grid-shift-x', `${x * 20}px`);
+            gridLayer.style.setProperty('--grid-shift-y', `${y * 16}px`);
+            gridLayer.style.setProperty('--grid-rotate-x', `${-y * 3}deg`);
+            gridLayer.style.setProperty('--grid-rotate-y', `${x * 3}deg`);
+        });
+
+        section.addEventListener('pointerleave', () => {
+            gridLayer.style.removeProperty('--grid-shift-x');
+            gridLayer.style.removeProperty('--grid-shift-y');
+            gridLayer.style.removeProperty('--grid-rotate-x');
+            gridLayer.style.removeProperty('--grid-rotate-y');
+        });
+    });
+
+   
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     
@@ -55,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Load saved theme
-    const savedTheme = localStorage.getItem('gsx-theme') || 'dark';
+    const savedTheme = localStorage.getItem('gsx-theme') || 'light';
     setTheme(savedTheme);
 
     if (themeToggle) {
@@ -132,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
               .from('.hero-social-proof', { opacity: 0, y: 20, duration: 0.8, ease: 'power3.out' }, '-=0.3');
     }
 
-    // Counter Animation
+    
     const counters = document.querySelectorAll('.counter');
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
@@ -171,40 +238,239 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Scroll Reveals for portfolio and timeline process
-    const reveals = document.querySelectorAll('.process-step, .portfolio-card, .timeline-card');
-    reveals.forEach(el => {
-        gsap.from(el, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
+    const processPin = document.getElementById('process-pin');
+    const processDialWheel = document.getElementById('process-dial-wheel');
+    const processDialNumbers = processDialWheel ? Array.from(processDialWheel.querySelectorAll('.process-dial-number')) : [];
+    const processDialPanels = Array.from(document.querySelectorAll('.process-dial-panel'));
+
+    if (processPin && processDialWheel && processDialNumbers.length && processDialPanels.length) {
+        const stepCount = processDialNumbers.length;
+        const anglePerStep = 360 / stepCount;
+        let activeProcessStep = -1;
+
+        const setProcessStep = (step, rotation = -step * anglePerStep) => {
+            const nextStep = Math.max(0, Math.min(stepCount - 1, step));
+            gsap.set(processDialWheel, { rotation });
+            const isEndpoint = nextStep === 0 || nextStep === stepCount - 1;
+            processDialNumbers.forEach((number, index) => {
+                const label = number.querySelector('span');
+                if (label) {
+                    const offset = isEndpoint && index === nextStep ? ' translateY(-42px)' : '';
+                    label.style.transform = `rotate(${-rotation}deg)${offset}`;
+                }
+            });
+            processPin.style.setProperty('--active-step', nextStep);
+
+            if (nextStep === activeProcessStep && processDialPanels[nextStep] && !processDialPanels[nextStep].hidden) return;
+            activeProcessStep = nextStep;
+
+            processDialNumbers.forEach((number, index) => {
+                const isActive = index === nextStep;
+                number.classList.toggle('is-active', isActive);
+                number.toggleAttribute('aria-current', isActive);
+            });
+            processDialPanels.forEach((panel, index) => {
+                const isActive = index === nextStep;
+                panel.hidden = !isActive;
+                panel.classList.toggle('is-active', isActive);
+            });
+        };
+
+        processDialNumbers.forEach((number, index) => {
+            number.addEventListener('click', () => setProcessStep(index));
+        });
+        setProcessStep(0);
+
+        if (window.innerWidth > 768) {
+            ScrollTrigger.create({
+                trigger: processPin,
+                start: 'top top+=90',
+                end: () => `+=${window.innerHeight * 4.5}`,
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1,
+                onUpdate: self => {
+                    const progress = self.progress;
+                    // Keep the current content in place until the next
+                    // number reaches the center marker on the dial.
+                    const step = Math.min(stepCount - 1, Math.floor(progress * (stepCount - 1) + 0.0001));
+                    setProcessStep(step, -progress * anglePerStep * (stepCount - 1));
+                }
+            });
+        }
+    }
+
+    // Case studies — infinite arc/spiral carousel (scroll-driven + prev/next buttons)
+    const motionPin = document.getElementById('motion-pin');
+    const motionCards = motionPin ? Array.from(motionPin.querySelectorAll('.motion-card')) : [];
+    const motionPrevBtn = document.getElementById('motion-prev');
+    const motionNextBtn = document.getElementById('motion-next');
+
+    if (motionPin && motionCards.length && window.innerWidth > 768) {
+        const total = motionCards.length;
+        const spread = 15; // degrees between neighboring cards
+        const radius = 1000;
+        let currentOffset = 0;
+
+        const layoutArc = offset => {
+            motionCards.forEach((card, i) => {
+                let rel = (i - offset) % total;
+                if (rel > total / 2) rel -= total;
+                if (rel < -total / 2) rel += total;
+
+                const angle = rel * spread;
+                const rad = angle * Math.PI / 180;
+                const x = Math.sin(rad) * radius;
+                const y = (1 - Math.cos(rad)) * radius * 0.55;
+                const rotate = angle * 0.55;
+                const absAngle = Math.abs(angle);
+                const scale = Math.max(1 - absAngle / 110, 0.6);
+                const opacity = Math.max(1 - absAngle / 75, 0.08);
+                gsap.set(card, {
+                    x, y, rotate, scale, opacity,
+                    zIndex: 100 - Math.round(absAngle)
+                });
+            });
+        };
+
+        layoutArc(0);
+
+        ScrollTrigger.create({
+            trigger: motionPin,
+            start: 'top top+=90',
+            end: () => `+=${motionPin.offsetHeight * 2.5}`,
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            onUpdate: self => {
+                currentOffset = self.progress * total;
+                layoutArc(currentOffset);
             }
         });
-    });
 
-    // Timeline Dashed Line Animation
-    const timelineContainer = document.querySelector('.timeline-container');
-    if (timelineContainer) {
-        gsap.to('.timeline-container', {
-            scrollTrigger: {
-                trigger: '.timeline-container',
-                start: 'top 70%',
-                end: 'bottom 50%',
-                scrub: 1
-            },
-            '--line-height': '100%',
-            ease: 'none'
+        const step = dir => {
+            const proxy = { val: currentOffset };
+            gsap.to(proxy, {
+                val: currentOffset + dir,
+                duration: 0.6,
+                ease: 'power2.out',
+                onUpdate: () => layoutArc(proxy.val),
+                onComplete: () => { currentOffset = proxy.val; }
+            });
+        };
+
+        if (motionPrevBtn) motionPrevBtn.addEventListener('click', () => step(-1));
+        if (motionNextBtn) motionNextBtn.addEventListener('click', () => step(1));
+    } else if (motionPrevBtn && motionNextBtn) {
+        // Mobile fallback: buttons scroll the horizontal strip instead
+        const scrollAmount = 260;
+        motionPrevBtn.addEventListener('click', () => motionPin.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
+        motionNextBtn.addEventListener('click', () => motionPin.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
+    }
+
+    // Testimonials — infinite vertical center-scroll selector
+    const testiList = null;
+    if (testiList) {
+        const originals = Array.from(testiList.querySelectorAll('.testimonials-person'));
+
+        // Triple the list (before/original/after) so there's always real
+        // content above and below — no empty gap at the ends, ever.
+        const beforeFrag = document.createDocumentFragment();
+        originals.forEach(p => beforeFrag.appendChild(p.cloneNode(true)));
+        testiList.insertBefore(beforeFrag, testiList.firstChild);
+
+        const afterFrag = document.createDocumentFragment();
+        originals.forEach(p => afterFrag.appendChild(p.cloneNode(true)));
+        testiList.appendChild(afterFrag);
+
+        const people = Array.from(testiList.querySelectorAll('.testimonials-person'));
+        const testiTitle = document.getElementById('testimonial-title');
+        const testiText = document.getElementById('testimonial-text');
+        const testiUpBtn = document.getElementById('testi-scroll-up');
+        const testiDownBtn = document.getElementById('testi-scroll-down');
+
+        const setHeight = testiList.scrollHeight / 3;
+
+        // Start centered on the first real (middle-set) item. Measured via
+        // getBoundingClientRect (not offsetTop, which is relative to the
+        // nearest positioned ancestor — not necessarily this list) while
+        // scrollTop is still 0, so the delta is purely intra-list.
+        const firstReal = people[originals.length];
+        const listRect0 = testiList.getBoundingClientRect();
+        const itemRect0 = firstReal.getBoundingClientRect();
+        const relativeTop = itemRect0.top - listRect0.top;
+        testiList.scrollTop = relativeTop + itemRect0.height / 2 - testiList.clientHeight / 2;
+
+        const updateActiveTestimonial = () => {
+            const listRect = testiList.getBoundingClientRect();
+            const centerY = listRect.top + listRect.height / 2;
+            let closest = null;
+            let closestDist = Infinity;
+            people.forEach(person => {
+                const r = person.getBoundingClientRect();
+                const dist = Math.abs((r.top + r.height / 2) - centerY);
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closest = person;
+                }
+            });
+            people.forEach(p => p.classList.toggle('active', p === closest));
+            if (closest && testiTitle && testiText) {
+                testiTitle.textContent = closest.dataset.title;
+                testiText.textContent = closest.dataset.text;
+            }
+        };
+
+        let testiScrollTicking = false;
+        testiList.addEventListener('scroll', () => {
+            if (testiScrollTicking) return;
+            testiScrollTicking = true;
+            requestAnimationFrame(() => {
+                // Loop correction: jump by exactly one set-height when drifting
+                // into the clone regions — content is identical, so it's seamless.
+                if (testiList.scrollTop < setHeight) {
+                    testiList.scrollTop += setHeight;
+                } else if (testiList.scrollTop > setHeight * 2) {
+                    testiList.scrollTop -= setHeight;
+                }
+                updateActiveTestimonial();
+                testiScrollTicking = false;
+            });
+        });
+
+        people.forEach(person => {
+            person.addEventListener('click', () => {
+                person.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+
+        if (testiUpBtn) {
+            testiUpBtn.addEventListener('click', () => testiList.scrollBy({ top: -100, behavior: 'smooth' }));
+        }
+        if (testiDownBtn) {
+            testiDownBtn.addEventListener('click', () => testiList.scrollBy({ top: 100, behavior: 'smooth' }));
+        }
+
+        updateActiveTestimonial();
+    }
+
+    // Testimonials — scattered cards move smoothly into the centre when selected.
+    const testimonialStage = document.querySelector('.testimonials-stage');
+    if (testimonialStage) {
+        const testimonialCards = Array.from(testimonialStage.querySelectorAll('.testimonial-card'));
+
+        testimonialCards.forEach(card => {
+            card.addEventListener('click', () => {
+                testimonialCards.forEach(otherCard => {
+                    const isSelected = otherCard === card;
+                    otherCard.classList.toggle('is-centered', isSelected);
+                    otherCard.setAttribute('aria-pressed', String(isSelected));
+                });
+            });
         });
     }
 
-    // 6. Draggable Testimonials & Services & Work Sliders
-    const testimonialsSlider = document.getElementById('testimonials-slider');
-    const testimonialsTrack = document.getElementById('testimonials-track');
-    
+    // 6. Draggable Services & Work Sliders
     const servicesSlider = document.getElementById('services-slider-element');
     const workSlider = document.getElementById('work-slider-element');
     
@@ -259,11 +525,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (window.innerWidth <= 768) {
-        initDrag(testimonialsSlider, testimonialsTrack, 100);
         initDrag(servicesSlider, servicesSlider, 100);
         initDrag(workSlider, workSlider, 100);
     } else {
-        initDrag(testimonialsSlider, testimonialsTrack, 30);
         initDrag(servicesSlider, servicesSlider, 30);
         initDrag(workSlider, workSlider, 30);
     }
@@ -283,6 +547,147 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('active');
         });
     });
+
+    // 9. Bar frames — follow cursor height, but only inside their own frame
+    // (used for both the footer bars and the hero "50+ businesses" accent card)
+    function initInteractiveBars(frame) {
+        if (!frame) return;
+        const bars = Array.from(frame.querySelectorAll('.bar'));
+        const influenceRadius = 160; // px, how far a bar reacts from the cursor's x position
+
+        document.addEventListener('mousemove', (e) => {
+            const frameRect = frame.getBoundingClientRect();
+            const inside = e.clientX >= frameRect.left && e.clientX <= frameRect.right &&
+                            e.clientY >= frameRect.top && e.clientY <= frameRect.bottom;
+
+            if (!inside) {
+                if (frame.classList.contains('interactive')) {
+                    frame.classList.remove('interactive');
+                    bars.forEach(bar => { bar.style.height = ''; bar.style.opacity = ''; });
+                }
+                return;
+            }
+
+            frame.classList.add('interactive');
+            const mouseHeightRatio = 1 - (e.clientY - frameRect.top) / frameRect.height; // 0 bottom -> 1 top
+
+            bars.forEach(bar => {
+                const barRect = bar.getBoundingClientRect();
+                const barCenterX = barRect.left + barRect.width / 2;
+                const dist = Math.abs(e.clientX - barCenterX);
+                const influence = Math.max(0, 1 - dist / influenceRadius);
+                const baseHeight = 15;
+                const targetHeight = baseHeight + (mouseHeightRatio * 90) * influence;
+                bar.style.height = `${targetHeight}%`;
+                bar.style.opacity = String(0.35 + influence * 0.65);
+            });
+        });
+
+        document.addEventListener('mouseleave', () => {
+            frame.classList.remove('interactive');
+            bars.forEach(bar => { bar.style.height = ''; bar.style.opacity = ''; });
+        });
+    }
+
+    initInteractiveBars(document.getElementById('site-footer-bars'));
+    initInteractiveBars(document.querySelector('.hero-accent-bars'));
+
+    // Service card image ring: tiles orbit the main photo on a tilted
+    // ellipse hugging its right side. Position and z-index are computed
+    // here from elapsed time rather than left to a CSS offset-path
+    // animation, because a container-level transform (needed to tilt
+    // the orbit) traps its children in their own stacking context —
+    // no tile inside could ever get a z-index below the photo's, so it
+    // could only ever be hidden, never genuinely appear behind it.
+    // Setting each tile's z-index directly here instead lets the near
+    // half of the loop paint above the photo (fully visible, in front)
+    // and the far half paint below it (naturally clipped by the
+    // photo's opaque edges — only whatever sticks out past them stays
+    // visible), the way a planet's ring actually threads behind and in
+    // front of the planet.
+    const serviceRings = document.querySelectorAll('.service-img-ring');
+    if (serviceRings.length) {
+        const ORBIT_MS = 24000;
+        const TILT = -25 * Math.PI / 180;
+
+        const ringData = Array.from(serviceRings).map(ring => {
+            const cardImg = ring.parentElement.querySelector(':scope > img');
+            const tiles = Array.from(ring.querySelectorAll('.ring-img')).map(tile => ({
+                el: tile,
+                i: parseFloat(tile.style.getPropertyValue('--i')) || 0
+            }));
+            return { ring, cardImg, tiles, total: tiles.length || 1 };
+        });
+
+        // Promote the selected orbiting image to the main preview, and put
+        // the previous main image back into that same position in the ring.
+        ringData.forEach(({ cardImg, tiles }) => {
+            if (!cardImg) return;
+
+            tiles.forEach(({ el: tile }, index) => {
+                tile.setAttribute('role', 'button');
+                tile.setAttribute('tabindex', '0');
+                tile.setAttribute('aria-label', `Show service image ${index + 1}`);
+
+                const swapImages = () => {
+                    const mainSrc = cardImg.getAttribute('src');
+                    const tileSrc = tile.getAttribute('src');
+                    if (!mainSrc || !tileSrc || mainSrc === tileSrc) return;
+
+                    const imageAtWidth = (src, width) => {
+                        const url = new URL(src, window.location.href);
+                        url.searchParams.set('w', String(width));
+                        return url.href;
+                    };
+
+                    cardImg.classList.remove('is-switching');
+                    void cardImg.offsetWidth;
+                    cardImg.classList.add('is-switching');
+                    // Ring thumbnails are deliberately small. Request a
+                    // full-size source before promoting one to the main image.
+                    cardImg.setAttribute('src', imageAtWidth(tileSrc, 2074));
+                    tile.setAttribute('src', imageAtWidth(mainSrc, 160));
+                };
+
+                tile.addEventListener('click', event => {
+                    event.stopPropagation();
+                    swapImages();
+                });
+
+                tile.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        swapImages();
+                    }
+                });
+            });
+        });
+
+        function updateServiceRings(time) {
+            ringData.forEach(({ ring, cardImg, tiles, total }) => {
+                const block = ring.closest('.service-block');
+                if (!block || !cardImg || !block.matches(':hover')) return;
+                const w = cardImg.offsetWidth;
+                const h = cardImg.offsetHeight;
+                const rx = w * 0.32;
+                const ry = h * 0.68;
+                const cx = w * 0.56;
+                const cy = h * 0.5;
+                tiles.forEach(({ el, i }) => {
+                    const phase = ((time / ORBIT_MS) + i / total) % 1;
+                    const angle = phase * Math.PI * 2;
+                    const ex = Math.cos(angle) * rx;
+                    const ey = Math.sin(angle) * ry;
+                    const x = cx + ex * Math.cos(TILT) - ey * Math.sin(TILT);
+                    const y = cy + ex * Math.sin(TILT) + ey * Math.cos(TILT);
+                    el.style.transform = `translate(${x}px, ${y}px)`;
+                    el.style.zIndex = ex > 0 ? 3 : 1;
+                });
+            });
+            requestAnimationFrame(updateServiceRings);
+        }
+        requestAnimationFrame(updateServiceRings);
+    }
 
     // 8. Lucide Icons re-init
     if (typeof lucide !== 'undefined') lucide.createIcons();

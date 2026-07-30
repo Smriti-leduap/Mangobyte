@@ -9,11 +9,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="timeline.css">
-    
+
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -29,6 +28,7 @@
     <!-- 1. NAVIGATION HEADER -->
     <header class="site-header" id="navbar">
         <div class="container">
+            <a class="header-logo" href="index.html" aria-label="Mangobyte home"><img src="logo-color.png" alt="Mangobyte"></a>
             <div class="header-right">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
                     <i data-lucide="sun" id="theme-icon"></i>
@@ -56,7 +56,8 @@
     </div>
 
     <!-- 2. HERO SECTION -->
-    <section class="hero">
+    <section class="hero grid-interactive">
+        <div class="interactive-grid-layer" aria-hidden="true"></div>
         <div class="container">
             <div class="hero-grid">
 
@@ -64,8 +65,8 @@
                 <div class="hero-left">
 
                     <h1 class="hero-title">
-                        Powerful Results,<br>
-                        <span class="title-italic">Real Growth.</span>
+                        Turn Growth Into<br>
+                        <span class="title-accent">Conversions.</span>
                     </h1>
 
                     <p class="hero-sub">
@@ -74,61 +75,59 @@
                     </p>
 
                     <div class="hero-btns">
-                        <a href="contact.html" class="btn btn-primary">Make Magic Happen <i data-lucide="arrow-right"></i></a>
-                        <a href="work.html" class="btn btn-outline">View Our Work <i data-lucide="external-link"></i></a>
+                        <a href="contact.html" class="btn btn-primary">Start Now <i data-lucide="arrow-right"></i></a>
+                        <a href="work.html" class="btn btn-outline">Learn more <i data-lucide="external-link"></i></a>
                     </div>
 
-                    <!-- Social proof -->
-                    <div class="hero-social-proof">
-                        <div class="proof-avatars">
-                            <div class="proof-avatar" style="background: linear-gradient(135deg,#3B82F6,#38BDF8);">AK</div>
-                            <div class="proof-avatar" style="background: linear-gradient(135deg,#6366F1,#3B82F6);">PM</div>
-                            <div class="proof-avatar" style="background: linear-gradient(135deg,#38BDF8,#6366F1);">SR</div>
-                            <div class="proof-avatar" style="background: linear-gradient(135deg,#3B82F6,#6366F1);">NR</div>
-                            <div class="proof-avatar more">+50</div>
-                        </div>
-                        <div class="proof-text">
-                            <strong>Trusted by 50+ businesses</strong>
-                            <div class="proof-stars">
-                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
-                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
-                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
-                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
-                                <i data-lucide="star" style="width:13px;height:13px;fill:#FBBF24;color:#FBBF24;"></i>
-                                <span>4.9 / 5.0 rating</span>
-                            </div>
+                    <!-- Powered by -->
+                    <div class="hero-powered-by">
+                        <span class="powered-by-label">Powered by</span>
+                        <div class="powered-by-logos">
+                            <span>CloudBeds</span>
+                            <span>GoSite</span>
+                            <span>Inscripta</span>
+                            <span>Nadel.com</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- RIGHT: Placeholder Box -->
+                <!-- RIGHT: Photo collage -->
                 <div class="hero-right">
-                    <div class="hero-img-placeholder">
-                        <i data-lucide="image"></i>
-                        <span>Hero Image</span>
-                    </div>
+                    <div class="hero-collage">
+                        <!-- Accent card: quick stat + avatar cluster -->
+                        <div class="hero-collage-accent">
+                            <div class="footer-bars hero-accent-bars" aria-hidden="true">
+                                <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                                <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                                <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            </div>
+                            <div class="proof-avatars">
+                                <div class="proof-avatar">AK</div>
+                                <div class="proof-avatar">PM</div>
+                                <div class="proof-avatar">SR</div>
+                            </div>
+                            <span class="hero-collage-accent-value">50+</span>
+                            <p>Businesses trust our team to grow their brand</p>
+                            <i data-lucide="trending-up" class="hero-collage-accent-icon"></i>
+                        </div>
 
-                    <!-- Floating stat card 1 -->
-                    <div class="hero-stat-card card-top-right">
-                        <span class="stat-card-label">Projects Done</span>
-                        <span class="stat-card-value">150+</span>
-                        <span class="stat-card-up"><i data-lucide="trending-up" style="width:12px;height:12px;"></i> All-time</span>
-                    </div>
+                        <!-- Team photo with floating stat badges -->
+                        <div class="hero-collage-photo">
+                            <img src="hero_team_photo.jpg" alt="The Mangobyte team at work">
 
-                    <!-- Floating stat card 2 -->
-                    <div class="hero-stat-card card-bottom-left">
-                        <span class="stat-card-label">Avg. ROI Increase</span>
-                        <span class="stat-card-value">250%</span>
-                        <span class="stat-card-up"><i data-lucide="trending-up" style="width:12px;height:12px;"></i> Per client</span>
-                    </div>
+                            <div class="hero-stat-card card-top-right">
+                                <span class="stat-card-label">Avg. ROI Increase</span>
+                                <span class="stat-card-value">250%</span>
+                                <span class="stat-card-up"><i data-lucide="trending-up" style="width:12px;height:12px;"></i> Per client</span>
+                            </div>
 
-                    <!-- Floating stat card 3 -->
-                    <div class="hero-stat-card card-mid-right">
-                        <span class="stat-card-label">Happy Clients</span>
-                        <span class="stat-card-value">45</span>
-                        <span class="stat-card-sub">Active right now</span>
+                            <div class="hero-stat-card card-bottom-left">
+                                <span class="stat-card-label">Happy Clients</span>
+                                <span class="stat-card-value">45</span>
+                                <span class="stat-card-sub">Active right now</span>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -200,397 +199,506 @@
             <div class="trusted-logo-item">Vigor Systems</div>
             <div class="trusted-logo-item">ReSoft</div>
         </div>
-        <!-- Row 3: Left to Right -->
-        <div class="trusted-logos-row scroll-ltr" style="margin-top: 1rem;">
-            <div class="trusted-logo-item">Tech Solutions</div>
-            <div class="trusted-logo-item">Lumina Global</div>
-            <div class="trusted-logo-item">Apex Retail</div>
-            <div class="trusted-logo-item">Quantum SaaS</div>
-            <div class="trusted-logo-item">Nepal Ventures</div>
-            <div class="trusted-logo-item">Elite Commerce</div>
-            <div class="trusted-logo-item">BBB</div>
-            <!-- Duplicate for seamless loop -->
-            <div class="trusted-logo-item">Tech Solutions</div>
-            <div class="trusted-logo-item">Lumina Global</div>
-            <div class="trusted-logo-item">Apex Retail</div>
-            <div class="trusted-logo-item">Quantum SaaS</div>
-            <div class="trusted-logo-item">Nepal Ventures</div>
-            <div class="trusted-logo-item">Elite Commerce</div>
-            <div class="trusted-logo-item">BBB</div>
-        </div>
     </section>
 
-    <div class="x-divider"></div>
-
-    <!-- 4. SERVICES SECTION — STICKY STACKING -->
-    <section class="section-padding" id="services">
+    <!-- 4. SERVICES SECTION — STACKED BLOCKS -->
+    <section id="services" class="services-stack-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: 3rem; margin-top: 1rem;">What We <span class="text-gradient">Do</span></h2>
-                <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 0; font-size: var(--text-lg);">Strategy-first solutions tailored to help startups and enterprises scale their online presence.</p>
-            </div>
-            <div class="services-slider-container">
-                <div class="drag-indicator">
-                    <i data-lucide="chevron-left"></i> DRAG <i data-lucide="chevron-right"></i>
-                </div>
-                <div class="services-slider" id="services-slider-element">
-                    <!-- Service 1 -->
-                    <div class="services-tcard glass">
-                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop');"></div>
-                        <div class="services-pill">Primary Care</div>
-                        <h3>Branding & Identity</h3>
-                        <div class="services-tcard-bottom">
-                            <p>Development of logos, brand guidelines, and complete visual identity systems that build lasting recognition.</p>
-                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- Service 2 -->
-                    <div class="services-tcard glass">
-                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop');"></div>
-                        <div class="services-pill">Digital Platform</div>
-                        <h3>Website Development</h3>
-                        <div class="services-tcard-bottom">
-                            <p>Creation of business websites, custom web applications, and landing pages built for speed and performance.</p>
-                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
-                        </div>
-                    </div>
+            <div class="services-stack-eyebrow">Our Services</div>
+            <p class="services-stack-subheading">From strategy to execution, we build the digital pieces that move your brand forward.</p>
+        </div>
 
-                    <!-- Service 3 -->
-                    <div class="services-tcard glass">
-                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop');"></div>
-                        <div class="services-pill">Growth Marketing</div>
-                        <h3>Digital Marketing</h3>
-                        <div class="services-tcard-bottom">
-                            <p>Comprehensive marketing services including social media, email marketing, and paid advertising.</p>
-                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Service 4 -->
-                    <div class="services-tcard glass">
-                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop');"></div>
-                        <div class="services-pill">Organic Traffic</div>
-                        <h3>SEO & SEM</h3>
-                        <div class="services-tcard-bottom">
-                            <p>Technical SEO audits, on-page optimization, and search engine marketing strategies to drive organic traffic.</p>
-                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Service 5 -->
-                    <div class="services-tcard glass">
-                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop');"></div>
-                        <div class="services-pill">Native & Cross-platform</div>
-                        <h3>Mobile App Dev</h3>
-                        <div class="services-tcard-bottom">
-                            <p>Design and development of iOS, Android, and cross-platform mobile apps tailored to your business needs.</p>
-                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Service 6 -->
-                    <div class="services-tcard glass">
-                        <div class="services-tcard-bg" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop');"></div>
-                        <div class="services-pill">User Centric</div>
-                        <h3>UI/UX Design</h3>
-                        <div class="services-tcard-bottom">
-                            <p>Wireframing, prototyping, and high-fidelity UI/UX design that deliver exceptional user experiences.</p>
-                            <a href="#" class="services-arrow-btn"><i data-lucide="arrow-up-right"></i></a>
-                        </div>
+        <div class="services-stack-list">
+        <!-- Service 1 -->
+        <div class="service-block">
+            <div class="container service-block-inner">
+                <div class="service-block-text">
+                    <span class="service-block-num">[01]</span>
+                    <h3 class="service-block-title">Branding &amp; Identity</h3>
+                    <p class="service-block-tagline">A brand people remember.</p>
+                    <p class="service-block-desc">Development of logos, brand guidelines, and complete visual identity systems that build lasting recognition.</p>
+                    <div class="service-block-btns">
+                        <a href="services.html" class="service-btn service-btn-fill">What We Offer <i data-lucide="arrow-up-right"></i></a>
+                        <a href="contact.html" class="service-btn service-btn-outline">Get In Touch <i data-lucide="arrow-up-right"></i></a>
                     </div>
                 </div>
+                <div class="service-block-img">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" alt="Branding & Identity">
+                        <div class="service-img-ring">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:0" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:1" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:2" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:3" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:4" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:5" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:6" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:7" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:8" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:9" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:10" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:11" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:12" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:13" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:14" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:15" alt="" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                    </div>
             </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-block">
+            <div class="container service-block-inner">
+                <div class="service-block-text">
+                    <span class="service-block-num">[02]</span>
+                    <h3 class="service-block-title">Website Development</h3>
+                    <p class="service-block-tagline">Built for speed and scale.</p>
+                    <p class="service-block-desc">Creation of business websites, custom web applications, and landing pages built for speed and performance.</p>
+                    <div class="service-block-btns">
+                        <a href="services.html" class="service-btn service-btn-fill">What We Offer <i data-lucide="arrow-up-right"></i></a>
+                        <a href="contact.html" class="service-btn service-btn-outline">Get In Touch <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-block-img">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" alt="Website Development">
+                        <div class="service-img-ring">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:0" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:1" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:2" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:3" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:4" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:5" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:6" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:7" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:8" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:9" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:10" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:11" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:12" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:13" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:14" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:15" alt="" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-block">
+            <div class="container service-block-inner">
+                <div class="service-block-text">
+                    <span class="service-block-num">[03]</span>
+                    <h3 class="service-block-title">Digital Marketing</h3>
+                    <p class="service-block-tagline">Measured growth, not activity.</p>
+                    <p class="service-block-desc">Comprehensive marketing services including social media, email marketing, and paid advertising.</p>
+                    <div class="service-block-btns">
+                        <a href="services.html" class="service-btn service-btn-fill">What We Offer <i data-lucide="arrow-up-right"></i></a>
+                        <a href="contact.html" class="service-btn service-btn-outline">Get In Touch <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-block-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="Digital Marketing">
+                        <div class="service-img-ring">
+                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:0" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:1" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:2" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:3" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1553484771-047a44eee27b?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:4" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:5" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1571677208775-52bf3ba46e07?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:6" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:7" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:8" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:9" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:10" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:11" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1553484771-047a44eee27b?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:12" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1493421419110-74f4e85ba126?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:13" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1571677208775-52bf3ba46e07?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:14" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:15" alt="" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-block">
+            <div class="container service-block-inner">
+                <div class="service-block-text">
+                    <span class="service-block-num">[04]</span>
+                    <h3 class="service-block-title">SEO &amp; SEM</h3>
+                    <p class="service-block-tagline">Found by the right people.</p>
+                    <p class="service-block-desc">Technical SEO audits, on-page optimization, and search engine marketing strategies to drive organic traffic.</p>
+                    <div class="service-block-btns">
+                        <a href="services.html" class="service-btn service-btn-fill">What We Offer <i data-lucide="arrow-up-right"></i></a>
+                        <a href="contact.html" class="service-btn service-btn-outline">Get In Touch <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-block-img">
+                        <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop" alt="SEO & SEM">
+                        <div class="service-img-ring">
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:0" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:1" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:2" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:3" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:4" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:5" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1519222970733-f546218fa6d3?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:6" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:7" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:8" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:9" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1590650046871-92c887180603?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:10" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:11" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:12" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:13" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1519222970733-f546218fa6d3?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:14" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:15" alt="" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-block">
+            <div class="container service-block-inner">
+                <div class="service-block-text">
+                    <span class="service-block-num">[05]</span>
+                    <h3 class="service-block-title">Mobile App Dev</h3>
+                    <p class="service-block-tagline">Native feel, cross-platform reach.</p>
+                    <p class="service-block-desc">Design and development of iOS, Android, and cross-platform mobile apps tailored to your business needs.</p>
+                    <div class="service-block-btns">
+                        <a href="services.html" class="service-btn service-btn-fill">What We Offer <i data-lucide="arrow-up-right"></i></a>
+                        <a href="contact.html" class="service-btn service-btn-outline">Get In Touch <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-block-img">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop" alt="Mobile App Dev">
+                        <div class="service-img-ring">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:0" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:1" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:2" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:3" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:4" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:5" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:6" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1592179900431-c0eabc9e30a9?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:7" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:8" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:9" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:10" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:11" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:12" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:13" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:14" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1592179900431-c0eabc9e30a9?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:15" alt="" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-block">
+            <div class="container service-block-inner">
+                <div class="service-block-text">
+                    <span class="service-block-num">[06]</span>
+                    <h3 class="service-block-title">UI/UX Design</h3>
+                    <p class="service-block-tagline">Designed around the user.</p>
+                    <p class="service-block-desc">Wireframing, prototyping, and high-fidelity UI/UX design that deliver exceptional user experiences.</p>
+                    <div class="service-block-btns">
+                        <a href="services.html" class="service-btn service-btn-fill">What We Offer <i data-lucide="arrow-up-right"></i></a>
+                        <a href="contact.html" class="service-btn service-btn-outline">Get In Touch <i data-lucide="arrow-up-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-block-img">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop" alt="UI/UX Design">
+                        <div class="service-img-ring">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:0" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:1" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:2" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:3" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:4" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:5" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:6" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b6c?q=80&w=160&auto=format&fit=crop" class="ring-img" style="--i:7" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:8" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:9" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:10" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1523800503107-5bc3ba2a6f81?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:11" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:12" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:13" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:14" alt="" loading="lazy" onerror="this.style.display='none'">
+                        <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b6c?q=80&w=220&auto=format&fit=crop" class="ring-img" style="--i:15" alt="" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+            </div>
+        </div>
         </div>
     </section>
 
     <!-- 5. PROCESS SECTION -->
-    <section class="section-padding" id="process" style="background: var(--bg-secondary);">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 4rem;">
-                <h2 style="font-size: 3rem; margin-top: 1rem;">Our <span class="text-gradient">Process</span></h2>
-                <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 0; font-size: var(--text-lg);">A seamless 7-step flow designed to scale your business predictably.</p>
-            </div>
-            
-            <div class="timeline-container">
-                <!-- Step 1 -->
-                <div class="timeline-step">
-                    <div class="timeline-card">
-                        <div class="timeline-content">
-                            <h4><i data-lucide="search"></i> 1 Research & Audit</h4>
-                            <p>We explore your current performance, competitors, and user pain points to uncover true growth opportunities.</p>
-                        </div>
+    <section class="process-dial-section" id="process">
+        <div class="container process-dial-heading">
+            <h2>Our Process</h2>
+            <p>A considered route from the first question to long-term, measurable growth.</p>
+        </div>
+
+        <div class="process-dial-pin" id="process-pin">
+            <div class="process-dial-layout">
+                <div class="process-dial-scene" aria-label="Process steps">
+                    <div class="process-dial-marker" aria-hidden="true"></div>
+                    <div class="process-dial-wheel" id="process-dial-wheel">
+                        <button class="process-dial-number is-active" type="button" data-step="0" aria-label="Step 1: Discovery" aria-current="step"><span>01</span></button>
+                        <button class="process-dial-number" type="button" data-step="1" aria-label="Step 2: Strategy"><span>02</span></button>
+                        <button class="process-dial-number" type="button" data-step="2" aria-label="Step 3: Creation"><span>03</span></button>
+                        <button class="process-dial-number" type="button" data-step="3" aria-label="Step 4: Launch"><span>04</span></button>
+                        <button class="process-dial-number" type="button" data-step="4" aria-label="Step 5: Optimise"><span>05</span></button>
+                        <button class="process-dial-number" type="button" data-step="5" aria-label="Step 6: Partnership"><span>06</span></button>
                     </div>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="timeline-step">
-                    <div class="timeline-card">
-                        <div class="timeline-content">
-                            <h4><i data-lucide="map"></i> 2 Strategy & Planning</h4>
-                            <p>We develop a custom roadmap mapping out the exact steps, campaigns, and funnels needed to achieve your goals.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="timeline-step">
-                    <div class="timeline-card">
-                        <div class="timeline-content">
-                            <h4><i data-lucide="pen-tool"></i> 3 Visual Design</h4>
-                            <p>Our team builds clean, energetic designs with intuitive navigation and motivating visuals to capture attention.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="timeline-step">
-                    <div class="timeline-card">
-                        <div class="timeline-content">
-                            <h4><i data-lucide="code"></i> 4 Development</h4>
-                            <p>We bring the designs to life using modern tech stacks, ensuring speed, security, and flawless responsive behavior.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="timeline-step">
-                    <div class="timeline-card">
-                        <div class="timeline-content">
-                            <h4><i data-lucide="check-square"></i> 5 Testing & QA</h4>
-                            <p>Multiple test rounds are run to refine the experience, making sure everything feels smooth, secure, and enjoyable.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 6 -->
-                <div class="timeline-step">
-                    <div class="timeline-card">
-                        <div class="timeline-content">
-                            <h4><i data-lucide="rocket"></i> 6 Launch</h4>
-                            <p>We execute a coordinated go-live strategy, pushing your new digital presence or campaigns to the public.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 7 -->
-                <div class="timeline-step">
-                    <div class="timeline-card">
-                        <div class="timeline-content">
-                            <h4><i data-lucide="trending-up"></i> 7 Growth & Optimize</h4>
-                            <p>Post-launch, we continuously monitor analytics and run A/B tests to maximize ROI and scale effectively.</p>
-                        </div>
-                    </div>
+                <div class="process-dial-content" aria-live="polite">
+                    <article class="process-dial-panel is-active" data-step="0">
+                        <span class="process-dial-count">01 / 06</span><h3>Discovery</h3><p>Before we touch anything, we study your brand &mdash; your market, your customers, your competitors, your goals. We ask the uncomfortable questions most agencies skip. No flavour without understanding first.</p>
+                    </article>
+                    <article class="process-dial-panel" data-step="1" hidden>
+                        <span class="process-dial-count">02 / 06</span><h3>Strategy</h3><p>We mix data, insight, and instinct into a plan built only for you. Every brand gets a different recipe &mdash; because no two mangoes taste the same, and neither should two brands. No templates. No leftovers from someone else's project.</p>
+                    </article>
+                    <article class="process-dial-panel" data-step="2" hidden>
+                        <span class="process-dial-count">03 / 06</span><h3>Creation</h3><p>Design, content, campaigns, code &mdash; all crafted in-house, hand-blended, not assembly-lined. This is where the ideas actually get built, tested, and sharpened before anyone sees them.</p>
+                    </article>
+                    <article class="process-dial-panel" data-step="3" hidden>
+                        <span class="process-dial-count">04 / 06</span><h3>Launch</h3><p>We don't believe in "ready by Monday." We believe in ready right. Every launch is checked, tasted, and refined until it's something we'd proudly put our name on.</p>
+                    </article>
+                    <article class="process-dial-panel" data-step="4" hidden>
+                        <span class="process-dial-count">05 / 06</span><h3>Optimise</h3><p>Great brands aren't finished, they're refined. We track performance, gather data, and keep tasting, testing, and sharpening &mdash; always. Growth isn't a single bite. It's a habit.</p>
+                    </article>
+                    <article class="process-dial-panel" data-step="5" hidden>
+                        <span class="process-dial-count">06 / 06</span><h3>Partnership</h3><p>We're not a one-project agency. The best brands we've worked with, we've worked with again and again. We stick around for the next course, and the one after that.</p>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="x-divider"></div>
-
-    <!-- 6. PORTFOLIO / CASE STUDIES -->
+    <!-- 6. PORTFOLIO / CASE STUDIES — ARC SCROLL CAROUSEL -->
     <section class="section-padding" id="portfolio">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
                 <div>
-                    <h2 style="font-size: 3rem; margin-top: 1rem;">Case <span class="text-gradient">Studies</span></h2>
+                    <h2 style="font-size: 30px; margin-top: 1rem;">Case <span class="text-gradient">Studies</span></h2>
+                    <p class="section-subheading">A closer look at the measurable growth we create for ambitious brands.</p>
                 </div>
                 <a href="work.html" class="btn btn-outline">View All Projects</a>
             </div>
-            <div class="portfolio-grid">
-                <!-- Project 1: Sapphire -->
-                <div class="portfolio-card glass">
-                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-tags"><span>SEO</span><span>Organic Traffic</span></div>
-                        <h3>Sapphire</h3>
-                        <p><strong style="color: var(--accent-sky);">+39.1% Organic Traffic</strong> — achieved in just 6 months through comprehensive SEO.</p>
-                    </div>
+        </div>
+
+        <div class="motion-pin" id="motion-pin">
+            <div class="motion-arc-track" id="motion-arc-track">
+                <!-- Project 1 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>SEO</span><span>Organic Traffic</span></div>
+                    <h3>Sapphire</h3>
+                    <p><strong><span class="case-study-number">+39.1%</span> Organic Traffic</strong> in 6 months through comprehensive SEO.</p>
                 </div>
-                <!-- Project 2: Targeted Keywords -->
-                <div class="portfolio-card glass">
-                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-tags"><span>SEO</span><span>Rankings</span></div>
-                        <h3>Targeted Keywords</h3>
-                        <p><strong style="color: var(--accent-sky);">21 Keywords in Top 3</strong> — highly-competitive targeted keywords pushed into top positions.</p>
-                    </div>
+                <!-- Project 2 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>SEO</span><span>Rankings</span></div>
+                    <h3>Targeted Keywords</h3>
+                    <p><strong><span class="case-study-number">21</span> Keywords in Top 3</strong> for highly-competitive search terms.</p>
                 </div>
-                <!-- Project 3: Nexus SaaS -->
-                <div class="portfolio-card glass">
-                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-tags"><span>B2B</span><span>UI/UX</span></div>
-                        <h3>Nexus SaaS</h3>
-                        <p><strong style="color: var(--accent-sky);">-50% Churn Rate</strong> — complete redesign and growth strategy delivered measurable results.</p>
-                    </div>
+                <!-- Project 3 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>B2B</span><span>UI/UX</span></div>
+                    <h3>Nexus SaaS</h3>
+                    <p><strong><span class="case-study-number">-50%</span> Churn Rate</strong> after a complete redesign and growth strategy.</p>
                 </div>
-                <!-- Project 4: Aether Intelligence -->
-                <div class="portfolio-card glass">
-                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-tags"><span>AI Tech</span><span>Branding</span></div>
-                        <h3>Aether Intelligence</h3>
-                        <p><strong style="color: var(--accent-sky);">+120% Brand Awareness</strong> — futuristic identity and launch campaign for an AI lab.</p>
-                    </div>
+                <!-- Project 4 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>AI Tech</span><span>Branding</span></div>
+                    <h3>Aether Intelligence</h3>
+                    <p><strong><span class="case-study-number">+120%</span> Brand Awareness</strong> from a futuristic identity and launch campaign.</p>
                 </div>
-                <!-- Project 5: Chronos Watches -->
-                <div class="portfolio-card glass">
-                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-tags"><span>Luxury</span><span>Ads</span></div>
-                        <h3>Chronos Watches</h3>
-                        <p><strong style="color: var(--accent-sky);">3× ROAS</strong> — high-performance ads for a premium mechanical watch collection.</p>
-                    </div>
+                <!-- Project 5 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>Luxury</span><span>Ads</span></div>
+                    <h3>Chronos Watches</h3>
+                    <p><strong><span class="case-study-number">3×</span> ROAS</strong> on a premium mechanical watch collection.</p>
                 </div>
-                <!-- Project 6: Spark App -->
-                <div class="portfolio-card glass">
-                    <div class="portfolio-img-placeholder"><i data-lucide="image"></i></div>
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-tags"><span>Mobile</span><span>Growth</span></div>
-                        <h3>Spark App</h3>
-                        <p><strong style="color: var(--accent-sky);">100k+ Downloads</strong> — viral acquisition campaign in 30 days.</p>
-                    </div>
+                <!-- Project 6 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>Mobile</span><span>Growth</span></div>
+                    <h3>Spark App</h3>
+                    <p><strong><span class="case-study-number">100k+</span> Downloads</strong> from a viral acquisition campaign in 30 days.</p>
+                </div>
+                <!-- Project 7 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>Health</span><span>App Growth</span></div>
+                    <h3>Verve Fitness</h3>
+                    <p><strong><span class="case-study-number">+68%</span> Weekly Retention</strong> from an onboarding redesign and lifecycle campaigns.</p>
+                </div>
+                <!-- Project 8 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>B2B</span><span>Web Platform</span></div>
+                    <h3>Northwind Logistics</h3>
+                    <p><strong><span class="case-study-number">-35%</span> Support Tickets</strong> after launching a self-serve client portal.</p>
+                </div>
+                <!-- Project 9 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>E-commerce</span><span>Branding</span></div>
+                    <h3>Bloom Cosmetics</h3>
+                    <p><strong><span class="case-study-number">+82%</span> Repeat Purchases</strong> from a packaging refresh and loyalty program.</p>
+                </div>
+                <!-- Project 10 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>FinTech</span><span>UX</span></div>
+                    <h3>Vantage Pay</h3>
+                    <p><strong><span class="case-study-number">+44%</span> Faster Checkout</strong> after simplifying the payment flow end to end.</p>
+                </div>
+                <!-- Project 11 -->
+                <div class="motion-card">
+                    <div class="motion-card-tags"><span>Hospitality</span><span>SEO</span></div>
+                    <h3>Ember & Oak</h3>
+                    <p><strong><span class="case-study-number">+61%</span> Direct Bookings</strong> from a local SEO and content overhaul.</p>
                 </div>
             </div>
+        </div>
+
+        <div class="motion-nav-btns">
+            <button class="motion-nav-btn" id="motion-prev" aria-label="Previous case study"><i data-lucide="arrow-left"></i></button>
+            <button class="motion-nav-btn" id="motion-next" aria-label="Next case study"><i data-lucide="arrow-right"></i></button>
         </div>
     </section>
 
-    <!-- 7. TESTIMONIALS — DRAGGABLE -->
-    <section class="section-padding testimonials-section" style="background: var(--bg-secondary); overflow: hidden;">
-        <div class="container" style="margin-bottom: 4rem;">
-            <div style="text-align: center;">
-                <h2 style="font-size: 3rem; margin-top: 1rem;">What Our <span class="text-gradient">Clients Say</span></h2>
+    <!-- 7. TESTIMONIALS — CENTER-SCROLL SELECTOR -->
+    <section class="section-padding testimonials-section" id="testimonials" style="background: var(--bg-secondary);">
+        <div class="container" style="margin-bottom: 2rem;">
+            <div class="section-heading-row">
+                <div>
+                <h2 style="font-size: 30px; margin-top: 1rem;">What Our <span class="text-gradient">Clients Say</span></h2>
+                <p class="section-subheading">Real words from the brands we partner with.</p>
+                </div>
+                <a href="#testimonials" class="btn btn-outline">View All Testimonials</a>
             </div>
         </div>
 
-        <div class="testimonials-slider" id="testimonials-slider">
-            <div class="testimonials-track" id="testimonials-track">
-                <!-- Card 1 -->
-                <div class="tcard glass">
-                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
-                    <p class="tcard-text">"GoScaleX gave us a revenue engine. Our CAC dropped by 40% in the first quarter alone. Absolutely phenomenal results."</p>
-                    <div class="tcard-author">
-                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #3B82F6, #6366F1);">AS</div>
-                        <div>
-                            <h5>Aarav Sharma</h5>
-                            <p>CEO, UrbanEdge Nepal</p>
-                        </div>
+        <div class="container">
+            <div class="testimonials-panel glass">
+                <!-- LEFT: active testimonial detail -->
+                <div class="testimonials-detail">
+                    <h3 class="testimonials-detail-title" id="testimonial-title">A Revenue Engine</h3>
+                    <div class="testimonials-detail-stars" id="testimonial-stars">
+                        <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
                     </div>
+                    <p class="testimonials-detail-text" id="testimonial-text">"GoScaleX gave us a revenue engine. Our CAC dropped by 40% in the first quarter alone. Absolutely phenomenal results."</p>
                 </div>
-                <!-- Card 2 -->
-                <div class="tcard glass">
-                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
-                    <p class="tcard-text">"Within 6 months our organic traffic tripled. The SEO strategy they built was unlike anything we'd seen from an agency before."</p>
-                    <div class="tcard-author">
-                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #60a5fa, #2563EB);">PK</div>
-                        <div>
-                            <h5>Priya Kapoor</h5>
-                            <p>Founder, Lumina Global</p>
+
+                <!-- RIGHT: scrollable people list, middle item is selected -->
+                <div class="testimonials-list-wrap">
+                    <button class="testimonials-scroll-btn" id="testi-scroll-up" aria-label="Scroll up"><i data-lucide="chevron-up"></i></button>
+                    <div class="testimonials-list" id="testimonials-list">
+                        <div class="testimonials-person active" data-title="A Revenue Engine" data-text="&quot;GoScaleX gave us a revenue engine. Our CAC dropped by 40% in the first quarter alone. Absolutely phenomenal results.&quot;">
+                            <div class="testimonials-person-avatar">AS</div>
+                            <div>
+                                <h5>Aarav Sharma</h5>
+                                <p>CEO, UrbanEdge Nepal</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-person" data-title="Traffic Tripled in 6 Months" data-text="&quot;Within 6 months our organic traffic tripled. The SEO strategy they built was unlike anything we'd seen from an agency before.&quot;">
+                            <div class="testimonials-person-avatar">PK</div>
+                            <div>
+                                <h5>Priya Kapoor</h5>
+                                <p>Founder, Lumina Global</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-person" data-title="40+ Qualified Demos Weekly" data-text="&quot;The AI automation they built for our sales funnel now generates 40+ qualified demos weekly on autopilot. Pure ROI.&quot;">
+                            <div class="testimonials-person-avatar">RJ</div>
+                            <div>
+                                <h5>Rohan Joshi</h5>
+                                <p>Head of Growth, FinTech AI</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-person" data-title="Churn Dropped 50%" data-text="&quot;Our churn dropped 50% after the redesign. They don't just market — they engineer growth from the ground up.&quot;">
+                            <div class="testimonials-person-avatar">SM</div>
+                            <div>
+                                <h5>Sara Mills</h5>
+                                <p>CPO, Nexus SaaS</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-person" data-title="100k Downloads in 30 Days" data-text="&quot;100k downloads in 30 days. I honestly didn't think that was possible for us. They proved me wrong in the best way.&quot;">
+                            <div class="testimonials-person-avatar">TN</div>
+                            <div>
+                                <h5>Tasha Nyarko</h5>
+                                <p>CEO, Spark App</p>
+                            </div>
+                        </div>
+                        <div class="testimonials-person" data-title="ROAS We Only Dreamed Of" data-text="&quot;The performance ads campaign delivered ROAS we'd only dreamed of. The partner every luxury brand needs.&quot;">
+                            <div class="testimonials-person-avatar">DL</div>
+                            <div>
+                                <h5>Daniel Laurent</h5>
+                                <p>Marketing Director, Chronos Watches</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="tcard glass">
-                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
-                    <p class="tcard-text">"The AI automation they built for our sales funnel now generates 40+ qualified demos weekly on autopilot. Pure ROI."</p>
-                    <div class="tcard-author">
-                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #1E3A8A, #3B82F6);">RJ</div>
-                        <div>
-                            <h5>Rohan Joshi</h5>
-                            <p>Head of Growth, FinTech AI</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="tcard glass">
-                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
-                    <p class="tcard-text">"Our churn dropped 50% after the redesign. They don't just market — they engineer growth from the ground up."</p>
-                    <div class="tcard-author">
-                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #34d399, #60a5fa);">SM</div>
-                        <div>
-                            <h5>Sara Mills</h5>
-                            <p>CPO, Nexus SaaS</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="tcard glass">
-                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
-                    <p class="tcard-text">"100k downloads in 30 days. I honestly didn't think that was possible for us. They proved me wrong in the best way."</p>
-                    <div class="tcard-author">
-                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #6366F1, #2563EB);">TN</div>
-                        <div>
-                            <h5>Tasha Nyarko</h5>
-                            <p>CEO, Spark App</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="tcard glass">
-                    <div class="tcard-quote"><i data-lucide="quote"></i></div>
-                    <p class="tcard-text">"The performance ads campaign delivered ROAS we'd only dreamed of. The partner every luxury brand needs."</p>
-                    <div class="tcard-author">
-                        <div class="tcard-avatar" style="background: linear-gradient(135deg, #1E3A8A, #60a5fa);">DL</div>
-                        <div>
-                            <h5>Daniel Laurent</h5>
-                            <p>Marketing Director, Chronos Watches</p>
-                        </div>
-                    </div>
+                    <button class="testimonials-scroll-btn" id="testi-scroll-down" aria-label="Scroll down"><i data-lucide="chevron-down"></i></button>
                 </div>
             </div>
         </div>
 
-        <!-- Fade edges -->
-        <div class="testimonials-fade-left"></div>
-        <div class="testimonials-fade-right"></div>
+        <div class="container">
+            <div class="testimonials-stage" aria-label="Client testimonials">
+                <button class="testimonial-card is-centered" type="button" aria-pressed="true">
+                    <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                    <span class="testimonial-card-quote">“MangoByte gave us a revenue engine. Our CAC dropped by 40% in the first quarter alone. Absolutely phenomenal results.”</span>
+                    <span class="testimonial-card-person"><span class="testimonials-person-avatar">AS</span><span><strong>Aarav Sharma</strong><small>CEO, UrbanEdge Nepal</small></span></span>
+                </button>
+                <button class="testimonial-card" type="button" aria-pressed="false">
+                    <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                    <span class="testimonial-card-quote">“Within 6 months our organic traffic tripled. The SEO strategy they built was unlike anything we'd seen before.”</span>
+                    <span class="testimonial-card-person"><span class="testimonials-person-avatar">PK</span><span><strong>Priya Kapoor</strong><small>Founder, Lumina Global</small></span></span>
+                </button>
+                <button class="testimonial-card" type="button" aria-pressed="false">
+                    <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                    <span class="testimonial-card-quote">“The AI automation they built for our sales funnel generates 40+ qualified demos weekly on autopilot.”</span>
+                    <span class="testimonial-card-person"><span class="testimonials-person-avatar">RJ</span><span><strong>Rohan Joshi</strong><small>Head of Growth, FinTech AI</small></span></span>
+                </button>
+                <button class="testimonial-card" type="button" aria-pressed="false">
+                    <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                    <span class="testimonial-card-quote">“Our churn dropped 50% after the redesign. They don’t just market — they engineer growth from the ground up.”</span>
+                    <span class="testimonial-card-person"><span class="testimonials-person-avatar">SM</span><span><strong>Sara Mills</strong><small>CPO, Nexus SaaS</small></span></span>
+                </button>
+                <button class="testimonial-card" type="button" aria-pressed="false">
+                    <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                    <span class="testimonial-card-quote">“100k downloads in 30 days. I honestly didn't think that was possible for us. They proved me wrong.”</span>
+                    <span class="testimonial-card-person"><span class="testimonials-person-avatar">TN</span><span><strong>Tasha Nyarko</strong><small>CEO, Spark App</small></span></span>
+                </button>
+                <button class="testimonial-card" type="button" aria-pressed="false">
+                    <span class="testimonial-card-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                    <span class="testimonial-card-quote">“The performance ads campaign delivered the ROAS we'd only dreamed of. The partner every luxury brand needs.”</span>
+                    <span class="testimonial-card-person"><span class="testimonials-person-avatar">DL</span><span><strong>Daniel Laurent</strong><small>Marketing Director, Chronos Watches</small></span></span>
+                </button>
+            </div>
+        </div>
     </section>
 
     <!-- 7.5 FAQ SECTION -->
     <section class="section-padding" id="faq">
         <div class="container" style="max-width: 800px;">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2 style="font-size: 2.5rem; margin-top: 1rem;">Frequently Asked <span class="text-gradient">Questions</span></h2>
-                <p style="color: var(--text-secondary); margin-top: 1rem;">Everything you need to know about how we work.</p>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 30px; margin-top: 1rem;">Frequently Asked <span class="text-gradient">Questions</span></h2>
+                <p class="section-subheading">Everything you need to know about how we work.</p>
             </div>
             
             <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is your typical project timeline?</span>
-                        <i data-lucide="plus" class="faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Our standard timeline for a full website redesign or MVP app development is 6-8 weeks. This includes discovery, design, development, and testing. However, complex projects or enterprise solutions may require additional time. We always provide a clear, customized roadmap before starting any work.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you work with startups or established enterprises?</span>
-                        <i data-lucide="plus" class="faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        We partner with both! We help ambitious startups build their brand from scratch and scale quickly, while also assisting established enterprises in modernizing their legacy systems, improving user experience, and driving digital transformation.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is your pricing model?</span>
-                        <i data-lucide="plus" class="faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        We offer custom pricing based on the scope and complexity of your project. We typically work on a fixed-bid basis for well-defined projects (like a website build), and a monthly retainer model for ongoing services like SEO, digital marketing, and continuous optimization.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How do you ensure the quality of your work?</span>
-                        <i data-lucide="plus" class="faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Quality is built into our process. We conduct multiple rounds of rigorous QA testing across different devices and browsers. We also believe in transparent communication, involving you in key review milestones to ensure the final product exceeds your expectations.
-                    </div>
-                </div>
+                <div class="faq-item"><div class="faq-question"><span>What makes Mangobyte different from every other agency?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">Most agencies sell services. We sell flavour — the thing that makes people remember you after they've forgotten everyone else.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Why "Mangobyte"?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">Because a mango isn't just sweet — it's bold, bright, and impossible to ignore. That's how we want your brand to feel. Byte, because we live in digital.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Do you work with small businesses or only big brands?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">Size doesn't matter. Flavour does. If your brand has something worth saying, we'll help you say it louder.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How long does a project take?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">As long as it needs — not a day more, not a day less. Good mangoes aren't rushed. Neither are good brands.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What if I don't know what my brand needs yet?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">That's exactly why we start with a Taste Test. You bring the fruit. We find the flavour.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Is this just marketing, or something more?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">Marketing tells people you exist. We make them care that you do. That's the bite.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Do you only take on projects in certain industries?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">No. Flavour isn't industry-specific. We've worked across sectors — what matters is whether a brand is ready to be bold.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What if my brand already has an identity — can you still help?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">Always. Sometimes it's not about starting from scratch, it's about finding the bite that's already there and making it louder.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>Do I need all five services, or can I pick just one?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">Pick what you need. Some brands need the whole mango. Some just need the zest. We tailor the mix to what actually moves your business.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How involved will I need to be in the process?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">As involved as you want. We handle the heavy lifting, but the best results happen when it's a real collaboration — your brand, our craft.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>What does "success" look like to you?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">Not just likes and impressions. Real growth — leads, sales, recognition, and a brand people actually remember. That's the only metric that matters to us.</div></div>
+                <div class="faq-item"><div class="faq-question"><span>How do we get started?</span><i data-lucide="plus" class="faq-icon"></i></div><div class="faq-answer">One conversation. That's all it takes to find out if your brand's ready for its bite.</div></div>
             </div>
         </div>
     </section>
@@ -600,48 +708,60 @@
         <div class="container">
             <h2 class="hero-title">Ready to <span class="text-gradient">Scale Your Brand?</span></h2>
             <p class="hero-sub" style="margin: 0 auto 3rem;">Join 50+ high-growth brands that trust us to dominate their market.</p>
-            <a href="contact.html" class="btn btn-primary" style="padding: 1.5rem 3.5rem; font-size: 1.2rem;">Let's Talk <i data-lucide="message-square"></i></a>
+            <a href="contact.html" class="btn btn-primary" style="padding: 1.5rem 3.5rem; font-size: 19px;">Let's Talk <i data-lucide="message-square"></i></a>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <p>Creative digital agency based in Kathmandu, Nepal. Strategy-first solutions for startups and enterprises.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Agency</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="work.html">Work</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="#">Branding & Identity</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">SEO & SEM</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="mailto:hello@mangobyte.com.np">hello@mangobyte.com.np</a></li>
-                        <li><a href="#">Kathmandu, Nepal</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
-                </div>
+        <div class="container footer-inner">
+            <div class="footer-cta-row">
+                <h2 class="footer-cta-heading">Ready for<br>something <span class="footer-cta-accent">bold?</span></h2>
+                <a href="mailto:hello@mangobyte.com.np" class="footer-cta-link">Start a collaboration <i data-lucide="arrow-up-right"></i></a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Mangobyte Digital. All rights reserved.</p>
-                <p>Built for Challengers</p>
+
+            <div class="footer-lower">
+                <div class="footer-bars" id="site-footer-bars" aria-hidden="true">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </div>
+
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <p>Creative digital agency based in Kathmandu, Nepal. Strategy-first solutions for startups and enterprises.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Agency</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="#">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Business Enquiry</h4>
+                        <ul>
+                            <li><a href="mailto:hello@mangobyte.com.np">hello@mangobyte.com.np</a></li>
+                            <li><a href="#">Kathmandu, Nepal</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Social</h4>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Mangobyte Digital. All rights reserved.</p>
+                    <p>Built for Challengers</p>
+                </div>
             </div>
         </div>
     </footer>
