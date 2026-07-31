@@ -1518,7 +1518,7 @@ body.light-theme .stats {
 body.light-theme .trusted-section { border-color: rgba(0,0,0,0.05); }
 
 .trusted-section h2 {
-    font-size: 30px;
+    font-size: 30px !important;
     margin-bottom: 1rem;
 }
 
@@ -1667,7 +1667,7 @@ body.light-theme .service-card-stack {
 }
 
 .process-dial-heading { margin-bottom: 8px; }
-.process-dial-heading h2 { margin: 0; font-size: 30px; }
+.process-dial-heading h2 { margin: 0; font-size: 30px !important; }
 .process-dial-heading > p:last-child { max-width: 600px; margin-top: 1rem; color: var(--text-secondary); font-size: 18px; }
 
 .process-dial-pin {
@@ -2132,6 +2132,19 @@ body.light-theme .service-card-stack {
     font-size: 18px;
     color: var(--text-secondary);
     margin-top: 0.75rem;
+}
+
+/* Fixed section type scale — overrides the global desktop heading scale. */
+.case-studies-section h2,
+.testimonials-section .section-heading-row h2,
+#faq h2 {
+    font-size: 30px !important;
+}
+
+.case-studies-section .section-subheading,
+.testimonials-section .section-subheading,
+#faq .section-subheading {
+    font-size: 18px !important;
 }
 
 .section-heading-row {
