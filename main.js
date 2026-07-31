@@ -315,6 +315,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const processPin = document.getElementById('process-pin');
     const processSection = document.querySelector('.process-dial-section');
+    const processDialScene = processPin ? processPin.querySelector('.process-dial-scene') : null;
+    const processDialLayout = processPin ? processPin.querySelector('.process-dial-layout') : null;
     const processDialWheel = document.getElementById('process-dial-wheel');
     const processDialNumbers = processDialWheel ? Array.from(processDialWheel.querySelectorAll('.process-dial-number')) : [];
     const processDialPanels = Array.from(document.querySelectorAll('.process-dial-panel'));
@@ -357,12 +359,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         setProcessStep(0);
 
-        if (window.innerWidth > 768 && processSection) {
+        if (window.innerWidth > 768 && processSection && processDialLayout) {
             ScrollTrigger.create({
-                trigger: processSection,
+                trigger: processPin,
                 start: 'top top',
                 end: () => `+=${window.innerHeight * 4.5}`,
-                pin: processSection,
+                pin: processDialLayout,
                 scrub: 1,
                 anticipatePin: 1,
                 onUpdate: self => {
