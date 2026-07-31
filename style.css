@@ -2842,3 +2842,38 @@ body.light-theme .footer-contact-surface .footer-bottom {
     .section-padding { padding: 44px 0; }
     .portfolio-grid { grid-template-columns: 1fr; }
 }
+
+/* Permanent light theme: the site has no dark-mode variant. */
+:root {
+    --bg-main: #F5F5F5;
+    --bg-rgb: 245, 245, 245;
+    --bg-secondary: #EEEEEE;
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --text-primary: #141414;
+    --text-secondary: rgba(20, 20, 20, 0.7);
+    --text-muted: rgba(20, 20, 20, 0.48);
+    --accent-rgb: 20, 20, 20;
+    --accent-blue: #141414;
+    --accent-sky: #4A4A46;
+    --accent-indigo: #2B2B28;
+    --accent-glow: rgba(20, 20, 20, 0.12);
+    --grad-primary: linear-gradient(135deg, #000000, #3D3D3A);
+    --grad-surface: linear-gradient(135deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01));
+    --grad-border: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.04));
+    --dot-pattern: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(0,0,0,0.08)'/%3E%3C/svg%3E");
+    --line-grid: repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.045) 0px, rgba(0, 0, 0, 0.045) 1px, transparent 1px, transparent 120px), repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.045) 0px, rgba(0, 0, 0, 0.045) 1px, transparent 1px, transparent 120px);
+}
+/* Hero button contrast on the permanent light theme */
+.hero-btns .btn-primary {
+    border: 1px solid var(--brand-green);
+}
+
+.hero-btns .btn-outline {
+    border-color: #141414;
+    color: #141414;
+}
+
+.hero-btns .btn-outline:hover {
+    border-color: #141414;
+    color: #141414;
+}
