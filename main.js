@@ -45,47 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     gsap.ticker.lagSmoothing(0);
 
-    // 2. Custom Cursor
-    const cursor = document.getElementById('cursor');
-    if (cursor) {
-        document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, {
-                x: e.clientX - 16,
-                y: e.clientY - 11,
-                duration: 0.1
-            });
-        });
-
-        if (!window.matchMedia('(pointer: coarse)').matches) {
-            document.addEventListener('click', (e) => {
-                const stamp = document.createElement('span');
-                stamp.className = 'cursor-petal-stamp';
-                stamp.style.left = `${e.pageX}px`;
-                stamp.style.top = `${e.pageY}px`;
-                const stampArt = document.createElement('span');
-                stampArt.className = 'cursor-petal-stamp-art';
-                stamp.appendChild(stampArt);
-                document.body.appendChild(stamp);
-
-                gsap.fromTo(stampArt,
-                    { opacity: 1, scale: 1 },
-                    { opacity: 0, scale: 1, duration: 2.4, ease: 'power1.out', onComplete: () => stamp.remove() }
-                );
-            });
-        }
-
-       
-        const interactiveElements = document.querySelectorAll('a, button, .service-card-stack, .portfolio-card, .menu-toggle, .overlay-close');
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                gsap.to(cursor, { scale: 1.2, opacity: 1 });
-            });
-            el.addEventListener('mouseleave', () => {
-                gsap.to(cursor, { scale: 1, opacity: 1 });
-            });
-        });
-    }
-
     // Give grid-based backgrounds a restrained 3D response to the cursor.
     document.querySelectorAll('.grid-interactive').forEach(section => {
         const gridLayer = section.querySelector('.interactive-grid-layer');
