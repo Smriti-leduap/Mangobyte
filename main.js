@@ -68,35 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-   
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    
-    const setTheme = (theme) => {
-        const isLight = theme === 'light';
-        document.body.classList.toggle('light-theme', isLight);
-        
-        if (themeToggle) {
-            themeToggle.innerHTML = isLight 
-                ? '<i data-lucide="moon" id="theme-icon"></i>' 
-                : '<i data-lucide="sun" id="theme-icon"></i>';
-            if (typeof lucide !== 'undefined') lucide.createIcons();
-        }
-        
-        localStorage.setItem('gsx-theme', theme);
-    };
-
-    // Load saved theme
-    const savedTheme = localStorage.getItem('gsx-theme') || 'light';
-    setTheme(savedTheme);
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.body.classList.contains('light-theme') ? 'dark' : 'light';
-            setTheme(currentTheme);
-        });
-    }
-
     // 4. Menu Toggle Logic — Open with hamburger, Close with X inside overlay
     const menuToggleBtn = document.getElementById('menu-toggle-btn');
     const menuOverlay = document.getElementById('menu-overlay');
