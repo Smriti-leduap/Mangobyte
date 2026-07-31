@@ -2963,3 +2963,25 @@ body.light-theme .footer-contact-surface .footer-bottom {
     color: #1F3552;
     border-color: #1F3552;
 }
+/* Home hero headline */
+.hero-left .hero-title {
+    font-size: 40px !important;
+}
+/* Global typography guide */
+:root {
+    --text-sm: 14px;
+    --text-base: 18px;
+    --text-3xl: 30px;
+    --text-4xl: 36px;
+}
+
+body {
+    font-size: 18px;
+}
+
+h1 { font-size: 40px !important; }
+h2 { font-size: 36px !important; }
+h3 { font-size: 30px !important; }
+h4 { font-size: 24px !important; }
+small,
+.small-text { font-size: 14px !important; }
