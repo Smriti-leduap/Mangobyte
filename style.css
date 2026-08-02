@@ -3022,3 +3022,7 @@ small,
 .footer-contact-button-secondary {
     background: rgba(240, 90, 40, 0.58);
 }
+/* Selected section-title accents */
+.title-blue {
+    color: #1F3552;
+}
