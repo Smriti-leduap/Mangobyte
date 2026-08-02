@@ -2985,3 +2985,40 @@ h3 { font-size: 30px !important; }
 h4 { font-size: 24px !important; }
 small,
 .small-text { font-size: 14px !important; }
+/* Button palette — orange */
+:root { --button-primary: #F05A28; }
+
+.btn-primary {
+    box-shadow: 0 8px 24px rgba(240, 90, 40, 0.3);
+}
+
+.hero-btns .btn-primary {
+    border-color: #F05A28;
+}
+
+.hero-btns .btn-outline,
+.hero-btns .btn-outline:hover,
+.testimonials-view-all,
+.testimonials-view-all:hover,
+.projects-view-all,
+.projects-view-all:hover {
+    color: #F05A28;
+    border-color: #F05A28;
+}
+
+.service-block .service-btn-fill,
+.service-block .service-btn-fill:hover,
+.footer .btn-primary,
+.footer .btn-primary:hover,
+.footer .footer-contact-button,
+.footer .footer-contact-button:hover {
+    color: #F05A28;
+}
+
+.menu-toggle {
+    background: #F05A28;
+}
+
+.footer-contact-button-secondary {
+    background: rgba(240, 90, 40, 0.58);
+}
