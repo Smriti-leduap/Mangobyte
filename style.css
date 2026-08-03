@@ -4277,3 +4277,50 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 .footer-reference-column h4 {
     font-size: 18px !important;
 }
+/* Unified black case-study cards. */
+.case-studies-section .motion-card,
+.case-studies-section .motion-card:nth-child(n) {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card h1,
+.case-studies-section .motion-card h3,
+.case-studies-section .motion-card p,
+.case-studies-section .motion-card:nth-child(n) h1 {
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card-tags span,
+.case-studies-section .motion-card:nth-child(n) .motion-card-tags span {
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+    background: transparent !important;
+}
+.case-studies-section .motion-card-action,
+.case-studies-section .motion-card:nth-child(n) .motion-card-action {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
+/* Case-study hover treatment. */
+.case-studies-section .motion-card {
+    transition: background-color 240ms ease, color 240ms ease;
+}
+.case-studies-section .motion-card:hover,
+.case-studies-section .motion-card:focus-within {
+    background: #F05A28 !important;
+}
+.case-studies-section .motion-card:hover .motion-card-action,
+.case-studies-section .motion-card:focus-within .motion-card-action {
+    background: #F05A28 !important;
+    color: #FFFFFF !important;
+}
+/* Reversed case-study action button states. */
+.case-studies-section .motion-card-action,
+.case-studies-section .motion-card:nth-child(n) .motion-card-action {
+    background: #F05A28 !important;
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:hover .motion-card-action,
+.case-studies-section .motion-card:focus-within .motion-card-action {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
