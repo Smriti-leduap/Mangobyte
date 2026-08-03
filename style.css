@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     /* MONOCHROME PALETTE ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â DARK MODE */
@@ -102,7 +102,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Baskervville', serif;
     font-weight: 400;
     letter-spacing: -0.02em;
 }
@@ -491,7 +491,7 @@ body.light-theme .form-input:focus {
 
 .overlay-nav a {
     font-size: clamp(48px, 6vw, 80px);
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Baskervville', serif;
     font-weight: 400;
     text-transform: uppercase;
     color: var(--text-primary);
@@ -1593,7 +1593,7 @@ body.light-theme .service-card-stack {
 .service-card-num {
     font-size: 40px;
     font-weight: 800;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Baskervville', serif;
     color: var(--accent-blue);
     opacity: 0.4;
     line-height: 1;
@@ -1663,7 +1663,7 @@ body.light-theme .service-card-stack {
     background: transparent;
     color: var(--text-muted);
     cursor: pointer;
-    font: 400 32px/1 'DM Serif Display', serif;
+    font: 400 32px/1 'Baskervville', serif;
     transform: rotate(var(--angle)) translateX(390px) rotate(calc(-1 * var(--angle)));
     transition: color 250ms ease, font-size 250ms ease;
 }
@@ -1682,7 +1682,7 @@ body.light-theme .service-card-stack {
 .process-dial-panel { position: absolute; max-width: 610px; animation: dial-panel-in 480ms cubic-bezier(0.16, 1, 0.3, 1); }
 .process-dial-panel[hidden] { display: none; }
 .process-dial-count { color: var(--brand-orange); font-size: 16px; font-weight: 700; letter-spacing: 0.14em; }
-.process-dial-panel h3 { margin: 1rem 0 1.15rem; color: var(--text-primary); font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 32px !important; line-height: 1.1; letter-spacing: -0.04em; }
+.process-dial-panel h3 { margin: 1rem 0 1.15rem; color: var(--text-primary); font-family: 'Baskervville', serif; font-weight: 400; font-size: 32px !important; line-height: 1.1; letter-spacing: -0.04em; }
 .process-dial-panel p { max-width: 530px; color: var(--text-secondary); font-size: 16px; line-height: 1.55; }
 .process-dial-panel div { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.8rem; }
 .process-dial-panel div span { padding: 0.58rem 0.9rem; border: 1px solid rgba(var(--accent-rgb), 0.12); border-radius: 999px; background: var(--bg-card); color: var(--text-primary); font-size: 16px; box-shadow: 0 3px 8px rgba(var(--accent-rgb), 0.05); }
@@ -2085,7 +2085,7 @@ body.light-theme .service-card-stack {
     display: flex;
     align-items: center;
     color: #F5F3EE;
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Baskervville', serif;
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 2.5rem;
@@ -2675,7 +2675,7 @@ body.light-theme .footer-bottom { border-top-color: rgba(0, 0, 0, 0.05); }
 .footer-brand-tagline {
     margin: 0 auto;
     color: rgba(245,245,245,0.72);
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Baskervville', serif;
     font-size: 18px;
     font-style: italic;
     text-align: center;
@@ -4052,4 +4052,163 @@ small, .small-text { font-size: var(--type-caption) !important; }
     .stack-bottom-left,
     .stack-bottom-right,
     .hero-stack-pill { animation: none; }
+}
+/* Give case-study videos a little more presence without changing the card composition. */
+.case-studies-section .motion-card {
+    height: 430px;
+}
+.case-studies-section .motion-card-video {
+    height: 225px;
+    flex-basis: 225px;
+}
+@media (max-width: 768px) {
+    .case-studies-section .motion-card {
+        height: 410px;
+    }
+    .case-studies-section .motion-card-video {
+        height: 210px;
+        flex-basis: 210px;
+    }
+}
+/* Span the footer logo across the same content width as the divider and meta row. */
+.footer-reference-logo {
+    width: min(1180px, 100%);
+}
+/* Place the footer divider and meta row below the logo. */
+.footer-reference-logo + .footer-reference-divider { margin: 30px 0 20px; }
+
+/* Simplified footer navigation after removing Company, Others, and Social. */
+.footer-reference-top { grid-template-columns: minmax(250px, 1.65fr) minmax(140px, 1fr); }
+@media (max-width: 900px) { .footer-reference-top { grid-template-columns: repeat(2, minmax(0, 1fr)); } .footer-reference-intro { grid-column: auto; } }
+/* Keep a precise 25px breathing gap between the footer logo and its divider. */
+.footer-reference-logo {
+    margin-bottom: 25px;
+}
+.footer-reference-logo + .footer-reference-divider {
+    margin-top: 0;
+}
+/* Footer legal row: centered below the logo, with the divider above it. */
+.footer-reference-divider {
+    margin: 46px 0 25px;
+}
+.footer-reference-divider + .footer-reference-logo {
+    margin-top: 0;
+}
+.footer-reference-meta {
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+}
+/* Reference footer layout: intro, navigation, legal, and both office locations. */
+.footer-reference-top {
+    grid-template-columns: minmax(290px, 2.1fr) minmax(120px, 0.9fr) minmax(130px, 0.9fr) minmax(190px, 1.15fr) minmax(180px, 1.15fr);
+    gap: clamp(24px, 3vw, 52px);
+}
+.footer-reference-intro p { max-width: 360px; }
+.footer-reference-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 34px;
+}
+.footer-reference-social a {
+    display: inline-grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+}
+.footer-reference-social svg { width: 20px; height: 20px; stroke-width: 2.4; }
+.footer-reference-contact { font-style: normal; }
+.footer-reference-contact a {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.45;
+}
+.footer-reference-contact svg {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    stroke-width: 2.7;
+}
+@media (max-width: 1050px) {
+    .footer-reference-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .footer-reference-intro { grid-column: span 2; }
+}
+@media (max-width: 650px) {
+    .footer-reference-top { grid-template-columns: 1fr 1fr; }
+    .footer-reference-intro { grid-column: 1 / -1; }
+}
+/* Baskervville display typography uses the bold weight throughout. */
+h1,
+h2,
+.overlay-nav a,
+.service-card-num,
+.process-dial-number,
+.process-dial-panel h3,
+.services-stack-eyebrow {
+    font-weight: 700;
+}
+/* Footer interactions brighten to white on hover. */
+.footer-reference-column a:hover,
+.footer-reference-social a:hover {
+    color: #FFFFFF;
+}
+/* Embedded footer social marks remain visible without an external icon library. */
+.footer-reference-social a {
+    color: #FFFFFF;
+}
+.footer-reference-social svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+/* Drop the footer social icons slightly below the intro copy. */
+.footer-reference-social {
+    margin-top: 46px;
+}
+/* Footer social row sits directly above the divider in outlined icon buttons. */
+@media (min-width: 651px) {
+    .footer-reference-top { align-items: stretch; }
+    .footer-reference-intro {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-reference-social {
+        margin-top: auto;
+        padding-bottom: 0;
+    }
+    .footer-reference-divider {
+        margin: 6px 0;
+    }
+}
+.footer-reference-social a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+.footer-reference-social svg {
+    width: 18px;
+    height: 18px;
+}
+/* Match the logo-to-copyright spacing to the 6px icon-to-divider rhythm. */
+.footer-reference-logo {
+    margin-bottom: 6px;
+}
+/* Lower the footer wordmark to its visual baseline without crowding the legal text. */
+.footer-reference-logo {
+    transform: translateY(18px);
+    margin-bottom: 24px;
+}
+/* Extend the desktop footer row so the social icons and divider sit on the lower visual baseline. */
+@media (min-width: 651px) {
+    .footer-reference-top {
+        min-height: 224px;
+    }
+}
+/* Footer introduction copy. */
+.footer-reference-intro p {
+    font-size: 16px;
 }
