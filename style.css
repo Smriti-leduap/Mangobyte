@@ -4264,3 +4264,16 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
         margin-right: 0;
     }
 }
+/* Footer copyright text. */
+.footer-reference-meta p {
+    font-size: 16px !important;
+}
+/* Compact footer navigation headings. */
+.footer-reference-column h4 {
+    font-size: 16px !important;
+}
+
+/* Footer navigation headings. */
+.footer-reference-column h4 {
+    font-size: 18px !important;
+}
