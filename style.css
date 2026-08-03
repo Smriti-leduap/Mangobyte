@@ -44,7 +44,7 @@
     --container-width: 1280px;
     --glass-blur: 14px;
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    --border-radius: 16px;
+    --border-radius: 14px;
     --dot-pattern: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,0.08)'/%3E%3C/svg%3E");
     --line-grid: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 120px),
                  repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 120px);
@@ -317,7 +317,7 @@ body.preloading { overflow: hidden; }
     background: var(--bg-secondary);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.2rem;
-    border-radius: 12px;
+    border-radius: 14px;
     color: var(--text-primary);
     outline: none;
     font-family: inherit;
@@ -656,7 +656,7 @@ body.light-theme .form-input:focus {
     width: 58%;
     height: 238px;
     overflow: hidden;
-    border-radius: 30px 30px 0 30px;
+    border-radius: 14px 14px 0 14px;
     box-shadow: 0 20px 46px rgba(0, 0, 0, 0.16);
 }
 
@@ -675,7 +675,7 @@ body.light-theme .form-input:focus {
     right: 0;
     width: 45%;
     padding: 14px;
-    border-radius: 22px;
+    border-radius: 14px;
 }
 
 .hero-growth-kicker { display: block; color: var(--brand-green); font-size: 16px; font-weight: 700; }
@@ -689,7 +689,7 @@ body.light-theme .form-input:focus {
     left: 0;
     width: 34%;
     padding: 13px;
-    border-radius: 18px;
+    border-radius: 14px;
 }
 
 .hero-growth-stat strong { display: block; color: var(--brand-orange); font-size: 32px; line-height: 1; }
@@ -716,7 +716,7 @@ body.light-theme .form-input:focus {
     bottom: 24px;
     width: 46%;
     padding: 14px;
-    border-radius: 20px 20px 20px 0;
+    border-radius: 14px 14px 14px 0;
     background: var(--brand-orange);
     color: #fff;
     box-shadow: 0 16px 34px rgba(244, 129, 35, 0.22);
@@ -954,7 +954,7 @@ body.light-theme .form-input:focus {
     right: -50px;
     width: 235px;
     height: 190px;
-    border-radius: 24px;
+    border-radius: 14px;
 }
 
 .stack-bottom-left {
@@ -962,7 +962,7 @@ body.light-theme .form-input:focus {
     left: 3%;
     width: 205px;
     height: 106px;
-    border-radius: 24px;
+    border-radius: 14px;
 }
 
 .stack-bottom-right {
@@ -970,7 +970,7 @@ body.light-theme .form-input:focus {
     bottom: -12px;
     width: 220px;
     height: 114px;
-    border-radius: 24px;
+    border-radius: 14px;
 }
 
 .stack-bottom-left strong { color: var(--text-primary); }
@@ -1102,7 +1102,7 @@ body.light-theme .form-input:focus {
 
 .hero-collage-accent {
     background: var(--text-primary);
-    border-radius: 20px;
+    border-radius: 14px;
     padding: 1.75rem;
     display: flex;
     flex-direction: column;
@@ -1165,7 +1165,7 @@ body.light-theme .form-input:focus {
 
 .hero-collage-photo {
     position: relative;
-    border-radius: 20px;
+    border-radius: 14px;
     overflow: hidden;
 }
 
@@ -1513,7 +1513,7 @@ body.light-theme .trusted-section { border-color: rgba(0,0,0,0.05); }
     height: 56px;
     padding: 0 1.25rem;
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 12px;
+    border-radius: 14px;
     background: rgba(255,255,255,0.03);
     color: var(--text-muted);
     font-family: 'Inter', sans-serif;
@@ -1736,7 +1736,7 @@ body.light-theme .service-card-stack {
     height: 340px;
     margin: -170px 0 0 -140px;
     padding: 2rem;
-    border-radius: 22px;
+    border-radius: 14px;
     background: var(--bg-card);
     backdrop-filter: blur(var(--glass-blur));
     border: 1px solid rgba(var(--accent-rgb), 0.12);
@@ -1899,7 +1899,7 @@ body.light-theme .service-card-stack {
     gap: 1rem;
     padding: 1rem 1.25rem;
     margin: 0 0 0.5rem;
-    border-radius: 16px;
+    border-radius: 14px;
     opacity: 0.45;
     transform: scale(0.94);
     transition: var(--transition-smooth);
@@ -1966,7 +1966,7 @@ body.light-theme .service-card-stack {
     min-height: 240px;
     padding: 1.5rem;
     border: 1px solid rgba(var(--accent-rgb), 0.12);
-    border-radius: 22px;
+    border-radius: 14px;
     background: var(--bg-card);
     opacity: 0.78;
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
@@ -2230,7 +2230,7 @@ body.light-theme .service-card-stack {
     height: 100%;
     object-fit: cover;
     filter: grayscale(1) contrast(1.05);
-    border-radius: 18px;
+    border-radius: 14px;
     display: block;
     position: relative;
     z-index: 2;
@@ -2359,7 +2359,7 @@ body.light-theme .drag-indicator {
     height: 450px;
     background: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
+    border-radius: 14px;
     display: flex;
     position: relative;
     overflow: hidden;
@@ -2948,7 +2948,7 @@ body.light-theme .footer-contact-surface .footer-bottom {
     padding: 2rem 2.25rem;
     background: #FFFFFF;
     border: 1px solid rgba(31, 53, 82, 0.12);
-    border-radius: 22px;
+    border-radius: 14px;
     box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
 }
 /* Testimonials outline CTA */
@@ -3025,4 +3025,1031 @@ small,
 /* Selected section-title accents */
 .title-blue {
     color: #1F3552;
+}
+/* Who we work with — match the hero grid background. */
+.trusted-section {
+    background-color: var(--bg-main);
+    background-image: var(--dot-pattern), var(--line-grid);
+    border-color: rgba(31, 53, 82, 0.1);
+}
+/* Who we work with logo outlines */
+.trusted-logo-item,
+.trusted-logo-item:hover {
+    border-color: #000000;
+}
+/* Case-study cards — Bloom Dots-inspired video, overlay, and tag treatment. */
+.motion-pin {
+    height: 520px;
+    min-height: 520px;
+    max-height: 520px;
+    background: transparent;
+}
+
+.motion-card {
+    width: min(68vw, 700px);
+    height: 430px;
+    margin: -215px 0 0 min(-34vw, -350px);
+    padding: 2rem;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(31, 53, 82, 0.16);
+    background: #1F3552;
+    box-shadow: 0 24px 60px rgba(31, 53, 82, 0.22);
+}
+
+.motion-card-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: saturate(0.84) contrast(1.05);
+}
+
+.motion-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(31, 53, 82, 0.14) 0%, rgba(31, 53, 82, 0.08) 42%, rgba(31, 53, 82, 0.92) 100%);
+}
+
+.motion-card > :not(.motion-card-video) { position: relative; z-index: 1; }
+.motion-card-tags { gap: 0.55rem; }
+.motion-card-tags span {
+    padding: 0.42rem 0.72rem;
+    border: 1px solid rgba(31, 53, 82, 0.14);
+    background: rgba(255, 255, 255, 0.94);
+    color: #1F3552;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.motion-card h3 {
+    color: #FFFFFF;
+    font-size: 30px !important;
+    margin: 1.5rem 0 0.65rem;
+}
+
+.motion-card p,
+.motion-card p strong { color: rgba(255, 255, 255, 0.92); }
+.motion-card p { font-size: 18px; max-width: 470px; }
+.motion-card .case-study-number { color: #F05A28; }
+
+@media (max-width: 768px) {
+    .motion-pin { height: auto; max-height: none; }
+    .motion-arc-track { padding: 1rem 1.25rem 1.5rem; }
+    .motion-card { width: min(82vw, 430px); height: 390px; margin: 0; }
+}
+/* Case-study cards — standalone media card layout. */
+.motion-pin {
+    height: 590px;
+    min-height: 590px;
+    max-height: 590px;
+}
+
+.motion-card {
+    width: min(31vw, 390px);
+    height: 520px;
+    margin: -260px 0 0 max(-15.5vw, -195px);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    background: #1F3552;
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(31, 53, 82, 0.22);
+}
+
+.motion-card::after { display: none; }
+.motion-card-video {
+    position: relative;
+    inset: auto;
+    order: 1;
+    width: 100%;
+    height: 250px;
+    flex: 0 0 250px;
+    border-radius: 14px;
+    object-fit: cover;
+    filter: saturate(0.9) contrast(1.04);
+}
+
+.motion-card h3 {
+    order: 2;
+    margin: 1.5rem 0 1.1rem;
+    color: #FFFFFF;
+    font-size: 30px !important;
+    line-height: 1.1;
+}
+
+.motion-card-tags {
+    order: 3;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.motion-card-tags span {
+    padding: 0.4rem 0.7rem;
+    border: 1px solid rgba(255, 255, 255, 0.88);
+    border-radius: 999px;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+.motion-card p { display: none; }
+
+@media (max-width: 768px) {
+    .motion-pin { height: auto; max-height: none; }
+    .motion-card { width: min(82vw, 390px); height: 500px; margin: 0; }
+    .motion-card-video { height: 238px; flex-basis: 238px; }
+}
+/* Case studies — standard six-card grid, no pinned carousel scroll. */
+.motion-pin {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+    background: transparent;
+}
+
+.motion-arc-track {
+    position: relative;
+    inset: auto;
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.motion-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: 500px;
+    margin: 0;
+    transform: none;
+    opacity: 1;
+}
+
+.motion-nav-btns { display: none; }
+
+@media (max-width: 768px) {
+    .motion-arc-track {
+        width: min(100% - 32px, 520px);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+    .motion-card { width: 100%; height: 470px; }
+}
+
+/* Overall page background */
+:root {
+  --bg-main: #EBEBEB;
+  --bg-rgb: 235, 235, 235;
+}
+
+/* Compact navy metrics strip */
+.stats {
+    background: #1F3552;
+    padding: 32px 0;
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.stats-grid { gap: 2rem; }
+
+.stat-item h3,
+.stat-item h3.text-gradient {
+    color: #FFFFFF;
+    background: none;
+    -webkit-text-fill-color: #FFFFFF;
+    font-size: 36px !important;
+    margin-bottom: 0.25rem;
+}
+
+.stat-item p {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .stats { padding: 28px 0; }
+}
+/* Let the process dial complete beyond the lower edge of its scene. */
+.process-dial-layout,
+.process-dial-scene {
+    overflow: visible;
+}
+/* Case studies — staggered editorial card grid. */
+.motion-arc-track {
+    width: min(940px, calc(100% - 48px));
+    column-gap: 76px;
+    row-gap: 34px;
+    align-items: start;
+}
+
+.motion-card {
+    height: 410px;
+    padding: 1.25rem;
+    border-radius: 14px;
+    box-shadow: none;
+}
+
+.motion-card:nth-child(even) { margin-top: 48px; }
+.motion-card-video {
+    height: 205px;
+    flex-basis: 205px;
+    border-radius: 4px;
+    filter: none;
+}
+
+.motion-card h3 {
+    margin: 1.1rem 0 0.85rem;
+    font-size: 30px !important;
+}
+
+.motion-card-tags span {
+    padding: 0.28rem 0.58rem;
+    font-size: 11px;
+    line-height: 1;
+}
+
+.motion-card:nth-child(1) { background: #2FB2DF; color: #1F3552; }
+.motion-card:nth-child(2) { background: #FFFCF4; color: #1F3552; }
+.motion-card:nth-child(3) { background: #F8BD2E; color: #1F3552; }
+.motion-card:nth-child(4) { background: #F05A28; color: #FFFFFF; }
+.motion-card:nth-child(5) { background: #1F3552; color: #FFFFFF; }
+.motion-card:nth-child(6) { background: #FFFCF4; color: #1F3552; }
+
+.motion-card:nth-child(1) h3,
+.motion-card:nth-child(2) h3,
+.motion-card:nth-child(3) h3,
+.motion-card:nth-child(6) h3 { color: #1F3552; }
+
+.motion-card:nth-child(4) h3,
+.motion-card:nth-child(5) h3 { color: #FFFFFF; }
+
+.motion-card:nth-child(1) .motion-card-tags span,
+.motion-card:nth-child(2) .motion-card-tags span,
+.motion-card:nth-child(3) .motion-card-tags span,
+.motion-card:nth-child(6) .motion-card-tags span {
+    color: #1F3552;
+    border-color: #1F3552;
+}
+
+.motion-card:nth-child(4) .motion-card-tags span,
+.motion-card:nth-child(5) .motion-card-tags span {
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 768px) {
+    .motion-arc-track { width: min(100% - 32px, 460px); row-gap: 22px; }
+    .motion-card { height: 390px; }
+    .motion-card:nth-child(even) { margin-top: 0; }
+    .motion-card-video { height: 190px; flex-basis: 190px; }
+}
+
+
+/* Keep the process dial inside its scene; reveal its outline as the dial scrolls. */
+@media (min-width: 769px) {
+    .process-dial-scene { overflow: hidden; }
+    .process-dial-wheel {
+        border-color: transparent;
+        transition: border-color 360ms ease;
+    }
+    .process-dial-section.is-dial-revealed .process-dial-wheel {
+        border-color: rgba(var(--accent-rgb), 0.13);
+    }
+}
+
+
+/* Full-screen process dial stage. */
+@media (min-width: 769px) {
+    .process-dial-pin,
+    .process-dial-layout {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+    .process-dial-layout { height: 100vh; height: 100svh; }
+    .process-dial-scene { height: 100vh; height: 100svh; }
+    .process-dial-content { min-height: 100vh; min-height: 100svh; }
+}
+
+
+/* Navy case-study section. */
+.case-studies-section { background: #1F3552; }
+.case-studies-section h2,
+.case-studies-section .section-subheading { color: #FFFFFF; }
+.case-studies-section .projects-view-all,
+.case-studies-section .projects-view-all:hover {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    background: transparent;
+}
+
+/* Testimonials — client selector and focused review card. */
+.testimonials-section {
+    background-color: #EBEBEB !important;
+    background-image: var(--dot-pattern), var(--line-grid);
+}
+
+.testimonials-panel {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.3fr);
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.testimonials-list-wrap {
+    order: 1;
+    position: relative;
+    display: block;
+    padding-right: 72px;
+}
+
+.testimonials-list {
+    height: 350px;
+    padding: 0.5rem 0;
+}
+
+.testimonials-person {
+    min-height: 82px;
+    margin: 0 0 14px;
+    padding: 1rem 1.25rem;
+    border-radius: 14px;
+    opacity: 0.62;
+    transform: none;
+}
+
+.testimonials-person.active {
+    background: #FFFFFF;
+    opacity: 1;
+    transform: none;
+    box-shadow: 0 14px 30px rgba(31, 53, 82, 0.12);
+}
+
+.testimonials-person-avatar,
+.testimonials-person.active .testimonials-person-avatar {
+    background: #1F3552;
+    color: #FFFFFF;
+}
+
+.testimonials-person.active .testimonials-person-avatar { background: #F05A28; }
+.testimonials-person h5 { color: #1F3552; font-size: 16px; }
+.testimonials-person p { color: #1F3552; font-size: 14px; }
+
+.testimonials-scroll-btn {
+    position: absolute;
+    right: 0;
+    width: 46px;
+    height: 46px;
+    border-color: rgba(31, 53, 82, 0.24);
+    color: #1F3552;
+    background: transparent;
+}
+.testimonials-scroll-btn:hover { background: #FFFFFF; color: #1F3552; }
+#testi-scroll-up { top: calc(50% - 52px); }
+#testi-scroll-down { top: calc(50% + 10px); }
+
+.testimonials-detail {
+    order: 2;
+    min-height: 350px;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 18px 44px rgba(31, 53, 82, 0.12);
+}
+
+.testimonials-detail-title {
+    color: #1F3552;
+    font-size: 30px !important;
+    line-height: 1.2;
+}
+.testimonials-detail-stars { color: #F05A28; }
+.testimonials-detail-stars i { fill: #F05A28; stroke: #F05A28; }
+.testimonials-detail-text {
+    color: #1F3552;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1.7;
+}
+
+.testimonials-stage { display: none; }
+
+@media (max-width: 900px) {
+    .testimonials-panel { grid-template-columns: 1fr; gap: 2rem; }
+    .testimonials-detail { order: 1; min-height: 0; }
+    .testimonials-list-wrap { order: 2; }
+    .testimonials-list { height: 300px; }
+}
+
+.case-studies-section .title-blue { color: #FFFFFF; }
+
+/* Three-name testimonial selector: the centered row is always active. */
+.testimonials-list {
+    height: 288px;
+    padding: 0;
+    scroll-snap-type: y mandatory;
+}
+.testimonials-person {
+    height: 96px;
+    min-height: 96px;
+    box-sizing: border-box;
+    margin: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+@media (max-width: 900px) {
+    .testimonials-list { height: 288px; }
+}
+/* Testimonial type hierarchy. */
+.testimonials-person h5 { font-size: 20px; }
+.testimonials-person p { font-size: 14px; }
+.testimonials-detail-title { font-size: 24px !important; }
+
+/* Process section — hero-style grid background. */
+.process-dial-section {
+    background-color: var(--bg-secondary);
+    background-image: var(--dot-pattern), var(--line-grid);
+}
+
+/* Navy testimonial section with accessible contrast. */
+.testimonials-section {
+    background-color: #1F3552 !important;
+    background-image: none;
+}
+.testimonials-section .section-heading-row h2,
+.testimonials-section .section-subheading,
+.testimonials-section .title-blue { color: #FFFFFF; }
+.testimonials-section .testimonials-view-all,
+.testimonials-section .testimonials-view-all:hover {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    background: transparent;
+}
+.testimonials-section .testimonials-person h5,
+.testimonials-section .testimonials-person p { color: #FFFFFF; }
+.testimonials-section .testimonials-person.active h5,
+.testimonials-section .testimonials-person.active p { color: #1F3552; }
+.testimonials-section .testimonials-scroll-btn {
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.42);
+}
+.testimonials-section .testimonials-scroll-btn:hover {
+    color: #1F3552;
+    background: #FFFFFF;
+}
+/* White case-study cards on the navy section. */
+.case-studies-section .motion-card {
+    background: #FFFFFF;
+    color: #1F3552;
+}
+.case-studies-section .motion-card h3 { color: #1F3552; }
+.case-studies-section .motion-card-tags span {
+    color: #1F3552;
+    border-color: #1F3552;
+}
+/* Testimonial client names use neutral text elements, not heading tags. */
+.testimonials-person-name {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+}
+.testimonials-person.active .testimonials-person-name { color: #1F3552; }
+/* Center the testimonial navigation controls between list and review. */
+@media (min-width: 901px) {
+    .testimonials-panel { gap: 70px; }
+    .testimonials-list-wrap { padding-right: 0; }
+    .testimonials-scroll-btn { right: -58px; }
+}
+@media (max-width: 900px) {
+    .testimonials-list-wrap { padding-right: 72px; }
+    .testimonials-scroll-btn { right: 0; }
+}
+/* Keep the selected-name card aligned with the testimonial subheading width. */
+@media (min-width: 901px) {
+    .testimonials-panel { grid-template-columns: 360px minmax(0, 1fr); }
+    .testimonials-list-wrap,
+    .testimonials-list { width: 360px; }
+}
+/* Reference-aligned testimonial spacing and control placement. */
+@media (min-width: 1200px) {
+    .testimonials-panel {
+        grid-template-columns: 390px minmax(0, 1fr);
+        gap: 186px;
+    }
+    .testimonials-list-wrap,
+    .testimonials-list { width: 390px; }
+    .testimonials-scroll-btn { right: -116px; }
+}
+/* Align testimonial title, stars, statement, and optional expansion link. */
+.testimonials-detail {
+    align-items: flex-start;
+    text-align: left;
+}
+.testimonials-detail-title { margin: 0 0 1rem; }
+.testimonials-detail-stars { margin: 0 0 1.8rem; }
+.testimonials-detail-text { margin: 0; }
+.testimonial-read-more {
+    margin-top: 1rem;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: transparent;
+    color: #1F3552;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.case-studies-section .motion-card-tags span {
+    color: #1F3552 !important;
+    border-color: #1F3552 !important;
+    background: transparent !important;
+}
+
+/* Shared View all actions. */
+.projects-view-all,
+.testimonials-view-all {
+    font-size: 16px;
+}
+.projects-view-all:hover,
+.testimonials-view-all:hover {
+    color: #F05A28 !important;
+    border-color: #F05A28 !important;
+    text-decoration: underline;
+    text-decoration-color: #F05A28;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+/* View all links are text-only actions. */
+.projects-view-all,
+.testimonials-view-all {
+    display: inline-block;
+    padding: 0;
+    border: 0 !important;
+    background: transparent !important;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+/* Alternating case-study card palette. */
+.case-studies-section .motion-card:nth-child(3n + 1) {
+    background: #F05A28;
+    color: #FFFFFF;
+}
+.case-studies-section .motion-card:nth-child(3n + 2) {
+    background: #0C7D7D;
+    color: #FFFFFF;
+}
+.case-studies-section .motion-card:nth-child(3n) {
+    background: #FEC52B;
+    color: #1F3552;
+}
+.case-studies-section .motion-card:nth-child(3n + 2) h3,
+.case-studies-section .motion-card:nth-child(3n) h3 { color: #1F3552; }
+.case-studies-section .motion-card:nth-child(3n + 1) h3 { color: #FFFFFF; }
+
+/* Website-wide typography scale. */
+:root {
+    --type-h1: 40px;
+    --type-h2: 32px;
+    --type-h3: 28px;
+    --type-h4: 24px;
+    --type-body: 18px;
+    --type-small-body: 16px;
+    --type-caption: 14px;
+}
+body { font-size: var(--type-body); }
+h1 { font-size: var(--type-h1) !important; }
+h2 { font-size: var(--type-h2) !important; }
+h3 { font-size: var(--type-h3) !important; }
+h4 { font-size: var(--type-h4) !important; }
+small, .small-text { font-size: var(--type-caption) !important; }
+
+/* Component headings that previously had more specific size overrides. */
+.trusted-section h2,
+.process-dial-heading h2,
+.case-studies-section h2,
+.testimonials-section .section-heading-row h2,
+#faq h2,
+.final-cta h2 { font-size: var(--type-h2) !important; }
+.service-card-content h3,
+.process-dial-panel h3,
+.motion-card h3,
+.work-tcard h3 { font-size: var(--type-h3) !important; }
+
+/* Supporting copy scale. */
+.small-body,
+.process-dial-panel p,
+.footer-contact-block a,
+.footer-contact-block p { font-size: var(--type-small-body); }
+/* Full-width case-study columns aligned to the page gutters. */
+.motion-arc-track {
+    width: min(1180px, calc(100% - 48px));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Match the View all alignment across case studies and testimonials. */
+.case-studies-heading-row h2,
+.testimonials-section .section-heading-row h2 { margin-top: 0 !important; }
+.case-studies-heading-row .projects-view-all,
+.testimonials-section .testimonials-view-all { align-self: flex-end; }
+/* Circular case-study action mark. */
+.case-studies-section .motion-card::after {
+    content: '↗';
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 3;
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border: 1px solid #1F3552;
+    border-radius: 50%;
+    background: #FFFFFF;
+    color: #1F3552;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+}
+/* Place the case-study action circle outside the lower-right corner. */
+.case-studies-section .motion-card { overflow: visible; }
+.case-studies-section .motion-card::after {
+    inset: auto;
+    top: auto;
+    left: auto;
+    right: -32px;
+    bottom: -32px;
+    width: 64px;
+    height: 64px;
+    border: 7px solid #1F3552;
+    background: #F05A28;
+    color: #FFFFFF;
+    font-size: 34px;
+}
+/* Case-study action matches the hero button arrow and card edge. */
+.case-studies-section .motion-card::after { display: none; }
+.case-studies-section .motion-card-action {
+    position: absolute;
+    z-index: 4;
+    right: -8px;
+    bottom: 0;
+    display: grid;
+    width: 78px;
+    height: 78px;
+    box-sizing: border-box;
+    place-items: center;
+    border: 7px solid #1F3552;
+    border-radius: 50%;
+    background: #F05A28;
+    color: #FFFFFF;
+}
+.case-studies-section .motion-card-action svg {
+    width: 30px;
+    height: 30px;
+    stroke-width: 2.5;
+}
+.case-studies-section .motion-card-action:hover { color: #FFFFFF; transform: none; }
+@media (max-width: 768px) {
+    .case-studies-section .motion-card-action { right: -6px; width: 64px; height: 64px; border-width: 6px; }
+    .case-studies-section .motion-card-action svg { width: 25px; height: 25px; }
+}
+/* Clean lower-right notch behind the case-study action circle. */
+.case-studies-section .motion-card::before {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    right: -17px;
+    bottom: -9px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #1F3552;
+    pointer-events: none;
+}
+
+.case-studies-section .motion-card-tags span { font-size: 14px !important; }
+
+/* Orange case-study cards use white text and tags. */
+.case-studies-section .motion-card:nth-child(3n + 1) h3,
+.case-studies-section .motion-card:nth-child(3n + 1) .motion-card-tags span {
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(3n + 1) .motion-card-tags span {
+    border-color: #FFFFFF !important;
+}
+/* Match the hero arrow motion on case-study actions. */
+.case-studies-section .motion-card-action svg { transition: transform 220ms ease; }
+.case-studies-section .motion-card-action:hover svg { transform: rotate(90deg); }
+/* Case-study titles use the H1 scale. */
+.case-studies-section .motion-card h1 {
+    order: 2;
+    margin: 1.1rem 1.25rem 0.85rem;
+    color: inherit;
+    font-size: 40px !important;
+    line-height: 1.05;
+}
+.case-studies-section .motion-card:nth-child(3n + 1) h1 { color: #FFFFFF; }
+.case-studies-section .motion-card:nth-child(3n + 2) h1,
+.case-studies-section .motion-card:nth-child(3n) h1 { color: #1F3552; }
+/* Align case-study copy to the media edge and use Inter. */
+.case-studies-section .motion-card h1 {
+    margin-left: 0;
+    margin-right: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+.case-studies-section .motion-card-tags { margin-left: 0; }
+
+.case-studies-section .motion-card:hover .motion-card-action svg { transform: rotate(90deg); }
+
+/* Teal case-study cards use white text and tags. */
+.case-studies-section .motion-card:nth-child(3n + 2) h1,
+.case-studies-section .motion-card:nth-child(3n + 2) .motion-card-tags span {
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(3n + 2) .motion-card-tags span {
+    border-color: #FFFFFF !important;
+}
+/* Case-study action buttons contrast with their card palette. */
+.case-studies-section .motion-card:nth-child(3n + 1) .motion-card-action {
+    background: #FEC52B;
+    color: #1F3552;
+}
+.case-studies-section .motion-card:nth-child(3n) .motion-card-action {
+    background: #0C7D7D;
+    color: #FFFFFF;
+}
+/* Case-study palette: orange/white only. */
+.case-studies-section .motion-card:nth-child(odd) {
+    background: #F05A28 !important;
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(even) {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(odd) h1,
+.case-studies-section .motion-card:nth-child(odd) .motion-card-tags span {
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(odd) .motion-card-tags span {
+    border-color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(even) h1,
+.case-studies-section .motion-card:nth-child(even) .motion-card-tags span {
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(even) .motion-card-tags span {
+    border-color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(odd) .motion-card-action {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(even) .motion-card-action {
+    background: #F05A28 !important;
+    color: #FFFFFF !important;
+}
+/* Law Firms case study uses the white/orange variation. */
+.case-studies-section .motion-card:nth-child(3) {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(3) h1,
+.case-studies-section .motion-card:nth-child(3) .motion-card-tags span {
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(3) .motion-card-tags span {
+    border-color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(3) .motion-card-action {
+    background: #F05A28 !important;
+    color: #FFFFFF !important;
+}
+/* Travel & Tourism case study uses the orange/white variation. */
+.case-studies-section .motion-card:nth-child(4) {
+    background: #F05A28 !important;
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(4) h1,
+.case-studies-section .motion-card:nth-child(4) .motion-card-tags span {
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(4) .motion-card-tags span {
+    border-color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(4) .motion-card-action {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
+
+/* Reference-style footer restored before the Social section and logo changes. */
+.footer {
+    padding: 0;
+    background: #1F3552;
+}
+.footer-contact-surface {
+    min-height: 0;
+    background: linear-gradient(112deg, #1F3552 0%, #1F3552 74%, #213a5d 100%);
+}
+.footer-contact-surface .footer-bars {
+    opacity: 0.12;
+    padding: 0 32px;
+}
+.footer-reference-layout {
+    width: min(1180px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 68px 0 0;
+}
+.footer-reference-top {
+    display: grid;
+    grid-template-columns: minmax(250px, 1.65fr) repeat(4, minmax(110px, 1fr));
+    gap: clamp(28px, 4vw, 72px);
+    align-items: start;
+}
+.footer-reference-intro p {
+    max-width: 300px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 18px;
+    line-height: 1.55;
+}
+.footer-reference-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.footer-reference-column h4 {
+    margin: 0 0 7px;
+    color: #FFFFFF;
+    font-size: 24px !important;
+    line-height: 1.1;
+}
+.footer-reference-column a {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 16px;
+    line-height: 1.35;
+    transition: color 180ms ease, transform 180ms ease;
+}
+.footer-reference-column a:hover {
+    color: #FEC52B;
+    transform: translateX(3px);
+}
+.footer-reference-divider {
+    height: 1px;
+    margin: 52px 0 20px;
+    background: rgba(255, 255, 255, 0.2);
+}
+.footer-reference-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 16px;
+}
+.footer-reference-meta p { margin: 0; }
+.footer-reference-logo {
+    display: block;
+    width: min(950px, 100%);
+    margin: 18px auto -2px;
+    line-height: 0;
+}
+.footer-reference-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 900px) {
+    .footer-reference-top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .footer-reference-intro { grid-column: 1 / -1; }
+    .footer-reference-intro p { max-width: 430px; }
+}
+@media (max-width: 600px) {
+    .footer-reference-layout { width: min(100% - 40px, 480px); padding-top: 48px; }
+    .footer-reference-top { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 24px; }
+    .footer-reference-column h4 { font-size: 20px !important; }
+    .footer-reference-meta { flex-direction: column; gap: 8px; font-size: 14px; }
+    .footer-reference-divider { margin: 38px 0 18px; }
+    .footer-reference-logo { width: 100%; margin-top: 20px; }
+}
+/* Footer logo crop and alignment refinement. */
+.footer-reference-meta { align-items: center; }
+.footer-reference-logo {
+    width: min(1080px, 100%);
+    margin: 26px auto 0;
+}
+/* Footer logo video mask with a static fallback while the footage loads. */
+.footer-reference-logo {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+.footer-reference-logo .footer-logo-fallback {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.footer-reference-logo .footer-logo-video {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    -webkit-mask: url('footer-logo-white.svg') center / 100% 100% no-repeat;
+    mask: url('footer-logo-white.svg') center / 100% 100% no-repeat;
+    -webkit-mask-mode: luminance;
+    mask-mode: luminance;
+}
+/* Once local footage plays, only the masked video remains visible. */
+.footer-reference-logo .footer-logo-fallback {
+    transition: opacity 220ms ease;
+}
+.footer-reference-logo.is-video-playing .footer-logo-fallback {
+    opacity: 0;
+}
+/* Canvas-based logo mask: video pixels are drawn only inside the white SVG shape. */
+.footer-reference-logo .footer-logo-video {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+.footer-reference-logo .footer-logo-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease;
+}
+.footer-reference-logo.is-video-playing .footer-logo-canvas {
+    opacity: 1;
+}
+/* Layered hero information cards float gently in place. */
+.stack-top-right,
+.stack-bottom-left,
+.stack-bottom-right,
+.hero-stack-pill {
+    will-change: transform;
+}
+.stack-top-right { animation: hero-info-float-a 5.4s ease-in-out infinite; }
+.stack-bottom-left { animation: hero-info-float-b 6.1s ease-in-out infinite; }
+.stack-bottom-right { animation: hero-info-float-c 5.8s ease-in-out infinite; }
+.hero-stack-pill { animation: hero-info-float-d 4.9s ease-in-out infinite; }
+
+@keyframes hero-info-float-a {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -10px, 0); }
+}
+@keyframes hero-info-float-b {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(-6px, -8px, 0); }
+}
+@keyframes hero-info-float-c {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(7px, -9px, 0); }
+}
+@keyframes hero-info-float-d {
+    0%, 100% { transform: translate3d(0, 0, 0); }
+    50% { transform: translate3d(0, -7px, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .stack-top-right,
+    .stack-bottom-left,
+    .stack-bottom-right,
+    .hero-stack-pill { animation: none; }
 }

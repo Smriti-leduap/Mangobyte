@@ -367,6 +367,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 pin: processDialLayout,
                 scrub: 1,
                 anticipatePin: 1,
+                onEnter: () => processSection.classList.add('is-dial-revealed'),
+                onEnterBack: () => processSection.classList.add('is-dial-revealed'),
+                onLeaveBack: () => processSection.classList.remove('is-dial-revealed'),
                 onUpdate: self => {
                     const progress = self.progress;
                     // Keep the current content in place until the next
@@ -385,7 +388,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const motionPrevBtn = document.getElementById('motion-prev');
     const motionNextBtn = document.getElementById('motion-next');
 
-    if (motionPin && motionCards.length && window.innerWidth > 768) {
+    // Case-study media: silent autoplaying video layers with local image posters.
+    const caseStudyVideoSources = [
+        'https://www.pexels.com/download/video/7643442/',
+        'https://www.pexels.com/download/video/31867956/',
+        'https://www.pexels.com/download/video/12896412/',
+        'https://www.pexels.com/download/video/8643568/',
+        'https://www.pexels.com/download/video/8731228/',
+        'https://www.pexels.com/download/video/3202364/'
+    ];
+    const caseStudyPosters = ['hero-studio-team.png', 'hero-brand-workshop.png', 'hero_team_photo.jpg'];
+    motionCards.forEach((card, index) => {
+        if (card.querySelector('.motion-card-video')) return;
+        const video = document.createElement('video');
+        video.className = 'motion-card-video';
+        video.src = caseStudyVideoSources[index % caseStudyVideoSources.length];
+        video.poster = caseStudyPosters[index % caseStudyPosters.length];
+        video.autoplay = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.preload = 'metadata';
+        video.setAttribute('aria-hidden', 'true');
+        card.prepend(video);
+    });
+
+    if (false && motionPin && motionCards.length && window.innerWidth > 768) {
         const total = motionCards.length;
         const spread = 15; // degrees between neighboring cards
         const radius = 1000;
@@ -450,7 +478,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Testimonials — infinite vertical center-scroll selector
-    const testiList = null;
+    // Each case-study card enters on scroll along its own alternating curved path.
+    if (motionCards.length && window.innerWidth > 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        motionCards.forEach((card, index) => {
+            const direction = index % 2 === 0 ? -1 : 1;
+            const entrance = gsap.timeline({ paused: true });
+
+            entrance.fromTo(card,
+                { autoAlpha: 0, x: direction * 180, y: 72, rotation: direction * 5 },
+                { autoAlpha: 1, x: direction * 28, y: -18, rotation: direction * 1.4, duration: 0.52, ease: 'power2.out' }
+            ).to(card,
+                { x: 0, y: 0, rotation: 0, duration: 0.48, ease: 'power3.out' }
+            );
+
+            ScrollTrigger.create({
+                trigger: card,
+                start: 'top 88%',
+                once: true,
+                onEnter: () => entrance.play()
+            });
+        });
+    }
+
+    const testiList = document.getElementById('testimonials-list');
     if (testiList) {
         const originals = Array.from(testiList.querySelectorAll('.testimonials-person'));
 
@@ -467,6 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const people = Array.from(testiList.querySelectorAll('.testimonials-person'));
         const testiTitle = document.getElementById('testimonial-title');
         const testiText = document.getElementById('testimonial-text');
+        const testiReadMore = document.getElementById('testimonial-read-more');
         const testiUpBtn = document.getElementById('testi-scroll-up');
         const testiDownBtn = document.getElementById('testi-scroll-down');
 
@@ -498,7 +549,11 @@ document.addEventListener('DOMContentLoaded', () => {
             people.forEach(p => p.classList.toggle('active', p === closest));
             if (closest && testiTitle && testiText) {
                 testiTitle.textContent = closest.dataset.title;
-                testiText.textContent = closest.dataset.text;
+                const fullText = closest.dataset.text || '';
+                const isLongTestimonial = fullText.length > 190;
+                testiText.textContent = isLongTestimonial ? `${fullText.slice(0, 187).trimEnd()}…` : fullText;
+                testiText.dataset.fullText = fullText;
+                if (testiReadMore) testiReadMore.hidden = !isLongTestimonial;
             }
         };
 
@@ -524,6 +579,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 person.scrollIntoView({ behavior: 'smooth', block: 'center' });
             });
         });
+
+        if (testiReadMore) {
+            testiReadMore.addEventListener('click', () => {
+                testiText.textContent = testiText.dataset.fullText || testiText.textContent;
+                testiReadMore.hidden = true;
+            });
+        }
 
         if (testiUpBtn) {
             testiUpBtn.addEventListener('click', () => testiList.scrollBy({ top: -100, behavior: 'smooth' }));
@@ -670,7 +732,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    initInteractiveBars(document.getElementById('site-footer-bars'));
     initInteractiveBars(document.querySelector('.hero-accent-bars'));
 
     // Service card image ring: tiles orbit the main photo on a tilted
@@ -802,6 +863,82 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         requestAnimationFrame(updateHeroServiceOrbit);
+    }
+
+    // Canvas mask: local video frames are composited through the white logo SVG.
+    const footerLogoVideo = document.querySelector('.footer-logo-video');
+    const footerLogoCanvas = document.querySelector('.footer-logo-canvas');
+    if (footerLogoVideo && footerLogoCanvas) {
+        const footerLogo = footerLogoVideo.closest('.footer-reference-logo');
+        const context = footerLogoCanvas.getContext('2d');
+        const logoMask = new Image();
+        let maskReady = false;
+        let isPainting = false;
+        let canvasWidth = 0;
+        let canvasHeight = 0;
+
+        const resizeLogoCanvas = () => {
+            const bounds = footerLogoCanvas.getBoundingClientRect();
+            const width = Math.max(1, Math.round(bounds.width));
+            const height = Math.max(1, Math.round(bounds.height));
+            const scale = Math.min(window.devicePixelRatio || 1, 2);
+            if (width !== canvasWidth || height !== canvasHeight) {
+                canvasWidth = width;
+                canvasHeight = height;
+                footerLogoCanvas.width = width * scale;
+                footerLogoCanvas.height = height * scale;
+                context.setTransform(scale, 0, 0, scale, 0, 0);
+            }
+        };
+
+        const paintLogoVideo = () => {
+            if (!isPainting) return;
+            resizeLogoCanvas();
+            if (footerLogoVideo.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA && maskReady) {
+                const videoWidth = footerLogoVideo.videoWidth || 1;
+                const videoHeight = footerLogoVideo.videoHeight || 1;
+                const scale = Math.max(canvasWidth / videoWidth, canvasHeight / videoHeight);
+                const drawWidth = videoWidth * scale;
+                const drawHeight = videoHeight * scale;
+                context.clearRect(0, 0, canvasWidth, canvasHeight);
+                context.globalCompositeOperation = 'source-over';
+                context.drawImage(footerLogoVideo, (canvasWidth - drawWidth) / 2, (canvasHeight - drawHeight) / 2, drawWidth, drawHeight);
+                context.globalCompositeOperation = 'destination-in';
+                context.drawImage(logoMask, 0, 0, canvasWidth, canvasHeight);
+                context.globalCompositeOperation = 'source-over';
+            }
+            requestAnimationFrame(paintLogoVideo);
+        };
+
+        const beginLogoVideoMask = () => {
+            if (isPainting || !maskReady || footerLogoVideo.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) return;
+            isPainting = true;
+            footerLogo.classList.add('is-video-playing');
+            paintLogoVideo();
+        };
+
+        logoMask.addEventListener('load', () => {
+            maskReady = true;
+            beginLogoVideoMask();
+        });
+        logoMask.src = 'footer-logo-white.svg';
+        footerLogoVideo.loop = true;
+        footerLogoVideo.muted = true;
+        footerLogoVideo.defaultMuted = true;
+        footerLogoVideo.playsInline = true;
+        footerLogoVideo.addEventListener('loadeddata', beginLogoVideoMask);
+        footerLogoVideo.addEventListener('playing', beginLogoVideoMask);
+        footerLogoVideo.addEventListener('ended', () => {
+            footerLogoVideo.currentTime = 0;
+            footerLogoVideo.play().catch(() => {});
+        });
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) footerLogoVideo.play().catch(() => {});
+        });
+        window.addEventListener('resize', resizeLogoCanvas);
+        footerLogoVideo.play().catch(() => {
+            // The static white logo remains visible if autoplay is blocked.
+        });
     }
 
     // 8. Lucide Icons re-init
