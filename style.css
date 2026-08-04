@@ -4777,3 +4777,25 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 .case-studies-section .case-card-ripple-bottom {
     background: #FED7AA;
 }
+/* Default case-study tag and text palette. */
+.case-studies-section .motion-card-tags span {
+    color: #F05A28 !important;
+    border-color: #F05A28 !important;
+    background: transparent !important;
+}
+.case-studies-section .motion-card h1,
+.case-studies-section .motion-card h3,
+.case-studies-section .motion-card p {
+    color: #1F3552 !important;
+}
+/* Case-study default state: orange tags, navy copy. */
+.case-studies-section .motion-card:not(:hover):not(:focus-within) .motion-card-tags span {
+    color: #F05A28 !important;
+    border-color: #F05A28 !important;
+    background: transparent !important;
+}
+.case-studies-section .motion-card:not(:hover):not(:focus-within) h1,
+.case-studies-section .motion-card:not(:hover):not(:focus-within) h3,
+.case-studies-section .motion-card:not(:hover):not(:focus-within) p {
+    color: #1F3552 !important;
+}
