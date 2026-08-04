@@ -45,69 +45,102 @@
     <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
         <nav class="overlay-nav">
             <a href="index.html">Home</a>
-            <a href="index.html#services">Services</a>
+            <div class="overlay-services-item">
+                <a href="index.html#services" class="overlay-services-trigger">Services</a>
+                <div class="overlay-services-panel" aria-label="Services and included deliverables">
+                    <div class="overlay-service-group">
+                        <h3>Branding &amp; Identity</h3>
+                        <ul>
+                            <li>Logo Design</li>
+                            <li>Brand Guidelines</li>
+                            <li>Visual Identity System</li>
+                        </ul>
+                    </div>
+                    <div class="overlay-service-group">
+                        <h3>Website Development</h3>
+                        <ul>
+                            <li>Business Websites</li>
+                            <li>eCommerce Websites</li>
+                            <li>Custom Web Applications</li>
+                            <li>Landing Pages</li>
+                        </ul>
+                    </div>
+                    <div class="overlay-service-group">
+                        <h3>UI/UX Design</h3>
+                        <ul>
+                            <li>Website UI/UX</li>
+                            <li>Mobile App UI/UX</li>
+                            <li>Wireframing</li>
+                            <li>Prototyping</li>
+                        </ul>
+                    </div>
+                    <div class="overlay-service-group">
+                        <h3>Digital Marketing</h3>
+                        <ul>
+                            <li>Social Media Marketing (SMM)</li>
+                            <li>Content Creation</li>
+                            <li>Email Marketing</li>
+                            <li>Paid Advertising
+                                <ul>
+                                    <li>Meta Ads</li>
+                                    <li>Google Ads</li>
+                                </ul>
+                            </li>
+                            <li>Influencer Marketing</li>
+                        </ul>
+                    </div>
+                    <div class="overlay-service-group">
+                        <h3>Search Engine Optimization</h3>
+                        <ul>
+                            <li>Technical SEO Audit</li>
+                            <li>On-Page SEO</li>
+                            <li>Off-Page SEO</li>
+                            <li>Local SEO</li>
+                            <li>SEO Content Strategy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <a href="index.html#portfolio">Work</a>
             <a href="contact.html">Contact Us</a>
         </nav>
     </div>
 
     <!-- 2. HERO SECTION -->
-    <section class="hero grid-interactive">
-        <div class="interactive-grid-layer" aria-hidden="true"></div>
-        <div class="container">
-            <div class="hero-grid">
+    <section class="hero hero-cinematic" aria-labelledby="hero-heading">
+        <video class="hero-cinematic-media" autoplay muted loop playsinline preload="metadata" aria-label="Mangobyte team and studio showreel">
+            <source src="Corporate Video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-cinematic-shade" aria-hidden="true"></div>
 
-                <!-- LEFT: Copy -->
-                <div class="hero-left">
+        <div class="container hero-cinematic-inner">
+            <div class="hero-cinematic-copy">
+                <h1 id="hero-heading"><span>Driving Brands Forward</span><br><em>with Digital Marketing.</em></h1>
+                <p class="hero-cinematic-lede">Powerful growth doesn't have to break the bank or take forever. We help businesses drive revenue, generate leads, and build brands that stick.</p>
 
-                    <h1 class="hero-title">
-                        Turn Growth Into<br>
-                        <span class="title-accent">Conversions.</span>
-                    </h1>
+                <div class="hero-cinematic-actions">
+                    <a href="contact.html" class="hero-cinematic-primary">Start Now <i data-lucide="arrow-up-right"></i></a>
+                    <a href="contact.html" class="hero-cinematic-link">Learn more <i data-lucide="arrow-up-right"></i></a>
 
-                    <p class="hero-sub">
-                        Powerful growth doesn't have to break the bank or take forever.
-                        We help businesses drive revenue, generate leads, and build brands that stick.
-                    </p>
-
-                    <div class="hero-btns">
-                        <a href="contact.html" class="btn btn-primary">Start Now <i data-lucide="arrow-up-right"></i></a>
-                        <a href="contact.html" class="btn btn-outline">Learn more <i data-lucide="arrow-up-right"></i></a>
-                    </div>
-
-                    <!-- Powered by -->
-                    <div class="hero-powered-by">
-                        <span class="powered-by-label">Powered by</span>
-                        <div class="powered-by-logos">
-                            <span>CloudBeds</span>
-                            <span>GoSite</span>
-                            <span>Inscripta</span>
-                            <span>Nadel.com</span>
+                    <div class="hero-cinematic-powered" aria-label="Powered by trusted platforms">
+                        <span class="hero-cinematic-powered-label">Trusted by</span>
+                        <div class="hero-logo-portal">
+                            <div class="hero-logo-track">
+                                <div class="hero-logo-sequence">
+                                    <span>CloudBeds</span>
+                                    <span>GoSite</span>
+                                    <span>Inscripta</span>
+                                    <span>Nadel.com</span>
+                                </div>
+                                <div class="hero-logo-sequence" aria-hidden="true">
+                                    <span>CloudBeds</span>
+                                    <span>GoSite</span>
+                                    <span>Inscripta</span>
+                                    <span>Nadel.com</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- RIGHT: layered image stack -->
-                <div class="hero-right hero-growth-collage" aria-label="Mangobyte team image collage">
-                    <figure class="hero-stack-image stack-back-left"><img src="hero-studio-team.png" alt=""></figure>
-                    <figure class="hero-stack-image stack-middle-left"><img src="hero-brand-workshop.png" alt=""></figure>
-                    <figure class="hero-stack-image stack-main"><img src="hero_team_photo.jpg" alt="Mangobyte team collaborating"></figure>
-                    <div class="hero-stack-copy stack-top-right">
-                        <span class="hero-stack-eyebrow">Growth snapshot</span>
-                        <strong>Build a brand that moves.</strong>
-                        <div class="hero-stack-skeleton" aria-hidden="true"><i></i><i></i><i></i></div>
-                        <p class="hero-stack-welcome" aria-live="polite">Welcome to Mangobyte, how can we help you?</p>
-                        <a href="contact.html" class="hero-stack-button" aria-label="Explore Mangobyte services"><i data-lucide="arrow-up-right"></i></a>
-                    </div>
-                    <div class="hero-stack-copy stack-bottom-left">
-                        <strong>Strategy first.</strong>
-                        <span>Clear direction before execution.</span>
-                    </div>
-                    <div class="hero-stack-copy stack-bottom-right">
-                        <strong>Made to convert.</strong>
-                        <span>Branding, web, and growth.</span>
-                    </div>
-                    <a href="contact.html" class="hero-stack-pill">50+ clients</a>
                 </div>
             </div>
         </div>
