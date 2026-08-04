@@ -129,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (menuOverlay) {
             menuOverlay.classList.remove('active');
             menuOverlay.setAttribute('aria-hidden', 'true');
+            const expandedServices = menuOverlay.querySelector('.overlay-services-item.is-open');
+            if (expandedServices) expandedServices.classList.remove('is-open');
         }
         lenis.start();
     }
@@ -151,7 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuOverlay) {
         const overlayLinks = menuOverlay.querySelectorAll('.overlay-nav a');
         overlayLinks.forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', event => {
+                const servicesItem = link.closest('.overlay-services-item');
+                const usesTouchMenu = window.matchMedia('(max-width: 800px), (pointer: coarse)').matches;
+                if (servicesItem && usesTouchMenu && !servicesItem.classList.contains('is-open')) {
+                    event.preventDefault();
+                    servicesItem.classList.add('is-open');
+                    return;
+                }
                 closeMenu();
             });
         });
