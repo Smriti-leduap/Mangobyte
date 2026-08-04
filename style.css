@@ -5029,6 +5029,43 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 
 .hero-cinematic-powered { position: relative; top: 68px; isolation: isolate; }
 
+.hero-google-rating {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    white-space: nowrap;
+}
+
+.hero-google-mark {
+    display: block;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.hero-google-rating strong {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.hero-google-rating .hero-google-stars {
+    margin: 0;
+    color: var(--brand-orange);
+    gap: 3px;
+}
+
+.hero-google-rating .hero-google-stars svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--brand-orange);
+    stroke: var(--brand-orange);
+}
+
 .hero-cinematic-powered-label { white-space: nowrap; }
 
 .hero-logo-portal {
@@ -5626,6 +5663,22 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 
 #faq .faq-question:hover {
     color: var(--text-primary);
+}
+
+#faq .faq-icon {
+    box-sizing: content-box;
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    padding: 6px;
+    border-radius: 50%;
+    background: #1F3552;
+    color: #fff;
+}
+
+#faq .faq-item.active .faq-icon {
+    background: #1F3552;
+    color: #fff;
 }
 
 #faq > .container {
