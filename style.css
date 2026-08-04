@@ -4799,3 +4799,53 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 .case-studies-section .motion-card:not(:hover):not(:focus-within) p {
     color: #1F3552 !important;
 }
+/* Process dial line uses the same orange-to-navy service gradient. */
+@media (min-width: 769px) {
+    .process-dial-wheel {
+        border: 0;
+        border-radius: 50%;
+        background: linear-gradient(to bottom, var(--brand-orange), var(--brand-green));
+        padding: 1px;
+    }
+    .process-dial-wheel::after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        inset: 1px;
+        border-radius: 50%;
+        background: var(--bg-secondary);
+        pointer-events: none;
+    }
+    .process-dial-number { z-index: 1; }
+}
+@media (max-width: 768px) {
+    .process-dial-scene { border-bottom: 0; }
+    .process-dial-scene::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background: linear-gradient(to right, var(--brand-orange), var(--brand-green));
+    }
+}
+/* Preserve rounded case-study corners during all hover layers. */
+.case-studies-section .motion-card,
+.case-studies-section .motion-card:hover,
+.case-studies-section .motion-card:focus-within {
+    border-radius: 14px;
+}
+.case-studies-section .motion-card > .case-card-geometry,
+.case-studies-section .motion-card > .case-card-radial-layer {
+    border-radius: inherit;
+    overflow: hidden;
+}
+/* Full-screen menu option size. */
+.overlay-nav a {
+    font-size: 40px !important;
+}
+/* Hero conversion word uses upright type. */
+.hero-title .title-accent {
+    font-style: normal;
+}
