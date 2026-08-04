@@ -5152,7 +5152,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     display: flex;
     align-items: center;
     flex: 0 0 auto;
-    width: 420px;
+    width: 630px;
     gap: 0;
     padding-right: 0;
 }
@@ -5160,12 +5160,23 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 .hero-logo-sequence span {
     flex: 0 0 105px;
     width: 105px;
+    box-sizing: border-box;
+    padding: 0 12px;
     color: rgba(255,255,255,.84);
     font-size: 16px;
     font-weight: 700;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
+}
+
+.hero-logo-sequence img {
+    display: block;
+    width: auto;
+    max-width: 82px;
+    height: auto;
+    max-height: 28px;
+    object-fit: contain;
 }
 
 @keyframes hero-logo-marquee {
@@ -5337,8 +5348,8 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     .hero-cinematic-primary { min-height: 54px; }
     .hero-cinematic-powered { align-items: center; flex-direction: row; gap: .8rem; margin-top: 0; }
     .hero-logo-portal { width: 240px; max-width: 100%; }
-    .hero-logo-sequence { width: 320px; }
-    .hero-logo-sequence span { flex-basis: 80px; width: 80px; font-size: 14px; }
+    .hero-logo-sequence { width: 480px; }
+    .hero-logo-sequence span { flex-basis: 80px; width: 80px; padding-inline: 8px; font-size: 14px; }
     .hero-cinematic-meta { font-size: 14px; }
     .hero-cinematic-meta span:last-child { display: none; }
 }
