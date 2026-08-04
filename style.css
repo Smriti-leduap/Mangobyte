@@ -1537,6 +1537,23 @@ body.light-theme .trusted-logo-item {
     background: rgba(var(--accent-rgb),0.05);
 }
 
+.trusted-logo-item img {
+    display: block;
+    width: auto;
+    max-width: 125px;
+    height: auto;
+    max-height: 36px;
+    object-fit: contain;
+}
+
+.trusted-logo-item img[src="logos/your generation care.svg"] {
+    width: 92px;
+    height: 35px;
+    max-width: 92px;
+    max-height: 35px;
+    transform: translateX(-10px);
+}
+
 @keyframes scroll-ltr {
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0); }
