@@ -6026,6 +6026,18 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     .case-studies-section .motion-card > .motion-card-action {
         right: 10px !important;
         bottom: 10px !important;
+        width: 48px;
+        height: 48px;
+        border: 0;
+        background: var(--brand-orange) !important;
+        color: #fff !important;
+    }
+    .case-studies-section .motion-card > .motion-card-action svg {
+        width: 18px;
+        height: 18px;
+    }
+    .case-studies-section .motion-card::before {
+        display: none;
     }
 }
 
