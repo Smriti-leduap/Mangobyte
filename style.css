@@ -5101,6 +5101,13 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     stroke: var(--brand-orange);
 }
 
+.testimonials-detail-stars svg,
+.testimonial-card-stars svg {
+    fill: var(--brand-orange);
+    stroke: var(--brand-orange);
+    color: var(--brand-orange);
+}
+
 .hero-cinematic-powered-label { white-space: nowrap; }
 
 .hero-logo-portal {
