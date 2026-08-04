@@ -1775,6 +1775,62 @@ body.light-theme .service-card-stack {
     .footer-reference-top { grid-template-columns: 1fr; }
     .footer-reference-intro { grid-column: auto; }
     .footer-reference-meta { align-items: flex-start; text-align: left; }
+
+    .process-dial-heading,
+    .case-studies-heading-row,
+    .trusted-section > .container,
+    #faq > .container > div:first-child {
+        padding-right: 96px;
+    }
+
+    .case-studies-section .motion-arc-track {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        width: calc(100% - 24px) !important;
+        max-width: 380px;
+        gap: 20px;
+        padding: 0 !important;
+    }
+    .case-studies-section .motion-card {
+        width: 100% !important;
+        max-width: none;
+        min-width: 0;
+        height: auto;
+        min-height: 410px;
+        margin: 0 !important;
+        padding: 1rem;
+        overflow: hidden;
+    }
+    .case-studies-section .motion-card h1 {
+        max-width: calc(100% - 54px);
+        font-size: 32px !important;
+        line-height: 1.05;
+        overflow-wrap: anywhere;
+    }
+    .case-studies-section .motion-card-tags { flex-wrap: wrap; }
+    .case-studies-section .motion-card > .motion-card-action {
+        right: 10px !important;
+        bottom: 10px !important;
+    }
+    .case-studies-section .motion-card-video {
+        width: 100%;
+        height: 210px;
+        flex-basis: 210px;
+    }
+
+    .process-dial-content {
+        width: 100%;
+        min-height: 500px;
+        padding-inline: 12px;
+    }
+    .process-dial-panel {
+        right: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem;
+        box-sizing: border-box;
+    }
 }
 
 /* PROCESS SECTION ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â scroll-driven dial */
