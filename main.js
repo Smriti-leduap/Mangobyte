@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Split the FAQ into independent columns so one open answer does not
+    // displace questions in the opposite column.
+    const faqContainer = document.querySelector('#faq .faq-container');
+    if (faqContainer && !faqContainer.querySelector('.faq-column')) {
+        const faqEntries = Array.from(faqContainer.querySelectorAll(':scope > .faq-item'));
+        const leftFaqColumn = document.createElement('div');
+        const rightFaqColumn = document.createElement('div');
+        leftFaqColumn.className = 'faq-column';
+        rightFaqColumn.className = 'faq-column';
+        leftFaqColumn.append(...faqEntries.slice(0, 6));
+        rightFaqColumn.append(...faqEntries.slice(6));
+        faqContainer.append(leftFaqColumn, rightFaqColumn);
+    }
     // 0. Opening preloader — simple timed intro before the page reveals
     const preloader = document.getElementById('preloader');
     if (preloader) {
