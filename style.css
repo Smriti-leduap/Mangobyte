@@ -4953,6 +4953,40 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     font-size: 48px;
 }
 
+.hero-cinematic h1 .hero-headline-static {
+    display: block;
+    font-size: 48px;
+}
+
+.hero-cinematic h1 .hero-word-reel {
+    position: relative;
+    display: block;
+    height: 1.5em;
+    overflow: hidden;
+    color: var(--brand-orange);
+    font-family: 'Baskervville', Georgia, serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.hero-word-track {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    transition: transform 800ms linear;
+}
+
+.hero-word-track > span {
+    display: flex;
+    align-items: center;
+    flex: 0 0 1.5em;
+    height: 1.5em;
+    white-space: nowrap;
+}
+
 .hero-cinematic-lede {
     max-width: 610px;
     margin: 2rem 0 0;

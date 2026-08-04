@@ -1,4 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Premium hero headline reel: the duplicated final slide allows the reel
+    // to reset to its first position without a visible reverse jump.
+    const heroWordTrack = document.querySelector('.hero-word-track');
+    if (heroWordTrack) {
+        const heroWordSlides = Array.from(heroWordTrack.children);
+        const uniqueWordCount = Math.max(0, heroWordSlides.length - 1);
+        let heroWordIndex = 0;
+        const transitionDuration = 800;
+        const pauseDuration = 2400;
+
+        const advanceHeroWord = () => {
+            heroWordIndex += 1;
+            heroWordTrack.style.transform = `translate3d(0, -${heroWordIndex * 1.5}em, 0)`;
+
+            if (heroWordIndex === uniqueWordCount) {
+                window.setTimeout(() => {
+                    heroWordTrack.style.transition = 'none';
+                    heroWordIndex = 0;
+                    heroWordTrack.style.transform = 'translate3d(0, 0, 0)';
+                    void heroWordTrack.offsetHeight;
+                    heroWordTrack.style.transition = `transform ${transitionDuration}ms linear`;
+                }, transitionDuration);
+            }
+        };
+
+        window.setInterval(advanceHeroWord, transitionDuration + pauseDuration);
+    }
+
     // Split the FAQ into independent columns so one open answer does not
     // displace questions in the opposite column.
     const faqContainer = document.querySelector('#faq .faq-container');
