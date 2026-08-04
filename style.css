@@ -4324,3 +4324,456 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     background: #FFFFFF !important;
     color: #F05A28 !important;
 }
+/* B2B case-study hover variation. */
+.case-studies-section .motion-card:nth-child(2):hover,
+.case-studies-section .motion-card:nth-child(2):focus-within {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(2):hover h1,
+.case-studies-section .motion-card:nth-child(2):hover h3,
+.case-studies-section .motion-card:nth-child(2):hover p,
+.case-studies-section .motion-card:nth-child(2):focus-within h1,
+.case-studies-section .motion-card:nth-child(2):focus-within h3,
+.case-studies-section .motion-card:nth-child(2):focus-within p {
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:nth-child(2):hover .motion-card-tags span,
+.case-studies-section .motion-card:nth-child(2):focus-within .motion-card-tags span {
+    color: #F05A28 !important;
+    border-color: #F05A28 !important;
+}
+/* Keep B2B action button unchanged on card hover. */
+.case-studies-section .motion-card:nth-child(2):hover .motion-card-action,
+.case-studies-section .motion-card:nth-child(2):focus-within .motion-card-action {
+    background: #F05A28 !important;
+    color: #FFFFFF !important;
+}
+/* Unified case-study card colours. */
+.case-studies-section .motion-card,
+.case-studies-section .motion-card:nth-child(n) {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
+.case-studies-section .motion-card h1,
+.case-studies-section .motion-card h3,
+.case-studies-section .motion-card p,
+.case-studies-section .motion-card:nth-child(n) h1 {
+    color: #000000 !important;
+}
+.case-studies-section .motion-card-tags span,
+.case-studies-section .motion-card:nth-child(n) .motion-card-tags span {
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+.case-studies-section .motion-card:hover,
+.case-studies-section .motion-card:focus-within {
+    background: #F05A28 !important;
+}
+.case-studies-section .motion-card:hover h1,
+.case-studies-section .motion-card:hover h3,
+.case-studies-section .motion-card:hover p,
+.case-studies-section .motion-card:focus-within h1,
+.case-studies-section .motion-card:focus-within h3,
+.case-studies-section .motion-card:focus-within p,
+.case-studies-section .motion-card:hover .motion-card-tags span,
+.case-studies-section .motion-card:focus-within .motion-card-tags span {
+    color: #1F3552 !important;
+}
+.case-studies-section .motion-card:hover .motion-card-tags span,
+.case-studies-section .motion-card:focus-within .motion-card-tags span {
+    border-color: #1F3552 !important;
+}
+/* Case-study card default and hover palette. */
+.case-studies-section .motion-card,
+.case-studies-section .motion-card:nth-child(n) {
+    background: #FFFFFF !important;
+    color: #1F3552 !important;
+}
+.case-studies-section .motion-card h1,
+.case-studies-section .motion-card h3,
+.case-studies-section .motion-card p,
+.case-studies-section .motion-card:nth-child(n) h1 {
+    color: #1F3552 !important;
+}
+.case-studies-section .motion-card-tags span,
+.case-studies-section .motion-card:nth-child(n) .motion-card-tags span {
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+.case-studies-section .motion-card:hover,
+.case-studies-section .motion-card:focus-within {
+    background: #FFFFFF !important;
+}
+.case-studies-section .motion-card:hover h1,
+.case-studies-section .motion-card:hover h3,
+.case-studies-section .motion-card:hover p,
+.case-studies-section .motion-card:focus-within h1,
+.case-studies-section .motion-card:focus-within h3,
+.case-studies-section .motion-card:focus-within p {
+    color: #F05A28 !important;
+}
+.case-studies-section .motion-card:hover .motion-card-tags span,
+.case-studies-section .motion-card:focus-within .motion-card-tags span {
+    color: #F05A28 !important;
+    border-color: #F05A28 !important;
+}
+/* Geometric detail inside case-study cards. */
+.case-studies-section .motion-card {
+    isolation: isolate;
+}
+.case-studies-section .case-card-geometry {
+    position: absolute;
+    z-index: 1;
+    right: 24px;
+    bottom: 24px;
+    width: 120px;
+    height: 92px;
+    pointer-events: none;
+}
+.case-studies-section .case-card-circle {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #F05A28;
+}
+.case-studies-section .case-card-triangle {
+    position: absolute;
+    right: 49px;
+    bottom: 16px;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-right: 38px solid #F9A46E;
+}
+.case-studies-section .motion-card > :not(.case-card-geometry) {
+    position: relative;
+    z-index: 2;
+}
+.case-studies-section .motion-card > .motion-card-action { z-index: 4; }
+@media (max-width: 768px) {
+    .case-studies-section .case-card-geometry {
+        right: 18px;
+        bottom: 18px;
+        transform: scale(.84);
+        transform-origin: bottom right;
+    }
+}
+/* Case-study geometric wedge: follows the marked right-side diagonal. */
+.case-studies-section .case-card-geometry {
+    inset: 0;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+.case-studies-section .case-card-circle {
+    right: 18px;
+    bottom: 18px;
+    width: 74px;
+    height: 74px;
+    background: #F05A28;
+}
+.case-studies-section .case-card-triangle {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: #F9A46E;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+@media (max-width: 768px) {
+    .case-studies-section .case-card-geometry { transform: none; }
+    .case-studies-section .case-card-circle { right: 16px; bottom: 16px; width: 62px; height: 62px; }
+}
+.case-studies-section .case-card-circle { z-index: 1; }
+.case-studies-section .case-card-triangle { z-index: 0; }
+/* Preserve the original case-study action button placement. */
+.case-studies-section .motion-card > .motion-card-action {
+    position: absolute !important;
+    right: -8px !important;
+    bottom: 0 !important;
+    left: auto !important;
+    top: auto !important;
+}
+@media (max-width: 768px) {
+    .case-studies-section .motion-card > .motion-card-action { right: -6px !important; }
+}
+/* Case-card geometric hover motion. */
+.case-studies-section .case-card-circle,
+.case-studies-section .case-card-triangle {
+    will-change: transform, opacity;
+}
+.case-studies-section .case-card-circle {
+    transition: transform 520ms cubic-bezier(.16, 1, .3, 1), opacity 260ms ease;
+}
+.case-studies-section .case-card-triangle {
+    transition: transform 640ms cubic-bezier(.16, 1, .3, 1), opacity 260ms ease;
+}
+.case-studies-section .motion-card:hover .case-card-circle,
+.case-studies-section .motion-card:focus-within .case-card-circle {
+    transform: translate(-15px, -17px) scale(1.1);
+}
+.case-studies-section .motion-card:hover .case-card-triangle,
+.case-studies-section .motion-card:focus-within .case-card-triangle {
+    transform: translateX(-28px) scaleX(1.08);
+    transform-origin: right bottom;
+}
+@media (prefers-reduced-motion: reduce) {
+    .case-studies-section .case-card-circle,
+    .case-studies-section .case-card-triangle { transition: none; }
+}
+/* Orange rotating frame on case-study card hover. */
+.case-studies-section .case-card-hover-frame {
+    position: absolute;
+    z-index: 1;
+    inset: 13px;
+    display: block;
+    border: 3px solid #F05A28;
+    border-radius: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transform: rotate(-8deg) scale(.82);
+    transition: transform 620ms cubic-bezier(.16, 1, .3, 1), opacity 220ms ease;
+}
+.case-studies-section .motion-card:hover .case-card-hover-frame,
+.case-studies-section .motion-card:focus-within .case-card-hover-frame {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.case-studies-section .motion-card:hover .case-card-circle,
+.case-studies-section .motion-card:focus-within .case-card-circle,
+.case-studies-section .motion-card:hover .case-card-triangle,
+.case-studies-section .motion-card:focus-within .case-card-triangle {
+    transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    .case-studies-section .case-card-hover-frame { transition: none; }
+}.case-studies-section .motion-card > .case-card-hover-frame {
+    position: absolute !important;
+    z-index: 1 !important;
+}
+/* Bottom-right radial fill for case-study cards. */
+.case-studies-section .motion-card > .case-card-radial-layer {
+    position: absolute !important;
+    z-index: 1 !important;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+.case-studies-section .case-card-radial-layer span {
+    position: absolute;
+    right: -8px;
+    bottom: 0;
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    background: #F05A28;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 500ms ease-in-out;
+    will-change: transform;
+}
+.case-studies-section .motion-card:hover .case-card-radial-layer span,
+.case-studies-section .motion-card:focus-within .case-card-radial-layer span {
+    transform: scale(16);
+}
+.case-studies-section .motion-card:hover h1,
+.case-studies-section .motion-card:hover h3,
+.case-studies-section .motion-card:hover p,
+.case-studies-section .motion-card:focus-within h1,
+.case-studies-section .motion-card:focus-within h3,
+.case-studies-section .motion-card:focus-within p {
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:hover .motion-card-tags span,
+.case-studies-section .motion-card:focus-within .motion-card-tags span {
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
+@media (prefers-reduced-motion: reduce) {
+    .case-studies-section .case-card-radial-layer span { transition: none; }
+}
+/* Keep the B2B case-study card consistent with every other card. */
+.case-studies-section .motion-card:nth-child(2):hover,
+.case-studies-section .motion-card:nth-child(2):focus-within {
+    background: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(2):hover h1,
+.case-studies-section .motion-card:nth-child(2):hover h3,
+.case-studies-section .motion-card:nth-child(2):hover p,
+.case-studies-section .motion-card:nth-child(2):focus-within h1,
+.case-studies-section .motion-card:nth-child(2):focus-within h3,
+.case-studies-section .motion-card:nth-child(2):focus-within p {
+    color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(2):hover .motion-card-tags span,
+.case-studies-section .motion-card:nth-child(2):focus-within .motion-card-tags span {
+    color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
+.case-studies-section .motion-card:nth-child(2):hover .motion-card-action,
+.case-studies-section .motion-card:nth-child(2):focus-within .motion-card-action {
+    background: #FFFFFF !important;
+    color: #F05A28 !important;
+}
+/* Premium dual-ripple case-study hover fill. */
+.case-studies-section .case-card-radial-layer span {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform;
+    transition: transform 600ms ease-in-out;
+}
+.case-studies-section .case-card-ripple-bottom {
+    right: -8px;
+    bottom: 0;
+    width: 78px;
+    height: 78px;
+    background: #F05A28;
+    transform: scale(0);
+    transform-origin: center;
+}
+.case-studies-section .case-card-ripple-top {
+    top: -36px;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    background: #FF7E53;
+    transform: translateX(-50%) scale(0);
+    transform-origin: center;
+}
+.case-studies-section .motion-card:hover .case-card-ripple-bottom,
+.case-studies-section .motion-card:focus-within .case-card-ripple-bottom {
+    transform: scale(16);
+}
+.case-studies-section .motion-card:hover .case-card-ripple-top,
+.case-studies-section .motion-card:focus-within .case-card-ripple-top {
+    transform: translateX(-50%) scale(15);
+}
+@media (prefers-reduced-motion: reduce) {
+    .case-studies-section .case-card-radial-layer span { transition: none; }
+}.case-studies-section .case-card-ripple-bottom {
+    top: auto;
+    left: auto;
+    z-index: 1;
+}
+.case-studies-section .case-card-ripple-top {
+    right: auto;
+    bottom: auto;
+    z-index: 2;
+}
+/* Lighter upper wave for the dual-ripple hover effect. */
+.case-studies-section .case-card-ripple-top {
+    background: #FFC1AB;
+}
+/* Converging dual-blob case-study hover effect. */
+.case-studies-section .case-card-ripple-bottom {
+    background: #F97316;
+    border-radius: 58% 42% 48% 52% / 54% 40% 60% 46%;
+}
+.case-studies-section .case-card-ripple-top {
+    background: #FED7AA;
+    border-radius: 46% 54% 58% 42% / 52% 58% 42% 48%;
+}
+.case-studies-section .motion-card:hover .case-card-ripple-bottom,
+.case-studies-section .motion-card:focus-within .case-card-ripple-bottom {
+    transform: scale(5.5);
+}
+.case-studies-section .motion-card:hover .case-card-ripple-top,
+.case-studies-section .motion-card:focus-within .case-card-ripple-top {
+    transform: translateX(-50%) scale(5.5);
+}
+/* Case-study card geometry matching the supplied layout. */
+.case-studies-section .case-card-geometry {
+    inset: 0;
+    width: auto;
+    height: auto;
+    right: auto;
+    bottom: auto;
+    overflow: hidden;
+}
+.case-studies-section .case-card-circle {
+    right: -64px;
+    bottom: -64px;
+    width: 180px;
+    height: 180px;
+    background: #F97316;
+    border-radius: 50%;
+}
+.case-studies-section .case-card-triangle {
+    top: 0;
+    left: 31%;
+    right: auto;
+    bottom: auto;
+    width: 53%;
+    height: 20px;
+    border: 0;
+    border-radius: 0 0 8px 8px;
+    background: #F97316;
+    clip-path: none;
+}
+.case-studies-section .motion-card:hover .case-card-circle,
+.case-studies-section .motion-card:focus-within .case-card-circle,
+.case-studies-section .motion-card:hover .case-card-triangle,
+.case-studies-section .motion-card:focus-within .case-card-triangle {
+    transform: none;
+}
+@media (max-width: 768px) {
+    .case-studies-section .case-card-circle {
+        right: -52px;
+        bottom: -52px;
+        width: 152px;
+        height: 152px;
+    }
+    .case-studies-section .case-card-triangle { height: 16px; }
+}
+/* Light-orange top tab, distinct from the darker lower arc. */
+.case-studies-section .case-card-triangle {
+    background: #FED7AA;
+}
+/* Explicit case-study dual-blob layer order. */
+.case-studies-section .motion-card > .motion-card-video,
+.case-studies-section .motion-card > img,
+.case-studies-section .motion-card > picture {
+    position: relative !important;
+    z-index: 0 !important;
+}
+.case-studies-section .motion-card > .case-card-radial-layer {
+    z-index: 1 !important;
+}
+.case-studies-section .case-card-ripple-bottom { z-index: 1; }
+.case-studies-section .case-card-ripple-top {
+    z-index: 2;
+    background: #FED7AA;
+}
+.case-studies-section .motion-card > .motion-card-tags,
+.case-studies-section .motion-card > h1,
+.case-studies-section .motion-card > h3,
+.case-studies-section .motion-card > p {
+    position: relative !important;
+    z-index: 3 !important;
+}
+.case-studies-section .motion-card > .motion-card-action { z-index: 4 !important; }
+/* Keep case-study media in front of the animated blobs. */
+.case-studies-section .motion-card > .motion-card-video,
+.case-studies-section .motion-card > img,
+.case-studies-section .motion-card > picture {
+    z-index: 2 !important;
+}
+/* Unified light-orange dual-blob colors. */
+.case-studies-section .case-card-ripple-top,
+.case-studies-section .case-card-ripple-bottom {
+    background: #FED7AA;
+}
