@@ -154,13 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const overlayLinks = menuOverlay.querySelectorAll('.overlay-nav a');
         overlayLinks.forEach(link => {
             link.addEventListener('click', event => {
-                const servicesItem = link.closest('.overlay-services-item');
-                const usesTouchMenu = window.matchMedia('(max-width: 800px), (pointer: coarse)').matches;
-                if (servicesItem && usesTouchMenu && !servicesItem.classList.contains('is-open')) {
-                    event.preventDefault();
-                    servicesItem.classList.add('is-open');
-                    return;
-                }
                 closeMenu();
             });
         });
@@ -971,7 +964,8 @@ document.addEventListener('DOMContentLoaded', () => {
             maskReady = true;
             beginLogoVideoMask();
         });
-        logoMask.src = 'footer-logo-white.svg';
+        const footerLogoFallback = footerLogo.querySelector('.footer-logo-fallback');
+        logoMask.src = footerLogoFallback?.currentSrc || footerLogoFallback?.src || 'footer-logo-white.svg';
         footerLogoVideo.loop = true;
         footerLogoVideo.muted = true;
         footerLogoVideo.defaultMuted = true;
