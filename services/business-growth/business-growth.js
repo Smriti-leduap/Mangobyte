@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const heading = document.querySelector('#growth-heading');
+    const staticLine = heading?.querySelector('.hero-headline-static');
+    const rotatingLine = heading?.querySelector('.hero-headline-rotating-line');
+
+    const alignThroughWithTransforming = () => {
+        if (!heading || !staticLine || !rotatingLine) return;
+        const offset = Math.max(0, staticLine.getBoundingClientRect().left - heading.getBoundingClientRect().left) + 200;
+        rotatingLine.style.setProperty('--growth-through-offset', `${offset}px`);
+    };
+
+    document.fonts?.ready.then(alignThroughWithTransforming);
+    window.addEventListener('resize', alignThroughWithTransforming);
+    alignThroughWithTransforming();
+
     const hero = document.querySelector('.growth-detail-hero');
     const trail = hero?.querySelector('.growth-image-trail');
     if (!hero || !trail || !window.matchMedia('(pointer: fine)').matches) return;
