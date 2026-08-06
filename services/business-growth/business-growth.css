@@ -22,15 +22,19 @@
     padding-bottom: 4rem;
 }
 .growth-detail-hero .hero-cinematic-copy { width: min(100%, 900px); max-width: 900px; margin-inline: auto; justify-self: center; text-align: center; transform: translateY(-56px); }
-.growth-detail-hero .hero-cinematic-copy h1 { max-width: 900px; margin-inline: auto; }
+.growth-detail-hero .hero-cinematic-copy h1 { width: 100%; max-width: 900px; margin-inline: auto; text-align: center; }
 .growth-detail-hero .hero-headline-rotating-line {
-    width: fit-content;
+    position: static;
+    width: 100%;
     max-width: 100%;
     margin-inline: auto;
     justify-content: center;
+    transform: none;
 }
-.growth-detail-hero .hero-word-reel { flex: 0 0 570px; max-width: 70vw; text-align: center; }
+.growth-detail-hero .hero-headline-with { display: none; }
+.growth-detail-hero .hero-word-reel { flex: 0 0 100%; width: 100%; max-width: 100%; text-align: center; }
 .growth-detail-hero .hero-word-track > span { justify-content: center; }
+.growth-detail-hero .hero-word-track > span::before { content: "Through"; margin-right: .28em; color: #fff; }
 .growth-detail-hero .hero-cinematic-lede { margin-inline: auto; }
 .growth-detail-hero .hero-cinematic-actions { position: relative; align-items: center; justify-content: flex-start; }
 .growth-hero-buttons { position: absolute; left: 50%; display: flex; align-items: center; gap: 1rem; transform: translateX(-50%); }
