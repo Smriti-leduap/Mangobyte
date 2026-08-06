@@ -56,20 +56,19 @@
 .growth-overview-lead { color: var(--brand-green); font-family: 'Baskervville', serif; font-size: 18px; line-height: 1.25; }
 .growth-overview-grid > div { display: grid; gap: 1.5rem; color: var(--text-secondary); font-size: var(--text-lg); }
 .growth-stats {
-    background-color: #fff;
-    background-image: radial-gradient(rgba(31,53,82,.058) .5px, transparent .5px);
-    background-size: 5px 5px;
-    border-color: rgba(31,53,82,.1);
+    background-color: var(--brand-green);
+    background-image: none;
+    border-color: rgba(255,255,255,.18);
 }
 .growth-stats .stat-item { overflow: hidden; }
 .growth-stats .growth-counter {
-    color: var(--brand-green);
+    color: #fff;
     background: none;
-    -webkit-text-fill-color: var(--brand-green);
+    -webkit-text-fill-color: #fff;
     font-variant-numeric: tabular-nums;
     will-change: transform, opacity;
 }
-.growth-stats .stat-item p { max-width: 230px; margin-inline: auto; color: var(--brand-green); }
+.growth-stats .stat-item p { max-width: 230px; margin-inline: auto; color: rgba(255,255,255,.78); }
 .growth-capabilities .service-block:nth-child(n) { top: 90px; }
 .growth-capabilities .service-block-img {
     overflow: hidden;
