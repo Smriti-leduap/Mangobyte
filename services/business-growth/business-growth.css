@@ -40,8 +40,8 @@
 .growth-detail-hero h1 .hero-word-reel { width: 100%; max-width: 440px; text-align: left; }
 .growth-detail-hero .hero-word-track > span { justify-content: flex-start; }
 .growth-detail-hero .hero-cinematic-lede { margin-inline: auto; }
-.growth-detail-hero .hero-cinematic-actions { position: relative; align-items: center; justify-content: flex-start; }
-.growth-hero-buttons { position: absolute; left: 50%; display: flex; align-items: center; gap: 1rem; transform: translateX(-50%); }
+.growth-detail-hero .hero-cinematic-actions { position: relative; align-items: center; justify-content: center; margin-top: 2.2rem; }
+.growth-hero-buttons { position: static; display: flex; align-items: center; justify-content: center; gap: 1rem; transform: none; }
 .growth-detail-hero .hero-cinematic-primary { position: static; transform: none; }
 .growth-detail-hero .hero-cinematic-primary:hover { transform: translateY(-3px); }
 .growth-detail-hero .hero-cinematic-powered {
