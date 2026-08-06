@@ -1,4 +1,47 @@
 /* Page-only composition. All visual tokens and components come from the homepage stylesheet. */
+.growth-back-button {
+    position: fixed !important;
+    z-index: 2147483647;
+    top: 96px !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 2rem !important;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .7rem 1rem;
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 999px;
+    background: rgba(31,53,82,.72);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(var(--glass-blur));
+    isolation: isolate;
+    will-change: transform;
+    transition: var(--transition-smooth);
+}
+.growth-back-button:hover { border-color: var(--brand-orange); background: var(--brand-orange); transform: translateX(-3px); }
+.growth-back-button svg { width: 16px !important; height: 16px !important; }
+.growth-go-top {
+    position: fixed;
+    z-index: 999;
+    right: 2rem;
+    bottom: 2rem;
+    display: grid;
+    width: 54px;
+    height: 54px;
+    place-items: center;
+    border: 1.5px solid var(--brand-orange);
+    border-radius: 50%;
+    background: var(--brand-orange);
+    color: #fff;
+    box-shadow: 0 14px 34px rgba(31,53,82,.18);
+    transition: var(--transition-smooth);
+}
+.growth-go-top:hover { background: #fff; color: var(--brand-orange); transform: translateY(-3px); }
+.growth-go-top svg { width: 18px !important; height: 18px !important; transition: transform .25s ease; }
+.growth-go-top:hover svg { transform: translateY(-2px); }
 .growth-detail-hero { background: var(--brand-green); }
 .growth-detail-hero .hero-cinematic-shade {
     background: linear-gradient(180deg, rgba(31,53,82,.22), rgba(31,53,82,.58));
@@ -203,6 +246,8 @@
     .growth-hero-buttons { position: static; justify-content: center; transform: none; }
 }
 @media (max-width: 600px) {
+    .growth-back-button { top: 78px !important; left: 1rem !important; padding: .55rem .8rem; }
+    .growth-go-top { right: 1rem; bottom: 1rem; width: 48px; height: 48px; }
     .growth-detail-hero .hero-cinematic-inner { align-content: center; padding-top: 6.5rem; padding-bottom: 3.5rem; }
     .growth-detail-hero h1 .hero-headline-rotating-line { display: grid; grid-template-columns: max-content minmax(0, 1fr); width: 100%; justify-content: start; }
     .growth-detail-hero h1 .hero-headline-with { display: block; }
