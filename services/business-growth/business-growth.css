@@ -1,11 +1,9 @@
 /* Page-only composition. All visual tokens and components come from the homepage stylesheet. */
 .growth-back-button {
-    position: fixed !important;
-    z-index: 2147483647;
-    top: 96px !important;
-    right: auto !important;
-    bottom: auto !important;
-    left: 2rem !important;
+    position: absolute;
+    z-index: 10;
+    top: 96px;
+    left: max(2rem, calc((100vw - var(--container-width)) / 2));
     display: inline-flex;
     align-items: center;
     gap: .5rem;
@@ -246,7 +244,7 @@
     .growth-hero-buttons { position: static; justify-content: center; transform: none; }
 }
 @media (max-width: 600px) {
-    .growth-back-button { top: 78px !important; left: 1rem !important; padding: .55rem .8rem; }
+    .growth-back-button { top: 78px; left: 1rem; padding: .55rem .8rem; }
     .growth-go-top { right: 1rem; bottom: 1rem; width: 48px; height: 48px; }
     .growth-detail-hero .hero-cinematic-inner { align-content: center; padding-top: 6.5rem; padding-bottom: 3.5rem; }
     .growth-detail-hero h1 .hero-headline-rotating-line { display: grid; grid-template-columns: max-content minmax(0, 1fr); width: 100%; justify-content: start; }
