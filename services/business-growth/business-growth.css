@@ -66,6 +66,7 @@
 }
 .growth-detail-hero .hero-cinematic-copy { width: min(100%, 900px); max-width: 900px; margin-inline: auto; justify-self: center; text-align: center; transform: translateY(-56px); }
 .growth-detail-hero .hero-cinematic-copy h1 { width: 100%; max-width: 900px; margin-inline: auto; text-align: center; }
+.growth-detail-hero h1 .hero-headline-static { font-size: 40px; }
 .growth-detail-hero h1 .hero-headline-rotating-line {
     position: relative;
     display: grid;

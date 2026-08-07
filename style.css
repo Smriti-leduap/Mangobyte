@@ -5199,6 +5199,10 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     font-size: 48px;
 }
 
+#hero-heading .hero-headline-static {
+    font-size: 40px;
+}
+
 .hero-cinematic h1 .hero-headline-rotating-line {
     display: flex;
     align-items: flex-start;
