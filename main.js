@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const goTopButtons = document.querySelectorAll('.home-go-top');
+    const updateGoTopVisibility = () => {
+        const shouldShow = window.scrollY > 240;
+        goTopButtons.forEach(button => button.classList.toggle('is-visible', shouldShow));
+    };
+    window.addEventListener('scroll', updateGoTopVisibility, { passive: true });
+    updateGoTopVisibility();
+
     // Premium hero headline reel: the duplicated final slide allows the reel
     // to reset to its first position without a visible reverse jump.
     const heroWordTrack = document.querySelector('.hero-word-track');

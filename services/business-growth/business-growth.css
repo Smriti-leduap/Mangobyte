@@ -6,20 +6,22 @@
     left: max(2rem, calc((100vw - var(--container-width)) / 2 + 2rem));
     display: inline-flex;
     align-items: center;
-    gap: .5rem;
-    padding: .7rem 1rem;
-    border: 1px solid rgba(255,255,255,.4);
+    justify-content: center;
+    gap: .45rem;
+    min-height: 44px;
+    padding: 0 1.2rem;
+    border: 1.5px solid #fff;
     border-radius: 999px;
-    background: rgba(31,53,82,.72);
+    background: transparent;
     color: #fff;
     font-size: 14px;
-    font-weight: 600;
-    backdrop-filter: blur(var(--glass-blur));
+    font-weight: 750;
+    backdrop-filter: blur(6px);
     isolation: isolate;
     will-change: transform;
-    transition: var(--transition-smooth);
+    transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
 }
-.growth-back-button:hover { border-color: var(--brand-orange); background: var(--brand-orange); transform: translateX(-3px); }
+.growth-back-button:hover { border-color: var(--brand-orange); background: transparent; color: var(--brand-orange); transform: translateY(-3px); }
 .growth-back-button svg { width: 16px !important; height: 16px !important; }
 .growth-go-top {
     position: fixed;
@@ -244,7 +246,7 @@
     .growth-hero-buttons { position: static; justify-content: center; transform: none; }
 }
 @media (max-width: 600px) {
-    .growth-back-button { top: 78px; left: 3rem; padding: .55rem .8rem; }
+    .growth-back-button { top: 78px; left: 3rem; min-height: 42px; padding: 0 1rem; }
     .growth-go-top { right: 1rem; bottom: 1rem; width: 48px; height: 48px; }
     .growth-detail-hero .hero-cinematic-inner { align-content: center; padding-top: 6.5rem; padding-bottom: 3.5rem; }
     .growth-detail-hero h1 .hero-headline-rotating-line { display: grid; grid-template-columns: max-content minmax(0, 1fr); width: 100%; justify-content: start; }
