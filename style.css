@@ -79,6 +79,7 @@
 .contact-form-card h2, .contact-office h4 { color: #1f3552; font-family: 'Inter',sans-serif; font-size: 32px !important; font-weight: 700; letter-spacing: -.01em; }
 .contact-office h4 { font-size: 24px !important; }
 .contact-form { display: grid; gap: 1.05rem; margin-top: 1.7rem; }
+.contact-form-card > .contact-form { margin-top: 0; }
 .contact-field { display: grid; gap: .45rem; }
 .contact-field label { color: #fff; font-size: 14px; font-weight: 600; }
 .contact-page .form-input { min-height: 50px; padding: .85rem 1rem; border: 1px solid #deded9; border-radius: 10px; background: #fff; color: #1f3552; font-size: 16px; box-shadow: 0 2px 8px rgba(31,53,82,.035); }
@@ -92,6 +93,7 @@
 .contact-panel-label { margin-bottom: 1rem; color: #fff; font-size: 24px; font-weight: 700; }
 .contact-direct a, .contact-direct > p:not(.contact-panel-label) { display: flex; align-items: center; gap: .7rem; width: fit-content; margin-top: .75rem; color: rgba(255,255,255,.76); font-size: 16px; }
 .contact-direct a:hover { color: #f05a28; }
+.contact-direct .contact-location-toggle { margin-top: .75rem; }
 .contact-direct svg, .contact-office p svg { width: 17px; height: 17px; flex: 0 0 auto; color: #f05a28; }
 .contact-map-card { position: relative; flex: 1; min-height: 410px; overflow: hidden; border: 1px solid #e6e6e1; border-radius: 18px; background: #ececea; box-shadow: 0 22px 60px rgba(31,53,82,.08); }
 .contact-map-art { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(135deg,#efefec,#e6e6e2); }

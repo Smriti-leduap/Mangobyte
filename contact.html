@@ -43,10 +43,6 @@
 
         <section class="contact-layout container" aria-label="Contact form and office information">
             <div class="contact-form-card">
-                <div class="contact-location-toggle" role="group" aria-label="Choose office location">
-                    <button type="button" class="is-active" data-location="australia" aria-pressed="true">Australia</button>
-                    <button type="button" data-location="nepal" aria-pressed="false">Nepal</button>
-                </div>
                 <form id="contact-form" class="contact-form">
                     <div class="contact-field">
                         <label for="contact-name">Name</label>
@@ -77,7 +73,10 @@
                     <p class="contact-panel-label">Prefer a Direct Approach?</p>
                     <a id="contact-phone-link" href="tel:+61410532359"><i data-lucide="phone" aria-hidden="true"></i><span id="contact-phone">+61 410 532 359</span></a>
                     <a href="mailto:hello@mangobyte.com.np"><i data-lucide="mail" aria-hidden="true"></i><span>hello@mangobyte.com.np</span></a>
-                    <p><i data-lucide="clock-3" aria-hidden="true"></i><span>Monday to Friday, 9 AM – 6 PM</span></p>
+                    <div class="contact-location-toggle" role="group" aria-label="Choose office location">
+                        <button type="button" class="is-active" data-location="australia" aria-pressed="true">Australia</button>
+                        <button type="button" data-location="nepal" aria-pressed="false">Nepal</button>
+                    </div>
                 </div>
 
                 <div class="contact-map-card">
