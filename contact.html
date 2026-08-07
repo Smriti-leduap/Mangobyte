@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Start a conversation with Mangobyte Digital about your next project.">
     <title>Contact Us | Mangobyte Digital</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 </head>
-<body style="min-height: 100vh; display: flex; flex-direction: column;">
+<body class="contact-page">
     <div class="noise"></div>
     <div class="custom-cursor" id="cursor"></div>
-
-    <!-- NAVIGATION HEADER -->
     <header class="site-header" id="navbar">
         <div class="container">
+            <a class="header-logo" href="index.html" aria-label="Mangobyte home"><img src="logo-color.png" alt="Mangobyte"></a>
             <div class="header-right">
-                <div class="menu-toggle" id="menu-toggle-btn" role="button" aria-expanded="false">
+                <div class="menu-toggle" id="menu-toggle-btn" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
                     <span class="menu-label">Menu</span>
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    <div class="hamburger" aria-hidden="true"><span></span><span></span><span></span></div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- FULL SCREEN MENU OVERLAY -->
     <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
-        <nav class="overlay-nav">
+        <nav class="overlay-nav" aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="index.html#services">Services</a>
             <a href="index.html#portfolio">Work</a>
@@ -39,93 +35,101 @@
         </nav>
     </div>
 
-    <main class="section-padding" style="flex: 1; display: flex; align-items: center; padding-top: 150px;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
-                <!-- Left Side: Contact Info -->
-                <div>
-                    <h1 class="hero-title" style="font-size: 4rem;">Let's <span class="text-gradient">Connect</span></h1>
-                    <p class="hero-sub">Fill out the form and our team will get back to you within 24 hours.</p>
-                    
-                    <div style="margin-top: 3rem; display: flex; flex-direction: column; gap: 2rem;">
-                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <div class="service-icon" style="font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 0;"><i data-lucide="mail"></i></div>
-                            <div>
-                                <h4 style="color: var(--text-primary); margin-bottom: 0.2rem;">Email Us</h4>
-                                <p style="color: var(--text-muted); font-size: 0.95rem;">hello@mangobyte.com.np</p>
-                            </div>
-                        </div>
+    <main class="contact-main">
+        <section class="contact-intro container" aria-labelledby="contact-title">
+            <h1 id="contact-title">Get in Touch with Our Team</h1>
+            <p class="contact-lede">Reach out to us, and let’s start building something great together.</p>
+        </section>
 
-                        <!-- Location 1 -->
-                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <div class="service-icon" style="font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 0;"><i data-lucide="map-pin"></i></div>
-                            <div>
-                                <h4 style="color: var(--text-primary); margin-bottom: 0.2rem;">Australia Office</h4>
-                                <p style="color: var(--text-muted); font-size: 0.95rem;">1 Seaford Street, Pimpama,<br>Gold Coast &ndash; 4209<br><a href="tel:+61410532359" style="color: var(--text-muted);">+61 410 532 359</a></p>
-                            </div>
-                        </div>
+        <section class="contact-layout container" aria-label="Contact form and office information">
+            <div class="contact-form-card">
+                <div class="contact-location-toggle" role="group" aria-label="Choose office location">
+                    <button type="button" class="is-active" data-location="australia" aria-pressed="true">Australia</button>
+                    <button type="button" data-location="nepal" aria-pressed="false">Nepal</button>
+                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="contact-field">
+                        <label for="contact-name">Name</label>
+                        <input id="contact-name" name="name" type="text" class="form-input" placeholder="Your full name" autocomplete="name" required>
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-email">Email Address</label>
+                        <input id="contact-email" name="email" type="email" class="form-input" placeholder="We’ll get back to you here" autocomplete="email" required>
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-company">Company Name</label>
+                        <input id="contact-company" name="company" type="text" class="form-input" placeholder="Let us know who you represent" autocomplete="organization">
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-subject">Subject</label>
+                        <input id="contact-subject" name="subject" type="text" class="form-input" placeholder="What’s this about?" required>
+                    </div>
+                    <div class="contact-field">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" class="form-input" placeholder="Tell us how we can help." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary contact-submit">Send Message <i data-lucide="arrow-up-right" aria-hidden="true"></i></button>
+                </form>
+            </div>
 
-                        <!-- Location 2 -->
-                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                            <div class="service-icon" style="font-size: 1.5rem; color: var(--accent-blue); margin-bottom: 0;"><i data-lucide="map-pin"></i></div>
-                            <div>
-                                <h4 style="color: var(--text-primary); margin-bottom: 0.2rem;">Nepal Office</h4>
-                                <p style="color: var(--text-muted); font-size: 0.95rem;">Thapathali,<br>Kathmandu<br><a href="tel:+9779863593458" style="color: var(--text-muted);">+977 9863593458</a></p>
-                            </div>
-                        </div>
+            <aside class="contact-details">
+                <div class="contact-direct">
+                    <p class="contact-panel-label">Prefer a Direct Approach?</p>
+                    <a id="contact-phone-link" href="tel:+61410532359"><i data-lucide="phone" aria-hidden="true"></i><span id="contact-phone">+61 410 532 359</span></a>
+                    <a href="mailto:hello@mangobyte.com.np"><i data-lucide="mail" aria-hidden="true"></i><span>hello@mangobyte.com.np</span></a>
+                    <p><i data-lucide="clock-3" aria-hidden="true"></i><span>Monday to Friday, 9 AM – 6 PM</span></p>
+                </div>
+
+                <div class="contact-map-card">
+                    <div class="contact-map-art">
+                        <iframe id="contact-map-frame" title="Map showing the Australia office" src="https://www.google.com/maps?q=1%20Seaford%20Street%2C%20Pimpama%2C%20Gold%20Coast%204209&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-
-                <!-- Right Side: Form -->
-                <div class="glass" style="padding: 3.5rem;">
-                    <form id="contact-form" style="display: flex; flex-direction: column; gap: 2rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                                <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">First Name</label>
-                                <input type="text" class="form-input">
-                            </div>
-                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                                <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Last Name</label>
-                                <input type="text" class="form-input">
-                            </div>
-                        </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                            <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Email address</label>
-                            <input type="email" class="form-input">
-                        </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                            <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Service you want to enquire about</label>
-                            <select class="form-input" style="appearance: none; cursor: pointer;">
-                                <option style="background: var(--bg-card); color: var(--text-primary);">Branding & Identity</option>
-                                <option style="background: var(--bg-card); color: var(--text-primary);">Website Development</option>
-                                <option style="background: var(--bg-card); color: var(--text-primary);">Digital Marketing</option>
-                                <option style="background: var(--bg-card); color: var(--text-primary);">SEO & SEM</option>
-                                <option style="background: var(--bg-card); color: var(--text-primary);">Mobile App Development</option>
-                                <option style="background: var(--bg-card); color: var(--text-primary);">UI/UX Design</option>
-                            </select>
-                        </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                            <label style="font-size: 0.85rem; font-weight: 500; color: var(--text-secondary);">Input Message</label>
-                            <textarea rows="5" class="form-input" style="resize: vertical;"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="justify-content: center; width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 0.5rem;">Send button</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+            </aside>
+        </section>
     </main>
 
-    <footer class="footer" style="margin-top: auto;">
-        <div class="container" style="text-align: center;">
-            <div style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Mangobyte Digital. All rights reserved.</div>
-        </div>
-    </footer>
+    <site-footer data-root=""></site-footer>
 
+    <script src="shared-footer.js"></script>
     <script src="main.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+
+        const contactLocations = {
+            australia: {
+                title: 'Australia Office',
+                phone: '+61 410 532 359',
+                phoneHref: 'tel:+61410532359',
+                address: '1 Seaford Street, Pimpama, Gold Coast – 4209',
+                directions: 'https://maps.app.goo.gl/7YnEMKpCWruZXSFW9',
+                mapEmbed: 'https://www.google.com/maps?q=1%20Seaford%20Street%2C%20Pimpama%2C%20Gold%20Coast%204209&output=embed'
+            },
+            nepal: {
+                title: 'Nepal Office',
+                phone: '+977 9863593458',
+                phoneHref: 'tel:+9779863593458',
+                address: 'Thapathali, Kathmandu, Nepal',
+                directions: 'https://maps.app.goo.gl/cUBMkGeNY5SQuxjU9',
+                mapEmbed: 'https://www.google.com/maps?q=Thapathali%2C%20Kathmandu%2C%20Nepal&output=embed'
+            }
+        };
+
+        document.querySelectorAll('.contact-location-toggle button').forEach((button) => {
+            button.addEventListener('click', () => {
+                const location = contactLocations[button.dataset.location];
+                document.querySelectorAll('.contact-location-toggle button').forEach((item) => {
+                    const active = item === button;
+                    item.classList.toggle('is-active', active);
+                    item.setAttribute('aria-pressed', String(active));
+                });
+                document.getElementById('contact-phone').textContent = location.phone;
+                document.getElementById('contact-phone-link').href = location.phoneHref;
+                const mapFrame = document.getElementById('contact-map-frame');
+                mapFrame.src = location.mapEmbed;
+                mapFrame.title = `Map showing the ${location.title}`;
+            });
+        });
+    </script>
 </body>
 </html>
