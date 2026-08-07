@@ -67,14 +67,14 @@
 .contact-main h2 { font-size: 32px !important; }
 .contact-main h3 { font-size: 28px !important; }
 .contact-main h4 { font-size: 24px !important; }
-.contact-intro { margin-bottom: 24px; }
+.contact-intro { margin-bottom: 0; transform: translateY(-16px); }
 .contact-location-toggle { display: inline-flex; padding: 4px; border: 1.5px solid #fff; border-radius: 999px; background: rgba(255,255,255,.08); backdrop-filter: blur(10px); }
 .contact-location-toggle button { min-width: 96px; min-height: 36px; padding: 0 1rem; border: 0; border-radius: 999px; background: transparent; color: #fff; font: 700 14px/1 'Inter', sans-serif; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
 .contact-location-toggle button.is-active { background: #f05a28; color: #fff; }
 .contact-location-toggle button:focus-visible { outline: 2px solid #f05a28; outline-offset: 2px; }
 .contact-intro h1 { max-width: 780px; color: #fff; font-size: 40px !important; line-height: 1.08; }
 .contact-lede { max-width: 760px; margin-top: 16px; color: rgba(255,255,255,.76); font-size: 18px; line-height: 1.65; }
-.contact-layout { display: grid; grid-template-columns: minmax(0,1.04fr) minmax(360px,.96fr); gap: clamp(2rem,5vw,5rem); align-items: stretch; }
+.contact-layout { display: grid; grid-template-columns: minmax(0,1.04fr) minmax(360px,.96fr); gap: clamp(2rem,5vw,5rem); align-items: stretch; margin-top: 40px; }
 .contact-form-card { height: 560px; padding: clamp(1.5rem,3vw,2.5rem); border: 1px solid rgba(255,255,255,.22); border-radius: 18px; background: #2d4b70; box-shadow: 0 22px 60px rgba(31,53,82,.08); }
 .contact-form-card h2, .contact-office h4 { color: #1f3552; font-family: 'Inter',sans-serif; font-size: 32px !important; font-weight: 700; letter-spacing: -.01em; }
 .contact-office h4 { font-size: 24px !important; }
@@ -117,7 +117,7 @@
 .contact-footer { padding: 1.4rem 0; border-top: 1px solid #e5e5e0; color: rgba(20,20,20,.5); font-size: 14px; text-align: center; }
 @media (min-width: 601px) {
     .contact-main { padding-top: 10.25rem; padding-bottom: 3rem; }
-    .contact-intro { margin-bottom: 24px; }
+    .contact-intro { margin-bottom: 0; }
     .contact-lede { max-width: 1100px; }
     .contact-form-card { padding: 1.5rem; }
     .contact-form-card > .contact-form { height: 100%; grid-template-columns: repeat(2,minmax(0,1fr)); grid-template-rows: auto auto minmax(0,1fr) auto; gap: .9rem 1rem; margin-top: 0; }
@@ -137,7 +137,8 @@
 @media (max-width: 600px) {
     .contact-main { padding: 9rem 0 3.5rem; }
     .contact-location-toggle button { min-width: 90px; }
-    .contact-intro { margin-bottom: 24px; }
+    .contact-intro { margin-bottom: 0; transform: translateY(-12px); }
+    .contact-layout { margin-top: 32px; }
     .contact-intro h1 { font-size: 40px !important; }
     .contact-lede { font-size: 18px; }
     .contact-form-card { height: auto; padding: 1.25rem; border-radius: 14px; }
