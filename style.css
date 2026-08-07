@@ -56,6 +56,11 @@
     background-image: radial-gradient(rgba(255,255,255,.08) .5px, transparent .5px);
     background-size: 5px 5px; color: #1f3552;
 }
+.contact-page .footer {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.38);
+}
 .contact-page .noise { opacity: .025; }
 .contact-main { flex: 1; padding: 10.5rem 0 5rem; font-size: 18px; }
 .contact-main h1 { font-size: 40px !important; }
