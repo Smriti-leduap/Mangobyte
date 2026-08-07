@@ -5589,7 +5589,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 }
 .home-hero-learn-more:hover svg {
     color: currentColor;
-    transform: none;
+    transform: rotate(90deg);
 }
 .hero-cinematic-actions svg { width: 18px; height: 18px; }
 .hero-cinematic-actions svg { transition: color .25s ease, background-color .25s ease, transform .25s ease; }

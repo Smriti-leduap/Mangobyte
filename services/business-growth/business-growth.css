@@ -94,6 +94,16 @@
     transform: translateY(28px);
 }
 .growth-detail-hero .hero-cinematic-link { display: inline-flex; }
+.growth-detail-hero .hero-cinematic-link:hover {
+    border-color: #F5F3EE;
+    background: rgba(255,255,255,.06);
+    color: #F5F3EE;
+    transform: none;
+}
+.growth-detail-hero .hero-cinematic-link:hover svg {
+    color: currentColor;
+    transform: rotate(90deg);
+}
 .growth-detail-eyebrow { margin-bottom: 1rem; color: var(--brand-orange); font-size: var(--type-caption); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .growth-overview { padding: 64px 0; }
 .growth-overview-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
