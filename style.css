@@ -5581,6 +5581,16 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     color: var(--brand-orange);
     transform: rotate(90deg);
 }
+.home-hero-learn-more:hover {
+    border-color: #F5F3EE;
+    background: rgba(255,255,255,.06);
+    color: #F5F3EE;
+    transform: none;
+}
+.home-hero-learn-more:hover svg {
+    color: currentColor;
+    transform: none;
+}
 .hero-cinematic-actions svg { width: 18px; height: 18px; }
 .hero-cinematic-actions svg { transition: color .25s ease, background-color .25s ease, transform .25s ease; }
 
