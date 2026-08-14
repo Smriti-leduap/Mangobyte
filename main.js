@@ -1,5 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const goTopButtons = document.querySelectorAll('.home-go-top');
+    let goTopButtons = document.querySelectorAll('.home-go-top');
+    if (!goTopButtons.length) {
+        const goTopButton = document.createElement('button');
+        goTopButton.type = 'button';
+        goTopButton.className = 'home-go-top';
+        goTopButton.setAttribute('aria-label', 'Go to top');
+        goTopButton.innerHTML = '<span>Go to top</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 15-6-6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        document.body.appendChild(goTopButton);
+        goTopButtons = document.querySelectorAll('.home-go-top');
+    }
+    goTopButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
     const updateGoTopVisibility = () => {
         const shouldShow = window.scrollY > 240;
         goTopButtons.forEach(button => button.classList.toggle('is-visible', shouldShow));
@@ -80,19 +95,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. Initialize Lenis Smooth Scroll
-    const lenis = new Lenis({
+    const lenis = typeof Lenis !== 'undefined' ? new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smooth: true,
         mouseMultiplier: 1,
-    });
+    }) : {
+        stop() {},
+        start() {},
+        raf() {},
+        on() {}
+    };
 
-   
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
+    if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+    }
 
     // Give grid-based backgrounds a restrained 3D response to the cursor.
     document.querySelectorAll('.grid-interactive').forEach(section => {

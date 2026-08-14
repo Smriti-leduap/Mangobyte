@@ -45,6 +45,8 @@
     --glass-blur: 14px;
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --border-radius: 14px;
+    --arrow-control-size: 46px;
+    --arrow-control-icon-size: 18px;
     --dot-pattern: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='1' fill='rgba(255,255,255,0.08)'/%3E%3C/svg%3E");
     --line-grid: none;
 }
@@ -69,14 +71,14 @@
 .contact-main h4 { font-size: 24px !important; }
 .contact-intro { margin-bottom: 0; transform: translateY(-16px); }
 .contact-location-toggle { display: inline-flex; padding: 4px; border: 1.5px solid #fff; border-radius: 999px; background: rgba(255,255,255,.08); backdrop-filter: blur(10px); }
-.contact-location-toggle button { min-width: 96px; min-height: 36px; padding: 0 1rem; border: 0; border-radius: 999px; background: transparent; color: #fff; font: 700 14px/1 'Inter', sans-serif; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.contact-location-toggle button { min-width: 96px; min-height: 36px; padding: 0 1rem; border: 0; border-radius: 999px; background: transparent; color: #fff; font: 400 14px/1 'Inter', sans-serif; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
 .contact-location-toggle button.is-active { background: #f05a28; color: #fff; }
 .contact-location-toggle button:focus-visible { outline: 2px solid #f05a28; outline-offset: 2px; }
 .contact-intro h1 { max-width: 780px; color: #fff; font-size: 40px !important; line-height: 1.08; }
 .contact-lede { max-width: 760px; margin-top: 16px; color: rgba(255,255,255,.76); font-size: 18px; line-height: 1.65; }
 .contact-layout { display: grid; grid-template-columns: minmax(0,1.04fr) minmax(360px,.96fr); gap: clamp(2rem,5vw,5rem); align-items: stretch; margin-top: 40px; }
 .contact-form-card { height: 560px; padding: clamp(1.5rem,3vw,2.5rem); border: 1px solid rgba(255,255,255,.22); border-radius: 18px; background: #2d4b70; box-shadow: 0 22px 60px rgba(31,53,82,.08); }
-.contact-form-card h2, .contact-office h4 { color: #1f3552; font-family: 'Inter',sans-serif; font-size: 32px !important; font-weight: 700; letter-spacing: -.01em; }
+.contact-form-card h2, .contact-office h4 { color: #1f3552; font-family: 'Inter',sans-serif; font-size: 32px !important; font-weight: 400; letter-spacing: -.01em; }
 .contact-office h4 { font-size: 24px !important; }
 .contact-form { display: grid; gap: 1.05rem; margin-top: 1.7rem; }
 .contact-form-card > .contact-form { margin-top: 0; }
@@ -90,7 +92,7 @@
 .contact-submit svg { width: 17px; height: 17px; }
 .contact-details { min-width: 0; display: flex; flex-direction: column; }
 .contact-direct { padding: .2rem 0 2rem; }
-.contact-panel-label { margin-bottom: 1rem; color: #fff; font-size: 24px; font-weight: 700; }
+.contact-panel-label { margin-bottom: 1rem; color: #fff; font-size: 24px; font-weight: 400; }
 .contact-direct a, .contact-direct > p:not(.contact-panel-label) { display: flex; align-items: center; gap: .7rem; width: fit-content; margin-top: .75rem; color: rgba(255,255,255,.76); font-size: 16px; }
 .contact-direct a:hover { color: #f05a28; }
 .contact-direct .contact-location-toggle { margin-top: .75rem; }
@@ -110,7 +112,7 @@
 .map-pin svg { width: 20px; height: 20px; }
 .contact-office { position: absolute; z-index: 3; right: 1rem; bottom: 1rem; left: 1rem; padding: 1.35rem; border-radius: 12px; background: rgba(255,255,255,.94); box-shadow: 0 12px 35px rgba(31,53,82,.12); backdrop-filter: blur(12px); }
 .contact-office p { display: flex; align-items: flex-start; gap: .6rem; margin-top: .65rem; color: rgba(20,20,20,.64); font-size: 16px; }
-.contact-direction { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; color: #1f3552; font-size: 16px; font-weight: 700; }
+.contact-direction { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; color: #1f3552; font-size: 16px; font-weight: 400; }
 .contact-direction:hover { color: #f05a28; }
 .contact-direction svg { width: 16px; height: 16px; transition: transform .25s ease; }
 .contact-direction:hover svg { transform: translateX(4px); }
@@ -192,6 +194,7 @@ body {
     background-image: var(--dot-pattern), var(--line-grid);
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
+    font-weight: 300;
     line-height: 1.6;
     overflow-x: clip;
     -webkit-font-smoothing: antialiased;
@@ -213,7 +216,7 @@ body {
     background: var(--brand-orange);
     color: #fff;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     box-shadow: 0 14px 34px rgba(31,53,82,.18);
     opacity: 0;
     visibility: hidden;
@@ -247,7 +250,7 @@ h1, h2 {
 
 h3, h4, h5, .btn {
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 /* Desktop type scale */
@@ -303,7 +306,7 @@ img { max-width: 100%; display: block; }
     transition: var(--transition-smooth);
     border: none;
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .btn [data-lucide="arrow-up-right"],
@@ -482,7 +485,7 @@ body.light-theme .form-input:focus {
    NAVIGATION & HEADER
    ============================================================ */
 .site-header {
-    position: absolute;
+    position: fixed;
     top: 0; left: 0;
     width: 100%;
     z-index: 10002;
@@ -543,7 +546,7 @@ body.light-theme .form-input:focus {
 
 .menu-label {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -817,11 +820,11 @@ body.light-theme .form-input:focus {
     border-radius: 14px;
 }
 
-.hero-growth-kicker { display: block; color: var(--brand-green); font-size: 16px; font-weight: 700; }
+.hero-growth-kicker { display: block; color: var(--brand-green); font-size: 16px; font-weight: 400; }
 .hero-growth-title { display: block; margin: 4px 0 10px; font-size: 16px; font-weight: 800; line-height: 1.1; }
 .hero-growth-line { display: block; width: 100%; height: 6px; margin: 5px 0; border-radius: 999px; background: rgba(31, 53, 82, 0.2); }
 .hero-growth-line.short { width: 46%; }
-.hero-growth-action { display: inline-flex; margin-top: 10px; padding: 7px 11px; border-radius: 999px; background: var(--brand-green); color: #fff; font-size: 16px; font-weight: 700; }
+.hero-growth-action { display: inline-flex; margin-top: 10px; padding: 7px 11px; border-radius: 999px; background: var(--brand-green); color: #fff; font-size: 16px; font-weight: 400; }
 
 .hero-growth-stat {
     top: 204px;
@@ -990,7 +993,7 @@ body.light-theme .form-input:focus {
     gap: 7px;
     border-radius: 999px;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: none;
 }
 
@@ -1202,7 +1205,7 @@ body.light-theme .form-input:focus {
 
 .powered-by-logos span {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.02em;
     color: var(--text-muted);
 }
@@ -1219,7 +1222,7 @@ body.light-theme .form-input:focus {
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     color: #fff;
     overflow: hidden;
 }
@@ -1345,7 +1348,7 @@ body.light-theme .form-input:focus {
 
 .stat-card-label {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--brand-green);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1467,7 +1470,7 @@ body.light-theme .form-input:focus {
     background: rgba(10, 10, 10, 0.74);
     color: #fff;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
@@ -1657,7 +1660,7 @@ body.light-theme .trusted-section { border-color: rgba(0,0,0,0.05); }
     color: var(--text-muted);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     transition: var(--transition-smooth);
@@ -2023,14 +2026,14 @@ body.light-theme .service-card-stack {
 .process-dial-number:nth-child(5) { --angle: 240deg; }
 .process-dial-number:nth-child(6) { --angle: 300deg; }
 .process-dial-number span { display: block; }
-.process-dial-number.is-active { color: var(--text-primary); font-size: 32px; font-weight: 700; }
+.process-dial-number.is-active { color: var(--text-primary); font-size: 32px; font-weight: 400; }
 .process-dial-number:focus-visible { outline: 2px solid var(--brand-green); outline-offset: 4px; border-radius: 50%; }
 .process-dial-marker { position: absolute; z-index: 2; top: 50%; left: 314px; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%; background: var(--brand-green); box-shadow: 0 0 0 7px var(--bg-secondary); }
 
 .process-dial-content { position: relative; padding: 4rem clamp(2rem, 6vw, 8rem) 4rem 2rem; min-height: 420px; display: flex; align-items: center; }
 .process-dial-panel { position: absolute; max-width: 610px; animation: dial-panel-in 480ms cubic-bezier(0.16, 1, 0.3, 1); }
 .process-dial-panel[hidden] { display: none; }
-.process-dial-count { color: var(--brand-orange); font-size: 16px; font-weight: 700; letter-spacing: 0.14em; }
+.process-dial-count { color: var(--brand-orange); font-size: 16px; font-weight: 400; letter-spacing: 0.14em; }
 .process-dial-panel h3 { margin: 1rem 0 1.15rem; color: var(--text-primary); font-family: 'Baskervville', serif; font-weight: 400; font-size: 32px !important; line-height: 1.1; letter-spacing: -0.04em; }
 .process-dial-panel p { max-width: 530px; color: var(--text-secondary); font-size: 16px; line-height: 1.55; }
 .process-dial-panel div { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.8rem; }
@@ -2181,7 +2184,7 @@ body.light-theme .service-card-stack {
 
 .testimonials-detail-title {
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text-primary);
     margin-bottom: 0.75rem;
 }
@@ -2516,7 +2519,7 @@ body.light-theme .service-card-stack {
 
 .service-block-title {
     font-family: 'Inter', sans-serif;
-    font-weight: 800;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 32px;
     line-height: 1.05;
@@ -2980,7 +2983,7 @@ body.light-theme .footer-bottom { border-top-color: rgba(0, 0, 0, 0.05); }
     background: var(--brand-green);
     color: #fff;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     transition: transform 250ms ease, background 250ms ease;
 }
 
@@ -3025,6 +3028,7 @@ body.light-theme .footer-bottom { border-top-color: rgba(0, 0, 0, 0.05); }
     margin: 0 auto;
     color: rgba(245,245,245,0.72);
     font-family: 'Baskervville', serif;
+    font-weight: 400;
     font-size: 18px;
     font-style: italic;
     text-align: center;
@@ -3070,7 +3074,7 @@ body.light-theme .footer-bottom { border-top-color: rgba(0, 0, 0, 0.05); }
     margin: 0;
     color: #fff;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.05;
 }
 .footer-contact-message > p span {
@@ -3384,7 +3388,7 @@ small,
 /* Who we work with logo outlines */
 .trusted-logo-item,
 .trusted-logo-item:hover {
-    border-color: #000000;
+    border-color: #b8b8b8;
 }
 /* Case-study cards — Bloom Dots-inspired video, overlay, and tag treatment. */
 .motion-pin {
@@ -3433,7 +3437,7 @@ small,
     background: rgba(255, 255, 255, 0.94);
     color: #1F3552;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.06em;
 }
@@ -3511,7 +3515,7 @@ small,
     background: transparent;
     color: #FFFFFF;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.06em;
 }
 
@@ -3883,7 +3887,7 @@ small,
     margin-bottom: 0.2rem;
     color: #FFFFFF;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
 }
 .testimonials-person.active .testimonials-person-name { color: #1F3552; }
 /* Center the testimonial navigation controls between list and review. */
@@ -3929,7 +3933,7 @@ small,
     color: #1F3552;
     font: inherit;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.2;
     cursor: pointer;
 }
@@ -3962,7 +3966,7 @@ small,
     border: 0 !important;
     background: transparent !important;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.2;
 }
 /* Alternating case-study card palette. */
@@ -4132,7 +4136,7 @@ small, .small-text { font-size: var(--type-caption) !important; }
     margin-left: 0;
     margin-right: 0;
     font-family: 'Inter', sans-serif;
-    font-weight: 700;
+    font-weight: 400;
 }
 .case-studies-section .motion-card-tags { margin-left: 0; }
 
@@ -4490,7 +4494,7 @@ small, .small-text { font-size: var(--type-caption) !important; }
     .footer-reference-top { grid-template-columns: 1fr 1fr; }
     .footer-reference-intro { grid-column: 1 / -1; }
 }
-/* Baskervville display typography uses the bold weight throughout. */
+/* Keep Baskervville display typography at its regular 400 weight. */
 h1,
 h2,
 .overlay-nav a,
@@ -4498,7 +4502,7 @@ h2,
 .process-dial-number,
 .process-dial-panel h3,
 .services-stack-eyebrow {
-    font-weight: 700;
+    font-weight: 400;
 }
 /* Footer interactions brighten to white on hover. */
 .footer-reference-column a:hover,
@@ -5259,7 +5263,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     margin: 0 0 1.6rem;
     color: #d7e9e2;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: .12em;
     text-transform: uppercase;
 }
@@ -5276,8 +5280,8 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     color: #fff;
     font-family: 'Baskervville', Georgia, serif;
     font-size: 40px !important;
-    font-weight: 650;
-    letter-spacing: -.065em;
+    font-weight: 400;
+    letter-spacing: .01em;
     line-height: 1.5;
     text-wrap: balance;
 }
@@ -5286,7 +5290,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     color: var(--brand-orange);
     font-family: 'Baskervville', Georgia, serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: -.045em;
 }
 
@@ -5316,7 +5320,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     color: #fff;
     font-family: 'Baskervville', Georgia, serif;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.5;
 }
 
@@ -5330,7 +5334,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     font-family: 'Baskervville', Georgia, serif;
     font-size: 40px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1.5;
 }
 
@@ -5413,7 +5417,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     color: #fff;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .hero-google-rating .hero-google-stars {
@@ -5492,7 +5496,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     padding: 0 12px;
     color: rgba(255,255,255,.84);
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
@@ -5623,7 +5627,7 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     display: block;
     font-family: 'Baskervville', Georgia, serif;
     font-size: 28px;
-    font-weight: 550;
+    font-weight: 400;
     line-height: 1.16;
     letter-spacing: -.03em;
 }
@@ -6256,4 +6260,90 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
     .case-studies-heading-row { padding-right: 92px; }
     .process-dial-content { width: 100%; padding-inline: 1rem; box-sizing: border-box; }
     .process-dial-panel { right: 0; left: 0; width: 100%; padding: 1.5rem; box-sizing: border-box; }
+}
+
+/* Typography weights: Inter body copy is light; controls use regular weight. */
+body { font-weight: 300; }
+button,
+.btn,
+a[class*="btn"],
+a[class*="button"],
+[class*="-cta"],
+.hero-cinematic-primary,
+.hero-cinematic-link,
+.growth-work-active-link,
+[role="button"] {
+    font-weight: 400 !important;
+}
+
+/* Trusted logos and Google rating now live at the top-right of Testimonials. */
+.testimonials-section .section-heading-row { align-items: flex-start; }
+.testimonials-trust {
+    position: relative;
+    top: 0;
+    width: min(560px, 52vw);
+    max-width: 560px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    color: rgba(255,255,255,.72);
+    isolation: auto;
+}
+.testimonials-trust::before { content: none; }
+.testimonials-trusted-logos {
+    display: flex;
+    align-items: center;
+    gap: 1.35rem;
+    padding: .8rem 1rem;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    backdrop-filter: blur(10px);
+}
+.testimonials-trusted-logos .hero-cinematic-powered-label { color: #000; }
+.testimonials-trust .hero-logo-portal { width: min(315px, 31vw); }
+.testimonials-trust .hero-logo-portal::before,
+.testimonials-trust .hero-logo-portal::after { content: none; }
+.testimonials-trust .hero-google-rating {
+    position: static;
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: flex-end;
+    margin-top: .65rem;
+}
+@media (max-width: 900px) {
+    .testimonials-section .section-heading-row { flex-direction: column; }
+    .testimonials-trust {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+    }
+    .testimonials-trust .hero-logo-portal { width: min(315px, calc(100vw - 140px)); }
+    .testimonials-trust .hero-google-rating { justify-content: flex-start; }
+}
+@media (max-width: 560px) {
+    .testimonials-trust { display: grid; grid-template-columns: 1fr; gap: .7rem; }
+    .testimonials-trusted-logos { display: grid; grid-template-columns: 1fr; gap: .7rem; }
+    .testimonials-trust .hero-logo-portal { width: 100%; }
+    .testimonials-trust .hero-google-rating { margin-top: 0; }
+}
+
+/* Lower only the shared footer divider; social icon positioning is unchanged. */
+.footer-reference-divider { transform: translateY(10px); }
+@media (min-width: 651px) {
+    .footer-reference-divider { transform: translateY(36px); }
+}
+
+/* Let the brand mark scroll with the page while the shared Menu stays available. */
+.site-header { position: absolute; }
+.site-header .menu-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: max(2rem, calc((100vw - var(--container-width)) / 2 + 2rem));
+}
+@media (max-width: 768px) {
+    .site-header .menu-toggle { right: 1rem; }
 }

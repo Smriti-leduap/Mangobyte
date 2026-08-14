@@ -180,6 +180,119 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.growth-work-carousel');
+    const slides = Array.from(carousel?.querySelectorAll('.growth-work-slide') || []);
+    if (!carousel || slides.length < 2) return;
+
+    const title = carousel.querySelector('.growth-work-active-title');
+    const category = carousel.querySelector('.growth-work-category');
+    const description = carousel.querySelector('.growth-work-active-description');
+    const previous = carousel.querySelector('.growth-work-prev');
+    const next = carousel.querySelector('.growth-work-next');
+    const progress = carousel.querySelector('.growth-work-progress');
+    const stage = carousel.querySelector('.growth-work-stage');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let activeIndex = 0;
+    let timer;
+    let transitionToken = 0;
+    let initialized = false;
+    let isInView = false;
+
+    if (progress && stage) stage.appendChild(progress);
+
+    const restartTimer = () => {
+        clearTimeout(timer);
+        progress?.classList.remove('is-running');
+        if (progress) void progress.offsetWidth;
+        if (!reducedMotion && isInView) {
+            progress?.classList.add('is-running');
+            timer = window.setTimeout(() => show(activeIndex + 1, 1), 5500);
+        }
+    };
+
+    const show = (requestedIndex) => {
+        activeIndex = (requestedIndex + slides.length) % slides.length;
+        slides.forEach(slide => slide.classList.remove('is-active', 'is-prev', 'is-next', 'is-far-prev', 'is-far-next', 'is-after', 'is-exiting'));
+        slides[(activeIndex - 2 + slides.length) % slides.length].classList.add('is-far-prev');
+        slides[(activeIndex - 1 + slides.length) % slides.length].classList.add('is-prev');
+        slides[activeIndex].classList.add('is-active');
+        slides[(activeIndex + 1) % slides.length].classList.add('is-next');
+        slides[(activeIndex + 2) % slides.length].classList.add('is-far-next');
+
+        const active = slides[activeIndex];
+        const token = ++transitionToken;
+        const textElements = [category, title, description];
+        const updateText = () => {
+            if (token !== transitionToken) return;
+            category.textContent = active.dataset.category;
+            title.textContent = active.dataset.title;
+            description.textContent = active.dataset.description;
+            if (!reducedMotion) {
+                textElements.forEach((element, index) => {
+                    element.animate([
+                        { opacity: 0, transform: 'translateY(12px)', filter: 'blur(5px)' },
+                        { opacity: 1, transform: 'translateY(0)', filter: 'blur(0)' }
+                    ], { duration: 430, delay: index * 65, easing: 'cubic-bezier(.22,1,.36,1)', fill: 'both' });
+                });
+            }
+        };
+        if (!initialized || reducedMotion) {
+            updateText();
+            initialized = true;
+        } else {
+            textElements.forEach(element => element.animate([
+                { opacity: 1, transform: 'translateY(0)', filter: 'blur(0)' },
+                { opacity: 0, transform: 'translateY(-9px)', filter: 'blur(4px)' }
+            ], { duration: 170, easing: 'ease-in', fill: 'forwards' }));
+            window.setTimeout(updateText, 175);
+        }
+        restartTimer();
+    };
+
+    previous?.addEventListener('click', () => show(activeIndex - 1));
+    next?.addEventListener('click', () => show(activeIndex + 1));
+    carousel.addEventListener('mouseenter', () => {
+        clearTimeout(timer);
+        progress?.classList.remove('is-running');
+    });
+    carousel.addEventListener('mouseleave', restartTimer);
+    carousel.addEventListener('focusin', () => clearTimeout(timer));
+    carousel.addEventListener('focusout', restartTimer);
+    show(0);
+
+    const visibilityObserver = new IntersectionObserver(entries => {
+        isInView = entries[0].isIntersecting;
+        if (isInView) restartTimer();
+        else {
+            clearTimeout(timer);
+            progress?.classList.remove('is-running');
+        }
+    }, { threshold: .35 });
+    visibilityObserver.observe(carousel);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('.growth-capabilities');
+    const cards = Array.from(section?.querySelectorAll('.service-block') || []);
+    if (!section || !cards.length) return;
+
+    const previewSets = [
+        ['reel-images/team-collaboration.jpg', 'reel-images/strategy-workshop.jpg'],
+        ['reel-images/business-meeting.jpg', 'reel-images/growth-planning.jpg'],
+        ['reel-images/modern-office.jpg', 'reel-images/creative-team.jpg'],
+        ['reel-images/presentation.jpg', 'reel-images/planning-session.jpg']
+    ];
+    cards.forEach((card, index) => {
+        const set = previewSets[index % previewSets.length];
+        const fan = document.createElement('div');
+        fan.className = 'growth-service-inline-fan';
+        fan.setAttribute('aria-hidden', 'true');
+        fan.innerHTML = `<img src="${set[0]}" alt=""><img src="${set[1]}" alt="">`;
+        card.querySelector('.service-block-btns')?.before(fan);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const serviceWindows = Array.from(document.querySelectorAll('.growth-capabilities .service-block-img'));
     if (!serviceWindows.length || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
