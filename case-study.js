@@ -23,6 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const height = width / .89;
         return { width, gap, top, insetLeft, secondLeft: insetLeft + width + gap, secondTop: top + height + gap };
     };
+    const gridPositions = () => {
+        const grid = finalGrid();
+        return [
+            [grid.top, grid.insetLeft],
+            [grid.top, grid.secondLeft],
+            [grid.secondTop, grid.insetLeft],
+            [grid.secondTop, grid.secondLeft]
+        ];
+    };
+    const firstImages = gsap.utils.toArray('.case-study-image:not(.case-study-next-image)');
+    const nextImages = gsap.utils.toArray('.case-study-next-image');
+    const allImages = [...firstImages, ...nextImages];
+
+    nextImages.forEach((image, index) => {
+        gsap.set(image, {
+            top: () => gridPositions()[index][0],
+            left: () => gridPositions()[index][1],
+            right: 'auto',
+            width: () => finalGrid().width,
+            y: () => document.querySelector('.case-study-image-stage').clientHeight * .62,
+            opacity: 0,
+            pointerEvents: 'none'
+        });
+    });
     const timeline = gsap.timeline({
         scrollTrigger: {
             trigger: '.case-study-scroll',
@@ -40,17 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
         .to('.case-study-image-two', { top: () => `${finalGrid().top}px`, left: () => `${finalGrid().secondLeft}px`, right: 'auto', width: () => `${finalGrid().width}px`, duration: 1.2, ease: 'power1.inOut', force3D: true }, 0)
         .to('.case-study-image-three', { top: () => `${finalGrid().secondTop}px`, left: () => `${finalGrid().insetLeft}px`, right: 'auto', width: () => `${finalGrid().width}px`, duration: 1.2, ease: 'power1.inOut', force3D: true }, 0)
         .to('.case-study-image-four', { top: () => `${finalGrid().secondTop}px`, left: () => `${finalGrid().secondLeft}px`, right: 'auto', width: () => `${finalGrid().width}px`, duration: 1.2, ease: 'power1.inOut', force3D: true }, 0)
-        .to('.case-study-details', { top: () => `${finalGrid().top}px`, opacity: 1, y: 0, duration: .7, ease: 'power2.out' }, .5);
+        .to('.case-study-details', { top: () => `${finalGrid().top}px`, opacity: 1, y: 0, duration: .7, ease: 'power2.out' }, .5)
+        .set(firstImages, { pointerEvents: 'none' }, 1.42)
+        .to(firstImages, { y: () => -document.querySelector('.case-study-image-stage').clientHeight * .62, opacity: 0, duration: 1, stagger: .035, ease: 'power2.inOut' }, 1.42)
+        .to(nextImages, { top: index => gridPositions()[index][0], left: index => gridPositions()[index][1], width: () => finalGrid().width, y: 0, opacity: 1, duration: 1, stagger: .035, ease: 'power2.inOut' }, 1.42)
+        .set(nextImages, { pointerEvents: 'auto' }, 2.35);
 
-    const images = gsap.utils.toArray('.case-study-image');
-    const restoreGrid = () => {
+    const restoreGrid = images => {
         const grid = finalGrid();
-        const positions = [
-            [grid.top, grid.insetLeft],
-            [grid.top, grid.secondLeft],
-            [grid.secondTop, grid.insetLeft],
-            [grid.secondTop, grid.secondLeft]
-        ];
+        const positions = gridPositions();
 
         images.forEach((image, index) => {
             image.classList.remove('is-expanded');
@@ -71,14 +93,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    images.forEach(image => {
+    allImages.forEach(image => {
         image.addEventListener('pointerenter', () => {
-            if (timeline.progress() < .82) return;
+            if (Number(gsap.getProperty(image, 'opacity')) < .75) return;
+            const imageGroup = image.classList.contains('case-study-next-image') ? nextImages : firstImages;
             const grid = finalGrid();
             const fullWidth = grid.width * 2 + grid.gap;
             const fullHeight = (grid.width / .89) * 2 + grid.gap;
 
-            images.forEach(other => {
+            imageGroup.forEach(other => {
                 if (other === image) return;
                 gsap.to(other, { opacity: 0, scale: .94, pointerEvents: 'none', duration: .35, ease: 'power2.out', overwrite: true });
             });
@@ -99,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         image.addEventListener('pointerleave', () => {
             if (!image.classList.contains('is-expanded')) return;
-            restoreGrid();
+            restoreGrid(image.classList.contains('case-study-next-image') ? nextImages : firstImages);
         });
     });
 });

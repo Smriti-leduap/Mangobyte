@@ -3398,7 +3398,7 @@ small,
     background-image: radial-gradient(rgba(31,53,82,.07) .5px, transparent .5px);
     background-size: 5px 5px;
 }
-.case-study-scroll { height: 220vh; }
+.case-study-scroll { height: 320vh; }
 .case-study-image-stage {
     position: sticky;
     top: 0;
@@ -3425,6 +3425,7 @@ small,
     transition: transform .65s cubic-bezier(.16, 1, .3, 1);
 }
 .case-study-image.is-expanded img { transform: scale(1.035); }
+.case-study-next-image { opacity: 0; pointer-events: none; }
 .case-study-image-one { top: 18%; left: 2rem; }
 .case-study-image-two { top: 14%; right: 2rem; left: auto; }
 .case-study-image-three { top: 66%; left: calc(8% + 2rem); }
