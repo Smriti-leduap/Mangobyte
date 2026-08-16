@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Mangobyte Digital</title>
+    <meta name="description" content="Mangobyte Digital case study.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+</head>
+<body>
+    <div class="noise"></div>
+    <a class="home-go-top" href="#navbar" aria-label="Go to top"><span>Go to top</span><i data-lucide="arrow-up"></i></a>
+
+    <header class="site-header" id="navbar">
+        <div class="container">
+            <div class="header-logo" aria-label="Mangobyte"><img src="logo-color.png" alt="Mangobyte"></div>
+            <div class="header-right">
+                <div class="menu-toggle" id="menu-toggle-btn" role="button" tabindex="0" aria-expanded="false">
+                    <span class="menu-label">Menu</span>
+                    <div class="hamburger"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+        <nav class="overlay-nav">
+            <a href="index.html">Home</a>
+            <div class="overlay-services-item">
+                <a href="index.html#services" class="overlay-services-trigger">Services</a>
+                <div class="overlay-services-panel" aria-label="Services and included deliverables">
+                    <div class="overlay-service-group"><h3><a href="services/business-growth/index.html">Business Growth</a></h3><ul><li>Market Research &amp; Opportunity Analysis</li><li>Business Growth Strategy</li><li>Digital Transformation</li><li>Analytics &amp; Reporting</li></ul></div>
+                    <div class="overlay-service-group"><h3>Customer Acquisition</h3><ul><li>Google Ads</li><li>Meta Advertising</li><li>LinkedIn Advertising</li><li>Landing Page Optimization</li><li>Tracking &amp; Attribution</li><li>Reporting</li></ul></div>
+                    <div class="overlay-service-group"><h3>Brand Strategy</h3><ul><li>Visual Identity</li><li>Brand Strategy</li><li>Marketing Assets</li><li>Social Branding</li><li>Reputation Management</li></ul></div>
+                    <div class="overlay-service-group"><h3>Digital Experiences</h3><ul><li>Website Design</li><li>WordPress Development</li><li>Website Optimization</li><li>Conversion Optimization</li><li>Website Maintenance</li></ul></div>
+                    <div class="overlay-service-group"><h3>Content Systems</h3><ul><li>Content Strategy</li><li>Content Creation</li><li>Social Content</li><li>Email Marketing</li><li>Marketing Automation</li><li>Content Distribution</li></ul></div>
+                    <div class="overlay-service-group"><h3>Search Visibility</h3><ul><li>SEO Strategy</li><li>Technical SEO</li><li>On-Page SEO</li><li>Local SEO</li><li>Content SEO</li><li>Off-Page SEO</li><li>SEO Reporting</li></ul></div>
+                </div>
+            </div>
+            <a href="index.html#portfolio">Work</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <main class="case-study-blank" aria-label="Case study content">
+        <div class="case-study-scroll">
+            <div class="container case-study-image-stage">
+                <header class="case-study-heading">
+                    <h1>E-commerce Organic Growth</h1>
+                    <div class="case-study-tags" aria-label="Case study tags"><span>SEO</span><span>E-commerce</span><span>Organic Traffic</span><span>Growth</span></div>
+                </header>
+                <figure class="case-study-image case-study-image-one"><img src="hero-brand-workshop.png" alt="Brand strategy workshop"></figure>
+                <figure class="case-study-image case-study-image-two"><img src="hero_team_photo.jpg" alt="Mangobyte project team"></figure>
+                <figure class="case-study-image case-study-image-three"><img src="hero-studio-team.png" alt="Creative studio team"></figure>
+                <figure class="case-study-image case-study-image-four"><img src="services/business-growth/reel-images/presentation.jpg" alt="Project presentation"></figure>
+                <aside class="case-study-details" aria-label="Case study details">
+                    <p class="case-study-summary">A focused search strategy that connected technical improvements, content structure and commercial intent to create sustainable organic growth. We clarified the customer journey, strengthened high-value category pages and developed an evidence-led content roadmap. Continuous measurement helped the team prioritise opportunities, improve search visibility and turn increased traffic into meaningful commercial progress.</p>
+                    <dl>
+                        <div><dt>Client</dt><dd>E-commerce brand</dd></div>
+                        <div><dt>Industry</dt><dd>Retail</dd></div>
+                        <div><dt>Services</dt><dd>SEO Strategy<br>Content Optimisation<br>Technical SEO</dd></div>
+                        <div><dt>Result</dt><dd>+39.1% organic traffic</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <site-footer data-root=""></site-footer>
+    <script src="shared-footer.js"></script>
+    <script src="main.js"></script>
+    <script src="case-study.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
