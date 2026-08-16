@@ -64,7 +64,11 @@
 .package-shoot span { font-size: 14px; line-height: 1.35; }
 .package-feature { padding: 1.2rem 0; border-top: 1px solid rgba(255,255,255,.15); }
 .is-featured .package-feature { border-color: rgba(31,53,82,.12); }
-.package-feature h3 { margin-bottom: .65rem; color: inherit; font: 400 16px/1.2 'Inter',sans-serif; }
+.package-feature h3 { display: flex; align-items: center; gap: .55rem; margin-bottom: .65rem; color: inherit; font: 400 16px/1.2 'Inter',sans-serif; }
+.package-feature-icon { display: inline-block; width: 20px; height: 20px; flex: 0 0 20px; background: #f05a28; }
+.package-feature-icon-research { -webkit-mask: url('research.png') center / contain no-repeat; mask: url('research.png') center / contain no-repeat; }
+.package-feature-icon-roadmap { -webkit-mask: url('road-map.png') center / contain no-repeat; mask: url('road-map.png') center / contain no-repeat; }
+.package-feature-icon-direction { -webkit-mask: url('four-arrows.png') center / contain no-repeat; mask: url('four-arrows.png') center / contain no-repeat; }
 .package-page main .package-feature h3 { font-size: 14px !important; }
 .package-page main .package-feature li { font-size: 16px !important; }
 .package-feature ul { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; }
