@@ -10,10 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const insetLeft = parseFloat(styles.paddingLeft) || 0;
         const insetRight = parseFloat(styles.paddingRight) || 0;
         const innerWidth = stage.clientWidth - insetLeft - insetRight;
-        const width = innerWidth * .15;
-        const height = width / .89;
         const gap = Math.max(12, Math.min(24, innerWidth * .018));
-        const top = stage.clientHeight * .28;
+        const sectionGap = innerWidth <= 768 ? 44 : 64;
+        const heading = document.querySelector('.case-study-heading');
+        const details = document.querySelector('.case-study-details');
+        const headingTop = stage.clientHeight * .04;
+        const desiredTop = headingTop + heading.offsetHeight + sectionGap;
+        const detailsHeight = details.offsetHeight;
+        const top = Math.min(desiredTop, stage.clientHeight - sectionGap - detailsHeight);
+        const widthFromDetails = ((detailsHeight - gap) / 2) * .89;
+        const width = Math.min(innerWidth * .19, widthFromDetails);
+        const height = width / .89;
         return { width, gap, top, insetLeft, secondLeft: insetLeft + width + gap, secondTop: top + height + gap };
     };
     const timeline = gsap.timeline({
