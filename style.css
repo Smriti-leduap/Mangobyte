@@ -3390,6 +3390,16 @@ small,
 .trusted-logo-item:hover {
     border-color: #b8b8b8;
 }
+
+/* Site-wide heading typeface. The specificity keeps page-level heading rules consistent. */
+body h1:not(#heading-font-override),
+body h2:not(#heading-font-override),
+body h3:not(#heading-font-override),
+body h4:not(#heading-font-override),
+body h5:not(#heading-font-override),
+body h6:not(#heading-font-override) {
+    font-family: 'Baskervville', Georgia, serif !important;
+}
 /* Case-study cards — Bloom Dots-inspired video, overlay, and tag treatment. */
 .motion-pin {
     height: 520px;
