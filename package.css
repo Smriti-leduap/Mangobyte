@@ -138,20 +138,14 @@
 .package-back {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: .6rem;
     margin-bottom: 2.5rem;
     color: #fff;
-    font: 300 16px/1 'Inter', sans-serif;
-    text-decoration: none;
+    font: 300 14px/1 'Inter', sans-serif;
 }
-.package-back::before {
-    content: '';
-    width: 64px;
-    height: 1px;
-    background: currentColor;
-    transition: width .3s ease;
-}
-.package-back:hover::before { width: 34px; }
+.package-back a { color: inherit; text-decoration: none; transition: color .25s ease; }
+.package-back a:hover { color: #f05a28; }
+.package-back > span:last-child { color: rgba(31,53,82,.58); }
 .package-hero .package-back {
     grid-column: 1 / -1;
     margin-bottom: .75rem;
