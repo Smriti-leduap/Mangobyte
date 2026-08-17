@@ -1016,4 +1016,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 8. Lucide Icons re-init
     if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // 9. Shared breadcrumbs for every non-home page.
+    const pagePath = window.location.pathname.replace(/\\/g, '/').toLowerCase();
+    const isRootHome = /\/(index\.html)?$/.test(pagePath) && !pagePath.includes('/services/business-growth/');
+    if (!isRootHome) {
+        const isGrowthPage = pagePath.includes('/services/business-growth/');
+        const rootPrefix = isGrowthPage ? '../../' : '';
+        let breadcrumb = document.querySelector('[aria-label="Breadcrumb"]');
+        const pageMap = [
+            ['case-study-archive.html', 'Case Studies'],
+            ['case-study.html', 'E-commerce Organic Growth'],
+            ['contact.html', 'Contact'],
+            ['about.html', 'About'],
+            ['services.html', 'Services'],
+            ['work.html', 'Work'],
+            ['package.html', 'Packages']
+        ];
+        const currentTitle = isGrowthPage
+            ? 'Business Growth'
+            : (pageMap.find(([file]) => pagePath.endsWith(file))?.[1] || document.title.split('|')[0].trim());
+
+        if (!breadcrumb) {
+            breadcrumb = document.createElement('nav');
+            breadcrumb.className = 'page-breadcrumb page-breadcrumb--floating';
+            breadcrumb.setAttribute('aria-label', 'Breadcrumb');
+            const extraCaseLink = pagePath.endsWith('case-study.html')
+                ? `<a href="${rootPrefix}case-study-archive.html">Case Studies</a><span aria-hidden="true">/</span>`
+                : '';
+            breadcrumb.innerHTML = `<a href="${rootPrefix}index.html">Home</a><span aria-hidden="true">/</span>${extraCaseLink}<span aria-current="page">${currentTitle}</span>`;
+            const pageStart = document.querySelector('main, body > .hero, body > header.hero');
+            if (pageStart) document.body.insertBefore(breadcrumb, pageStart);
+        } else {
+            breadcrumb.classList.add('page-breadcrumb');
+            if (isGrowthPage) {
+                breadcrumb.innerHTML = `<a href="../../index.html">Home</a><span aria-hidden="true">/</span><a href="../../index.html#services">Services</a><span aria-hidden="true">/</span><span aria-current="page">Business Growth</span>`;
+            }
+        }
+    }
 });

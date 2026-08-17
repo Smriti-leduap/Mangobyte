@@ -53,7 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
             start: 'top top',
             end: 'bottom bottom',
             scrub: 1.5,
-            invalidateOnRefresh: true
+            invalidateOnRefresh: true,
+            onUpdate: self => {
+                const stage = document.querySelector('.case-study-image-stage');
+                stage.classList.toggle('is-grid-ready', self.progress >= .4 && self.progress < .72);
+                stage.classList.toggle('is-second-grid', self.progress >= .88);
+            }
         }
     });
 
@@ -95,8 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     allImages.forEach(image => {
         image.addEventListener('pointerenter', () => {
+            const progress = timeline.scrollTrigger.progress;
+            const isNextImage = image.classList.contains('case-study-next-image');
+            if ((!isNextImage && (progress < .4 || progress >= .72)) || (isNextImage && progress < .88)) return;
             if (Number(gsap.getProperty(image, 'opacity')) < .75) return;
-            const imageGroup = image.classList.contains('case-study-next-image') ? nextImages : firstImages;
+            const imageGroup = isNextImage ? nextImages : firstImages;
             const grid = finalGrid();
             const fullWidth = grid.width * 2 + grid.gap;
             const fullHeight = (grid.width / .89) * 2 + grid.gap;
