@@ -1025,7 +1025,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const rootPrefix = isGrowthPage ? '../../' : '';
         let breadcrumb = document.querySelector('[aria-label="Breadcrumb"]');
         const pageMap = [
-            ['case-study-archive.html', 'Case Studies'],
+            ['case-study-archive.html', 'Case Studies (Ecommerce)'],
             ['case-study.html', 'E-commerce Organic Growth'],
             ['contact.html', 'Contact'],
             ['about.html', 'About'],

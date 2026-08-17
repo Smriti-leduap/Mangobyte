@@ -93,7 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 pointerEvents: 'auto',
                 duration: .55,
                 ease: 'power3.inOut',
-                overwrite: true
+                onComplete: index === images.length - 1
+                    ? () => timeline.progress(timeline.scrollTrigger.progress, false)
+                    : undefined
             });
         });
     };
@@ -111,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             imageGroup.forEach(other => {
                 if (other === image) return;
-                gsap.to(other, { opacity: 0, scale: .94, pointerEvents: 'none', duration: .35, ease: 'power2.out', overwrite: true });
+                gsap.to(other, { opacity: 0, scale: .94, pointerEvents: 'none', duration: .35, ease: 'power2.out' });
             });
 
             image.classList.add('is-expanded');
@@ -123,8 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 aspectRatio: 'auto',
                 zIndex: 8,
                 duration: .65,
-                ease: 'power3.inOut',
-                overwrite: true
+                ease: 'power3.inOut'
             });
         });
 
