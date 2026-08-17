@@ -136,7 +136,7 @@
 }
 .package-final-inner { width: 100%; margin-inline: auto; padding: clamp(2.2rem,5vw,5rem); border-radius: 20px; background: #1f3552; background-image: radial-gradient(rgba(255,255,255,.06) .5px,transparent .5px); background-size: 5px 5px; color: #fff; text-align: center; }
 .package-final h2 { max-width: 780px; margin: 0 auto; color: #fff; line-height: 1.05; }
-.package-final h2 span { color: #f05a28; font-style: normal; }
+.package-final h2 span { color: #fff; font-style: normal; }
 .package-final p { max-width: 650px; margin: 1.35rem auto 0; color: rgba(255,255,255,.7); font-size: 18px; }
 .package-final-actions { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 2.1rem; }
 .package-back {
