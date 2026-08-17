@@ -5718,11 +5718,6 @@ small, .small-text, .motion-card-tags span, .footer-reference-meta { font-size: 
 
 .hero-cinematic-powered { position: relative; top: 68px; isolation: isolate; }
 
-.hero-cinematic-powered.rating-only .hero-google-rating {
-    position: static;
-    margin: 0;
-}
-
 .hero-google-rating {
     position: absolute;
     top: calc(100% + 14px);
