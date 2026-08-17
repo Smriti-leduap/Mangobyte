@@ -129,16 +129,16 @@
 .package-promises p { color: rgba(31,53,82,.66); font-size: 16px; line-height: 1.55; }
 
 .package-final {
-    padding: 6rem 0;
+    padding-block: 64px;
     background-color: #fff;
     background-image: radial-gradient(rgba(31,53,82,.07) .5px, transparent .5px);
     background-size: 5px 5px;
 }
-.package-final-inner { width: 100%; margin-inline: auto; padding: clamp(2.2rem,5vw,5rem); border-radius: 20px; background: #1f3552; background-image: radial-gradient(rgba(255,255,255,.06) .5px,transparent .5px); background-size: 5px 5px; color: #fff; text-align: center; }
-.package-final h2 { max-width: 780px; margin: 0 auto; color: #fff; line-height: 1.05; }
-.package-final h2 span { color: #fff; font-style: normal; }
-.package-final p { max-width: 650px; margin: 1.35rem auto 0; color: rgba(255,255,255,.7); font-size: 18px; }
-.package-final-actions { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 2.1rem; }
+.package-final-inner { width: 100%; margin-inline: auto; padding: 0; background: transparent; background-image: none; color: #1f3552; text-align: center; }
+.package-final h2 { max-width: 780px; margin: 0 auto 2rem; color: #1f3552; line-height: 1.05; }
+.package-final h2 span { color: #1f3552; font-style: normal; }
+.package-final p { max-width: 650px; margin: 0 auto 3rem; color: rgba(31,53,82,.7); font-size: 18px; }
+.package-final-actions { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 0; }
 .package-back {
     display: inline-flex;
     align-items: center;
@@ -162,9 +162,12 @@
     .package-card.is-featured { transform: none; }
     .package-final-inner { width: 100%; max-width: 660px; margin-inline: auto; }
 }
+@media (max-width: 768px) {
+    .package-final { padding-block: 56px; }
+}
 @media (max-width: 700px) {
     .package-hero { padding: 9rem 0 4rem; }
-    .package-intro, .package-pricing, .package-promises, .package-final { padding-block: 3.5rem; }
+    .package-intro, .package-pricing, .package-promises { padding-block: 3.5rem; }
     .package-promises-grid { grid-template-columns: 1fr; }
     .package-promises article, .package-promises article:first-child, .package-promises article:last-child { padding: 1.6rem 0; border-right: 0; border-bottom: 1px solid rgba(31,53,82,.14); }
     .package-promises article:last-child { border-bottom: 0; }

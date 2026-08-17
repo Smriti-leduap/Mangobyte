@@ -2421,6 +2421,7 @@ a.motion-card { text-decoration: none; }
 }
 
 .final-cta h2 { font-size: 40px; margin-bottom: 2rem; }
+.final-cta .hero-sub { font-weight: 300; }
 
 /* SERVICES ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â STACKED BLOCKS, always dark */
 .services-stack-section {
